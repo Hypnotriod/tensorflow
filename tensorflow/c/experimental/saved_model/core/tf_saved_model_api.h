@@ -52,7 +52,7 @@ namespace tensorflow {
 // The SavedModelAPI only supports loading tf.functions annotated with input
 // signatures so that we ensure that there is a 1:1 mapping between tf.function
 // -> FunctionDef, and have a guarantee that all inputs are tensors.
-// (https://github.com/tensorflow/tensorflow/blob/2b96f3662bd776e277f86997659e61046b56c315/tensorflow/python/eager/def_function.py#L1167-L1171),
+// (https://github.com/galeone/tensorflow/blob/2b96f3662bd776e277f86997659e61046b56c315/tensorflow/python/eager/def_function.py#L1167-L1171),
 class TFSavedModelAPI : public SavedModelAPI {
  public:
   Status GetFunction(const std::string& function_path,

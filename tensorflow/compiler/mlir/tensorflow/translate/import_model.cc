@@ -3383,7 +3383,7 @@ Status CreateSavedModelIR(
       // We do not handle the other element of this tuple, which corresponds to
       // Python kwonlyargs, since currently TensorFlow prohibits this in
       // combination with input_signature:
-      // https://github.com/tensorflow/tensorflow/blob/8cb8627abb5ef83a6fba34f8fd0e4ee430562eb1/tensorflow/python/eager/function.py#L2027-L2030
+      // https://github.com/galeone/tensorflow/blob/8cb8627abb5ef83a6fba34f8fd0e4ee430562eb1/tensorflow/python/eager/function.py#L2027-L2030
       // Our SavedModel import requires input_signature on the tf.function, so
       // we never need to handle the kwonlyargs.
       auto positional_arg_structure =

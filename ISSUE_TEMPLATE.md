@@ -32,7 +32,7 @@ If you open a GitHub issue, here is our policy:
 
 You can collect some of this information using our environment capture script:
 
-https://github.com/tensorflow/tensorflow/tree/master/tools/tf_env_collect.sh
+https://github.com/galeone/tensorflow/tree/master/tools/tf_env_collect.sh
 
 You can obtain the TensorFlow version with:
 

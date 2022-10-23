@@ -45,14 +45,14 @@ namespace internal {
 
 // Load a TensorProto into a tensorflow::Constant. This is similar to the
 // constant loading logic in python:
-// https://github.com/tensorflow/tensorflow/blob/516608035f85cec8b126712b0ff8407220206b22/tensorflow/python/saved_model/load.py#L437
+// https://github.com/galeone/tensorflow/blob/516608035f85cec8b126712b0ff8407220206b22/tensorflow/python/saved_model/load.py#L437
 Status TensorProtoToConstant(ImmediateExecutionContext* ctx,
                              const TensorProto& proto,
                              std::unique_ptr<Constant>* output);
 
 // Creates a tensorflow::Variable from a SavedVariable. This is similar to the
 // logic in:
-// https://github.com/tensorflow/tensorflow/blob/516608035f85cec8b126712b0ff8407220206b22/tensorflow/python/saved_model/load.py#L407
+// https://github.com/galeone/tensorflow/blob/516608035f85cec8b126712b0ff8407220206b22/tensorflow/python/saved_model/load.py#L407
 // Note that the caller **must assign a value** to the loaded variable.
 Status LoadSavedVariable(ImmediateExecutionContext* ctx,
                          const SavedVariable& variable,

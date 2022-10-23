@@ -221,7 +221,7 @@ performance benefits. Following example shows how to do this:
 
 The delegate creation logic reads device's machine id (e.g. iPhone11,1) to
 determine its Neural Engine availability. See the
-[code](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/delegates/coreml/coreml_delegate.mm)
+[code](https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/delegates/coreml/coreml_delegate.mm)
 for more detail. Alternatively, you can implement your own set of denylist
 devices using other libraries such as
 [DeviceKit](https://github.com/devicekit/DeviceKit).
@@ -281,7 +281,7 @@ Following ops are supported by the Core ML delegate.
 ## Feedback
 
 For issues, please create a
-[GitHub](https://github.com/tensorflow/tensorflow/issues/new?template=50-other-issues.md)
+[GitHub](https://github.com/galeone/tensorflow/issues/new?template=50-other-issues.md)
 issue with all the necessary details to reproduce.
 
 ## FAQ
@@ -300,6 +300,6 @@ issue with all the necessary details to reproduce.
 
 ## APIs
 
-*   [Core ML delegate Swift API](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/swift/Sources/CoreMLDelegate.swift)
-*   [Core ML delegate C API](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/delegates/coreml/coreml_delegate.h)
+*   [Core ML delegate Swift API](https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/swift/Sources/CoreMLDelegate.swift)
+*   [Core ML delegate C API](https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/delegates/coreml/coreml_delegate.h)
     *   This can be used for Objective-C codes. ~~~

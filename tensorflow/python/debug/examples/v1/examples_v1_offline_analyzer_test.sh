@@ -43,7 +43,7 @@ while true; do
 done
 
 if [[ -z "${PYTHON_BIN_PATH}" ]]; then
-  OFFLINE_ANALYZER_BIN="$TEST_SRCDIR/org_tensorflow/tensorflow/python/debug/cli/offline_analyzer"
+  OFFLINE_ANALYZER_BIN="$TEST_SRCDIR/org_galeone/tensorflow/python/debug/cli/offline_analyzer"
 else
   OFFLINE_ANALYZER_BIN="${PYTHON_BIN_PATH} -m tensorflow.python.debug.cli.offline_analyzer"
 fi

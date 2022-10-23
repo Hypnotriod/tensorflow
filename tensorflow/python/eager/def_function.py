@@ -1607,7 +1607,7 @@ def function(func=None,
       which can then be detected when processing serialized function.
       See [standardizing composite ops](https://github.com/tensorflow/community/blob/master/rfcs/20190610-standardizing-composite_ops.md)  # pylint: disable=line-too-long
       for details.  For an example of utilizing this attribute see this
-      [example](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/compiler/mlir/lite/transforms/prepare_composite_functions_tf.cc)
+      [example](https://github.com/galeone/tensorflow/blob/master/tensorflow/compiler/mlir/lite/transforms/prepare_composite_functions_tf.cc)
       The code above automatically detects and substitutes function that
       implements "embedded_matmul" and allows TFLite to substitute its own
       implementations. For instance, a tensorflow user can use this
@@ -1619,7 +1619,7 @@ def function(func=None,
       a NameAttrList corresponding to a list of key-value attributes associated
       with the function name. The name of the function will be in the 'name'
       field of the NameAttrList. To define a formal TF op for this function
-      implements, try the experimental [composite TF](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/compiler/mlir/tfr)
+      implements, try the experimental [composite TF](https://github.com/galeone/tensorflow/blob/master/tensorflow/compiler/mlir/tfr)
       project.
     experimental_autograph_options: Optional tuple of
       `tf.autograph.experimental.Feature` values.

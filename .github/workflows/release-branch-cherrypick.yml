@@ -14,7 +14,7 @@
 # ==============================================================================
 
 # Usage: Go to
-# https://github.com/tensorflow/tensorflow/actions/workflows/release-branch-cherrypick.yml
+# https://github.com/galeone/tensorflow/actions/workflows/release-branch-cherrypick.yml
 # and click "Run Workflow." Leave "Use Workflow From" set to "master", then
 # input the branch name and paste the cherry-pick commit and click Run. A PR
 # will be created.
@@ -39,7 +39,7 @@ jobs:
   cherrypick:
     name: Cherrypick to ${{ github.event.inputs.release_branch}} - ${{ github.event.inputs.git_commit }}
     runs-on: ubuntu-latest
-    if: github.repository == 'tensorflow/tensorflow' # Don't do this in forks
+    if: github.repository == 'galeone/tensorflow' # Don't do this in forks
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
@@ -64,5 +64,5 @@ jobs:
         branch: ${{ github.event.inputs.release_branch }}-${{ steps.cherrypick.outputs.SHORTSHA }}
         reviewers: mihaimaruseac
         body: |
-          Refer to the original commit: https://github.com/tensorflow/tensorflow/commit/${{ github.event.inputs.git_commit }}
+          Refer to the original commit: https://github.com/galeone/tensorflow/commit/${{ github.event.inputs.git_commit }}
 

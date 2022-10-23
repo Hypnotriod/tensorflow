@@ -90,24 +90,24 @@ FindSerializedTensorInTrackable(
 // appropriate Restore ops on each of the variables.
 // Note(bmzhao): Conceptually, objects that contain checkpointable state
 // implement the "_gather_saveables_for_checkpoint" method
-// https://github.com/tensorflow/tensorflow/blob/ddc1bbad3dfd4a089eb96014f26cc16664b1b2f8/tensorflow/python/training/tracking/base.py#L953-L983
+// https://github.com/galeone/tensorflow/blob/ddc1bbad3dfd4a089eb96014f26cc16664b1b2f8/tensorflow/python/training/tracking/base.py#L953-L983
 // which returns a dict of string key -> EITHER:
 // 1. python callable (taking a checkpoint key) returning SaveableObject OR
 // 2. variable (partitioned/resource/reference or otherwise)
-// https://github.com/tensorflow/tensorflow/blob/ddc1bbad3dfd4a089eb96014f26cc16664b1b2f8/tensorflow/python/training/saving/saveable_object.py#L58.
+// https://github.com/galeone/tensorflow/blob/ddc1bbad3dfd4a089eb96014f26cc16664b1b2f8/tensorflow/python/training/saving/saveable_object.py#L58.
 // The string key becomes the "name" attribute of the SerializedTensor proto
 // in the TrackableObjectGraph,
-// https://github.com/tensorflow/tensorflow/blob/ddc1bbad3dfd4a089eb96014f26cc16664b1b2f8/tensorflow/core/protobuf/trackable_object_graph.proto#L26
+// https://github.com/galeone/tensorflow/blob/ddc1bbad3dfd4a089eb96014f26cc16664b1b2f8/tensorflow/core/protobuf/trackable_object_graph.proto#L26
 // And the checkpoint_key is a globally unique string derived from this name:
-// https://github.com/tensorflow/tensorflow/blob/842df9e6b516e42578a8d23b35d41176b9a6cf1d/tensorflow/python/training/tracking/graph_view.py#L236-L241
+// https://github.com/galeone/tensorflow/blob/842df9e6b516e42578a8d23b35d41176b9a6cf1d/tensorflow/python/training/tracking/graph_view.py#L236-L241
 // SaveableObjects model the information needed to pass to the SaveV2/RestoreV2
 // ops via their SaveSpec members
-// https://github.com/tensorflow/tensorflow/blob/ddc1bbad3dfd4a089eb96014f26cc16664b1b2f8/tensorflow/python/training/saving/saveable_object.py#L21,
+// https://github.com/galeone/tensorflow/blob/ddc1bbad3dfd4a089eb96014f26cc16664b1b2f8/tensorflow/python/training/saving/saveable_object.py#L21,
 // which contain the "real" checkpoint keys into the TensorBundle SSTable.
 // They also contain the logic needed to take the restored tensors from
 // RestoreV2 and load them back into the "object" they came from via their
 // overridden "restore" method:
-// https://github.com/tensorflow/tensorflow/blob/ddc1bbad3dfd4a089eb96014f26cc16664b1b2f8/tensorflow/python/training/saving/saveable_object.py#L85
+// https://github.com/galeone/tensorflow/blob/ddc1bbad3dfd4a089eb96014f26cc16664b1b2f8/tensorflow/python/training/saving/saveable_object.py#L85
 Status RestoreCheckpoint(SavedModelV2Bundle* bundle,
                          const RevivedObjects& revived_objects,
                          const std::string& directory,
@@ -121,7 +121,7 @@ Status RestoreCheckpoint(SavedModelV2Bundle* bundle,
             SavedObject::kVariable) {
           // TODO(bmzhao): This requires using the newly added Save/Restore
           // functions from
-          // https://github.com/tensorflow/tensorflow/commit/df6b21c13c82b5d0981642cfe18f10e60f78ea5c
+          // https://github.com/galeone/tensorflow/commit/df6b21c13c82b5d0981642cfe18f10e60f78ea5c
           LOG(WARNING) << "Restoring non-variable objects has not been "
                           "implemented yet. (Kind="
                        << bundle->saved_object_graph().nodes(node).kind_case()
@@ -273,7 +273,7 @@ Status TFSavedModelAPI::Load(
   // TODO(bmzhao): Mangle loaded function names so that different
   // models loaded in the same runtime Context don't clobber eachother.
   // This occurs in python here:
-  // https://github.com/tensorflow/tensorflow/blob/285b5fa15405c5e2c084080f52a1818be8648079/tensorflow/python/saved_model/function_deserialization.py#L438-L454
+  // https://github.com/galeone/tensorflow/blob/285b5fa15405c5e2c084080f52a1818be8648079/tensorflow/python/saved_model/function_deserialization.py#L438-L454
 
   // For each node in the graph, we should initialize an object of the
   // corresponding type. For objects that depend on the initialization of other

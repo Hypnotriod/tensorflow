@@ -27,7 +27,7 @@ namespace cc {
 
 // Status is a wrapper around an error code and an optional error message.
 // The set of error codes are defined here:
-// https://github.com/tensorflow/tensorflow/blob/08931c1e3e9eb2e26230502d678408e66730826c/tensorflow/c/tf_status.h#L39-L60
+// https://github.com/galeone/tensorflow/blob/08931c1e3e9eb2e26230502d678408e66730826c/tensorflow/c/tf_status.h#L39-L60
 // Many Tensorflow APIs return a Status, or take a Status as an out parameter.
 // Clients should check for status.ok() after calling these APIs, and either
 // handle or propagate the error appropriately.

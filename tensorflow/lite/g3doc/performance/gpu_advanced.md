@@ -234,9 +234,9 @@ TFLGpuDelegateDelete(delegate);
 ### Delegate Options for iOS
 
 Constructor for GPU delegate accepts a `struct` of options.
-([Swift API](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/swift/Sources/MetalDelegate.swift),
-[Objective-C API](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/objc/apis/TFLMetalDelegate.h),
-[C API](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/delegates/gpu/metal_delegate.h))
+([Swift API](https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/swift/Sources/MetalDelegate.swift),
+[Objective-C API](https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/objc/apis/TFLMetalDelegate.h),
+[C API](https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/delegates/gpu/metal_delegate.h))
 
 Passing `nullptr` (C API) or nothing (Objective-C and Swift API) to the
 initializer sets the default options (which are explicated in the Basic Usage

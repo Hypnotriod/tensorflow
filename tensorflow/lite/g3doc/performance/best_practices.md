@@ -32,7 +32,7 @@ learning. Check out the transfer learning tutorials using TensorFlow Lite
 
 Once you have selected a candidate model that is right for your task, it is a
 good practice to profile and benchmark your model. TensorFlow Lite
-[benchmarking tool](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/tools/benchmark)
+[benchmarking tool](https://github.com/galeone/tensorflow/tree/master/tensorflow/lite/tools/benchmark)
 has a built-in profiler that shows per operator profiling statistics. This can
 help in understanding performance bottlenecks and which operators dominate the
 computation time.
@@ -70,7 +70,7 @@ power.
 
 For some applications, latency may be more important than energy efficiency. You
 can increase the number of threads by setting the number of interpreter
-[threads](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/interpreter.h#L346).
+[threads](https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/interpreter.h#L346).
 Multi-threaded execution, however, comes at the cost of increased performance
 variability depending on what else is executed concurrently. This is
 particularly the case for mobile apps. For example, isolated tests may show 2x
@@ -84,7 +84,7 @@ when feeding the input to and reading the output from the model. Make sure to
 eliminate redundant copies. If you are using higher level APIs, like Java, make
 sure to carefully check the documentation for performance caveats. For example,
 the Java API is a lot faster if `ByteBuffers` are used as
-[inputs](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/java/src/main/java/org/tensorflow/lite/Interpreter.java#L175).
+[inputs](https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/java/src/main/java/org/tensorflow/lite/Interpreter.java#L175).
 
 ## Profile your application with platform specific tools
 
@@ -132,5 +132,5 @@ intensity.
 
 The TensorFlow team is happy to help diagnose and address specific performance
 issues you may be facing. Please file an issue on
-[GitHub](https://github.com/tensorflow/tensorflow/issues) with details of the
+[GitHub](https://github.com/galeone/tensorflow/issues) with details of the
 issue.

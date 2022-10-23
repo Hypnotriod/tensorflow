@@ -35,7 +35,7 @@ Download the nightly pre-built Android benchmark apps using the links below:
 *   [android_arm](https://storage.googleapis.com/tensorflow-nightly-public/prod/tensorflow/release/lite/tools/nightly/latest/android_arm_benchmark_model.apk)
 
 As for Android benchmark apps that support [TF ops](https://www.tensorflow.org/lite/guide/ops_select)
-via [Flex delegate](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/delegates/flex),
+via [Flex delegate](https://github.com/galeone/tensorflow/tree/master/tensorflow/lite/delegates/flex),
 use the links below:
 
 *   [android_aarch64](https://storage.googleapis.com/tensorflow-nightly-public/prod/tensorflow/release/lite/tools/nightly/latest/android_aarch64_benchmark_model_plus_flex.apk)
@@ -43,7 +43,7 @@ use the links below:
 
 
 You can also build the app from source by following these
-[instructions](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/tools/benchmark/android).
+[instructions](https://github.com/galeone/tensorflow/tree/master/tensorflow/lite/tools/benchmark/android).
 
 Note: It is required to build the app from the source if you want to run the
 Android benchmark apk on x86 CPU or Hexagon delegate or if your model contains
@@ -84,13 +84,13 @@ You can specify more optional parameters for running the benchmark.
     Use [NNAPI delegate](nnapi).
 *   `use_xnnpack`: `bool` (default=`false`) \
     Use
-    [XNNPACK delegate](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/delegates/xnnpack).
+    [XNNPACK delegate](https://github.com/galeone/tensorflow/tree/master/tensorflow/lite/delegates/xnnpack).
 *   `use_hexagon`: `bool` (default=`false`) \
     Use [Hexagon delegate](hexagon_delegate).
 
 Depending on the device you are using, some of these options may not be
 available or have no effect. Refer to
-[parameters](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/tools/benchmark#parameters)
+[parameters](https://github.com/galeone/tensorflow/tree/master/tensorflow/lite/tools/benchmark#parameters)
 for more performance parameters that you could run with the benchmark app.
 
 View the results using the `logcat` command:
@@ -123,7 +123,7 @@ links below:
 *   [android_arm](https://storage.googleapis.com/tensorflow-nightly-public/prod/tensorflow/release/lite/tools/nightly/latest/android_arm_benchmark_model)
 
 As for nightly pre-built binaries that support [TF ops](https://www.tensorflow.org/lite/guide/ops_select)
-via [Flex delegate](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/delegates/flex),
+via [Flex delegate](https://github.com/galeone/tensorflow/tree/master/tensorflow/lite/delegates/flex),
 use the links below:
 
 *   [linux_x86-64](https://storage.googleapis.com/tensorflow-nightly-public/prod/tensorflow/release/lite/tools/nightly/latest/linux_x86-64_benchmark_model_plus_flex)
@@ -133,7 +133,7 @@ use the links below:
 *   [android_arm](https://storage.googleapis.com/tensorflow-nightly-public/prod/tensorflow/release/lite/tools/nightly/latest/android_arm_benchmark_model_plus_flex)
 
 To benchmark with [TensorFlow Lite Hexagon delegate](https://www.tensorflow.org/lite/android/delegates/hexagon),
-we have also pre-built the required `libhexagon_interface.so` files (see [here](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/delegates/hexagon/README.md)
+we have also pre-built the required `libhexagon_interface.so` files (see [here](https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/delegates/hexagon/README.md)
 for details about this file). After downloading the file of the corresponding
 platform from the links below, please rename the file to `libhexagon_interface.so`.
 
@@ -141,7 +141,7 @@ platform from the links below, please rename the file to `libhexagon_interface.s
 *   [android_arm](https://storage.googleapis.com/tensorflow-nightly-public/prod/tensorflow/release/lite/tools/nightly/latest/android_arm_libhexagon_interface.so)
 
 You can also build the native benchmark binary from
-[source](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/tools/benchmark)
+[source](https://github.com/galeone/tensorflow/tree/master/tensorflow/lite/tools/benchmark)
 on your computer.
 
 ```shell
@@ -179,7 +179,7 @@ path/to/downloaded_or_built/benchmark_model \
 ```
 
 You can use the same set of
-[parameters](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/tools/benchmark#parameters)
+[parameters](https://github.com/galeone/tensorflow/tree/master/tensorflow/lite/tools/benchmark#parameters)
 as mentioned above with the native command-line binary.
 
 #### Profiling model ops
@@ -188,12 +188,12 @@ The benchmark model binary also allows you to profile model ops and get the
 execution times of each operator. To do this, pass the flag
 `--enable_op_profiling=true` to `benchmark_model` during invocation. Details are
 explained
-[here](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/tools/benchmark#profiling-model-operators).
+[here](https://github.com/galeone/tensorflow/tree/master/tensorflow/lite/tools/benchmark#profiling-model-operators).
 
 ### Native benchmark binary for multiple performance options in a single run
 
 A convenient and simple C++ binary is also provided to
-[benchmark multiple performance options](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/tools/benchmark#benchmark-multiple-performance-options-in-a-single-run)
+[benchmark multiple performance options](https://github.com/galeone/tensorflow/tree/master/tensorflow/lite/tools/benchmark#benchmark-multiple-performance-options-in-a-single-run)
 in a single run. This binary is built based on the aforementioned benchmark tool
 that could only benchmark a single performance option at a time. They share the
 same build/install/run process, but the BUILD target name of this binary is
@@ -214,13 +214,13 @@ You can get nightly pre-built binaries for this tool as listed below:
 ### iOS benchmark app
 
 To run benchmarks on iOS device, you need to build the app from
-[source](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/tools/benchmark/ios).
+[source](https://github.com/galeone/tensorflow/tree/master/tensorflow/lite/tools/benchmark/ios).
 Put the TensorFlow Lite model file in the
-[benchmark_data](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/tools/benchmark/ios/TFLiteBenchmark/TFLiteBenchmark/benchmark_data)
+[benchmark_data](https://github.com/galeone/tensorflow/tree/master/tensorflow/lite/tools/benchmark/ios/TFLiteBenchmark/TFLiteBenchmark/benchmark_data)
 directory of the source tree and modify the `benchmark_params.json` file. Those
 files are packaged into the app and the app reads data from the directory. Visit
 the
-[iOS benchmark app](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/tools/benchmark/ios)
+[iOS benchmark app](https://github.com/galeone/tensorflow/tree/master/tensorflow/lite/tools/benchmark/ios)
 for detailed instructions.
 
 ## Performance benchmarks for well known models
@@ -231,15 +231,15 @@ known models on some Android and iOS devices.
 ### Android performance benchmarks
 
 These performance benchmark numbers were generated with the
-[native benchmark binary](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/tools/benchmark).
+[native benchmark binary](https://github.com/galeone/tensorflow/tree/master/tensorflow/lite/tools/benchmark).
 
 For Android benchmarks, the CPU affinity is set to use big cores on the device
 to reduce variance (see
-[details](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/tools/benchmark#reducing-variance-between-runs-on-android)).
+[details](https://github.com/galeone/tensorflow/tree/master/tensorflow/lite/tools/benchmark#reducing-variance-between-runs-on-android)).
 
 It assumes that models were downloaded and unzipped to the
 `/data/local/tmp/tflite_models` directory. The benchmark binary is built using
-[these instructions](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/tools/benchmark#on-android)
+[these instructions](https://github.com/galeone/tensorflow/tree/master/tensorflow/lite/tools/benchmark#on-android)
 and assumed to be in the `/data/local/tmp` directory.
 
 To run the benchmark:
@@ -363,7 +363,7 @@ The performance values below are measured on Android 10.
 ### iOS performance benchmarks
 
 These performance benchmark numbers were generated with the
-[iOS benchmark app](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/tools/benchmark/ios).
+[iOS benchmark app](https://github.com/galeone/tensorflow/tree/master/tensorflow/lite/tools/benchmark/ios).
 
 To run iOS benchmarks, the benchmark app was modified to include the appropriate
 model and `benchmark_params.json` was modified to set `num_threads` to 2. To use

@@ -55,7 +55,7 @@ and the following optional parameters:
     Valid values: "nnapi", "gpu", "hexagon".
 
     NOTE: Please refer to the
-    [Hexagon delegate documentation](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/g3doc/performance/hexagon_delegate.md)
+    [Hexagon delegate documentation](https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/g3doc/performance/hexagon_delegate.md)
     for instructions on how to set it up for the Hexagon delegate. The tool
     assumes that `libhexagon_interface.so` and Qualcomm libraries lie in
     `/data/local/tmp`.
@@ -65,7 +65,7 @@ and the following optional parameters:
     instance of `tflite::evaluation::EvaluationStageMetrics`
 
 This script also supports runtime/delegate arguments introduced by the
-[delegate registrar](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/tools/delegates).
+[delegate registrar](https://github.com/galeone/tensorflow/tree/master/tensorflow/lite/tools/delegates).
 If there is any conflict (for example, `num_threads` vs
 `num_interpreter_threads` here), the parameters of this
 script are given precedence.

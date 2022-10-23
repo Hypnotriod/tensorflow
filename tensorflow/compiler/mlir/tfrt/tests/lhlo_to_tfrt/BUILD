@@ -11,7 +11,7 @@ glob_lit_tests(
         "ccl.mlir",  # b/216062298
         "fusion.mlir",  # b/215799570
     ],
-    features = if_oss(["--path=org_tensorflow/tensorflow/compiler/mlir/tfrt"]),
+    features = if_oss(["--path=org_galeone/tensorflow/compiler/mlir/tfrt"]),
     test_file_exts = ["mlir"],
 )
 

@@ -2,7 +2,7 @@
 
 The code here exists in two places:
 
-*   https://github.com/tensorflow/tensorflow/tree/master/tensorflow/compiler/mlir/hlo;
+*   https://github.com/galeone/tensorflow/tree/master/tensorflow/compiler/mlir/hlo;
     this is the canonical location and where contributions should be made using
     GitHub pull-requests.
 *   https://github.com/tensorflow/mlir-hlo; this is a standalone repository with

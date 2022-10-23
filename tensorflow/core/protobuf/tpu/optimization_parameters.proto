@@ -80,7 +80,7 @@ message LearningRate {
 // implementation (if available) for user reference.
 
 // https://www.tensorflow.org/api_docs/python/tf/keras/optimizers/Adagrad
-// https://github.com/tensorflow/tensorflow/blob/6b6471f3ffb7f1fefe42d814aa5fb9ab7a535b58/tensorflow/core/kernels/training_ops.cc#L1634
+// https://github.com/galeone/tensorflow/blob/6b6471f3ffb7f1fefe42d814aa5fb9ab7a535b58/tensorflow/core/kernels/training_ops.cc#L1634
 message AdagradParameters {
   // Old initial accumulator parameter.
   reserved "initial_accumulator";
@@ -132,12 +132,12 @@ message BoundedAdagradParameters {
 }
 
 // https://www.tensorflow.org/api_docs/python/tf/keras/optimizers/SGD
-// https://github.com/tensorflow/tensorflow/blob/6b6471f3ffb7f1fefe42d814aa5fb9ab7a535b58/tensorflow/core/kernels/training_ops.cc#L629
+// https://github.com/galeone/tensorflow/blob/6b6471f3ffb7f1fefe42d814aa5fb9ab7a535b58/tensorflow/core/kernels/training_ops.cc#L629
 message StochasticGradientDescentParameters {}
 
 // https://www.tensorflow.org/api_docs/python/tf/keras/optimizers/Ftrl
 // https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/41159.pdf
-// https://github.com/tensorflow/tensorflow/blob/6b6471f3ffb7f1fefe42d814aa5fb9ab7a535b58/tensorflow/core/kernels/training_ops.cc#L2646
+// https://github.com/galeone/tensorflow/blob/6b6471f3ffb7f1fefe42d814aa5fb9ab7a535b58/tensorflow/core/kernels/training_ops.cc#L2646
 //
 // The hyperparameters for FTRL are the same as for the Keras implementation,
 // with some additions. The "beta" parameter matches the behavior described in
@@ -176,7 +176,7 @@ message FtrlParameters {
 // Here, t is the current timestep.
 //
 // https://www.tensorflow.org/api_docs/python/tf/keras/optimizers/Adam
-// https://github.com/tensorflow/tensorflow/blob/ab51450c817674c8ff08a7ae4f8ac50cdc4bed8b/tensorflow/python/training/adam.py#L32
+// https://github.com/galeone/tensorflow/blob/ab51450c817674c8ff08a7ae4f8ac50cdc4bed8b/tensorflow/python/training/adam.py#L32
 //
 // Note that the code by default implements the lazy version of Adam
 // (https://www.tensorflow.org/api_docs/python/tf/contrib/opt/LazyAdamOptimizer)
@@ -203,7 +203,7 @@ message AdamParameters {
 }
 
 // https://www.tensorflow.org/api_docs/python/tf/keras/optimizers/SGD
-// https://github.com/tensorflow/tensorflow/blob/6b6471f3ffb7f1fefe42d814aa5fb9ab7a535b58/tensorflow/core/kernels/training_ops.cc#L3068
+// https://github.com/galeone/tensorflow/blob/6b6471f3ffb7f1fefe42d814aa5fb9ab7a535b58/tensorflow/core/kernels/training_ops.cc#L3068
 message MomentumParameters {
   float momentum = 1;
   bool use_nesterov = 2;
@@ -214,7 +214,7 @@ message MomentumParameters {
 }
 
 // https://www.tensorflow.org/api_docs/python/tf/keras/optimizers/RMSprop
-// https://github.com/tensorflow/tensorflow/blob/6b6471f3ffb7f1fefe42d814aa5fb9ab7a535b58/tensorflow/core/kernels/training_ops.cc#L4229
+// https://github.com/galeone/tensorflow/blob/6b6471f3ffb7f1fefe42d814aa5fb9ab7a535b58/tensorflow/core/kernels/training_ops.cc#L4229
 message RmsPropParameters {
   float rho = 1;
   float momentum = 2;
@@ -226,7 +226,7 @@ message RmsPropParameters {
 }
 
 // https://www.tensorflow.org/api_docs/python/tf/keras/optimizers/RMSprop
-// https://github.com/tensorflow/tensorflow/blob/6b6471f3ffb7f1fefe42d814aa5fb9ab7a535b58/tensorflow/core/kernels/training_ops.cc#L4358
+// https://github.com/galeone/tensorflow/blob/6b6471f3ffb7f1fefe42d814aa5fb9ab7a535b58/tensorflow/core/kernels/training_ops.cc#L4358
 message CenteredRmsPropParameters {
   float rho = 1;
   float momentum = 2;
@@ -258,7 +258,7 @@ message MdlAdagradLightParameters {
 }
 
 // https://www.tensorflow.org/api_docs/python/tf/keras/optimizers/Adadelta
-// https://github.com/tensorflow/tensorflow/blob/6b6471f3ffb7f1fefe42d814aa5fb9ab7a535b58/tensorflow/core/kernels/training_ops.cc#L933
+// https://github.com/galeone/tensorflow/blob/6b6471f3ffb7f1fefe42d814aa5fb9ab7a535b58/tensorflow/core/kernels/training_ops.cc#L933
 message AdadeltaParameters {
   float rho = 1;
   float epsilon = 2;
@@ -269,7 +269,7 @@ message AdadeltaParameters {
 }
 
 // https://www.tensorflow.org/api_docs/python/tf/compat/v1/train/ProximalAdagradOptimizer
-// https://github.com/tensorflow/tensorflow/blob/6b6471f3ffb7f1fefe42d814aa5fb9ab7a535b58/tensorflow/core/kernels/training_ops.cc#L1961
+// https://github.com/galeone/tensorflow/blob/6b6471f3ffb7f1fefe42d814aa5fb9ab7a535b58/tensorflow/core/kernels/training_ops.cc#L1961
 message ProximalAdagradParameters {
   float l1 = 1;
   float l2 = 2;

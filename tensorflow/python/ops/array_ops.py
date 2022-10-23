@@ -6730,7 +6730,7 @@ def get_positive_axis(axis, ndims, axis_name="axis", ndims_name="ndims"):
 # simply make `axis` be a required argument.
 #
 # External (OSS) `tf.repeat` feature request:
-# https://github.com/tensorflow/tensorflow/issues/8246
+# https://github.com/galeone/tensorflow/issues/8246
 def repeat_with_axis(data, repeats, axis, name=None):
   """Repeats elements of `data`.
 

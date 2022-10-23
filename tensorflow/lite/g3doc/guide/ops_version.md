@@ -219,7 +219,7 @@ In this example, you need to add the following entry into `op_version_map`:
 ```
 
 where `%CURRENT_RUNTIME_VERSION%` corresponds to the current runtime version
-defined in [tensorflow/core/public/version.h](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/core/public/version.h).
+defined in [tensorflow/core/public/version.h](https://github.com/galeone/tensorflow/blob/master/tensorflow/core/public/version.h).
 
 ### Delegation implementation
 

@@ -43,12 +43,12 @@ automatically on GitHub.
 
 If you want to contribute, start working through the TensorFlow codebase,
 navigate to the
-[Github "issues" tab](https://github.com/tensorflow/tensorflow/issues) and start
+[Github "issues" tab](https://github.com/galeone/tensorflow/issues) and start
 looking through interesting issues. If you are not sure of where to start, then
 start by trying one of the smaller/easier issues here i.e.
-[issues with the "good first issue" label](https://github.com/tensorflow/tensorflow/labels/good%20first%20issue)
+[issues with the "good first issue" label](https://github.com/galeone/tensorflow/labels/good%20first%20issue)
 and then take a look at the
-[issues with the "contributions welcome" label](https://github.com/tensorflow/tensorflow/labels/stat%3Acontributions%20welcome).
+[issues with the "contributions welcome" label](https://github.com/galeone/tensorflow/labels/stat%3Acontributions%20welcome).
 These are issues that we believe are particularly well suited for outside
 contributions, often because we probably won't get to them right now. If you
 decide to start on an issue, leave a comment so that other people know that
@@ -58,7 +58,7 @@ comment thread to coordinate.
 ### Contribution guidelines and standards
 
 Before sending your pull request for
-[review](https://github.com/tensorflow/tensorflow/pulls),
+[review](https://github.com/galeone/tensorflow/pulls),
 make sure your changes are consistent with the guidelines and follow the
 TensorFlow coding style.
 
@@ -71,9 +71,9 @@ TensorFlow coding style.
     usually indicates insufficient test coverage.
 *   Keep API compatibility in mind when you change code in core TensorFlow,
     e.g., code in
-    [tensorflow/core](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/core)
+    [tensorflow/core](https://github.com/galeone/tensorflow/tree/master/tensorflow/core)
     and
-    [tensorflow/python](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/python).
+    [tensorflow/python](https://github.com/galeone/tensorflow/tree/master/tensorflow/python).
     TensorFlow has passed version 1.0 and hence cannot make
     non-backward-compatible API changes without a major release. Reviewers of
     your pull request will comment on any API compatibility issues
@@ -99,16 +99,16 @@ TensorFlow coding style.
 
 Include a license at the top of new files.
 
-* [C/C++ license example](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/core/framework/op.cc#L1)
-* [Python license example](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/python/ops/nn.py#L1)
-* [Java license example](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/java/src/main/java/org/tensorflow/Graph.java#L1)
-* [Go license example](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/go/operation.go#L1)
-* [Bash license example](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/tools/ci_build/ci_sanity.sh#L2)
+* [C/C++ license example](https://github.com/galeone/tensorflow/blob/master/tensorflow/core/framework/op.cc#L1)
+* [Python license example](https://github.com/galeone/tensorflow/blob/master/tensorflow/python/ops/nn.py#L1)
+* [Java license example](https://github.com/galeone/tensorflow/blob/master/tensorflow/java/src/main/java/org/tensorflow/Graph.java#L1)
+* [Go license example](https://github.com/galeone/tensorflow/blob/master/tensorflow/go/operation.go#L1)
+* [Bash license example](https://github.com/galeone/tensorflow/blob/master/tensorflow/tools/ci_build/ci_sanity.sh#L2)
 * [HTML license example](https://github.com/tensorflow/tensorboard/blob/master/tensorboard/components/tf_backend/tf-backend.html#L2)
 * [JavaScript/TypeScript license example](https://github.com/tensorflow/tensorboard/blob/master/tensorboard/components/tf_backend/backend.ts#L1)
 
 Bazel BUILD files also need to include a license section, e.g.,
-[BUILD example](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/core/BUILD#L61).
+[BUILD example](https://github.com/galeone/tensorflow/blob/master/tensorflow/core/BUILD#L61).
 
 #### C++ coding style
 
@@ -171,12 +171,12 @@ There are two ways to run TensorFlow unit tests.
 1.  Using tools and libraries installed directly on your system.
 
     Refer to the
-    [CPU-only developer Dockerfile](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/tools/dockerfiles/dockerfiles/devel-cpu.Dockerfile)
+    [CPU-only developer Dockerfile](https://github.com/galeone/tensorflow/blob/master/tensorflow/tools/dockerfiles/dockerfiles/devel-cpu.Dockerfile)
     and
-    [GPU developer Dockerfile](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/tools/dockerfiles/dockerfiles/devel-gpu.Dockerfile)
+    [GPU developer Dockerfile](https://github.com/galeone/tensorflow/blob/master/tensorflow/tools/dockerfiles/dockerfiles/devel-gpu.Dockerfile)
     for the required packages. Alternatively, use the said
-    [Docker images](https://hub.docker.com/r/tensorflow/tensorflow/tags/), e.g.,
-    `tensorflow/tensorflow:devel` and `tensorflow/tensorflow:devel-gpu` for
+    [Docker images](https://hub.docker.com/r/galeone/tensorflow/tags/), e.g.,
+    `galeone/tensorflow:devel` and `galeone/tensorflow:devel-gpu` for
     development to avoid installing the packages directly on your system (in
     which case remember to change directory from `/root` to `/tensorflow` once
     you get into the running container so `bazel` can find the `tensorflow`
@@ -235,7 +235,7 @@ There are two ways to run TensorFlow unit tests.
     ```
 
     See
-    [TensorFlow Builds](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/tools/ci_build)
+    [TensorFlow Builds](https://github.com/galeone/tensorflow/tree/master/tensorflow/tools/ci_build)
     for details.
 
 #### Running doctest for testable docstring
@@ -257,7 +257,7 @@ There are two ways to test the code in the docstring locally:
     *   Use an up to date [tf-nightly](https://pypi.org/project/tf-nightly/)
         `pip install -U tf-nightly`
     *   Rebase your pull request onto a recent pull from
-        [TensorFlow's](https://github.com/tensorflow/tensorflow) master branch.
+        [TensorFlow's](https://github.com/galeone/tensorflow) master branch.
 
 2.  If you are changing the code and the docstring of a class/function/method,
     then you will need to
@@ -290,7 +290,7 @@ bazel build --config=dbg //tensorflow/tools/pip_package:build_pip_package
 TensorFlow kernels and TensorFlow's dependencies are still not built with
 debugging information with `--config=dbg`, as issues occur on Linux if
 there is too much debug info (see [this GitHub
-issue](https://github.com/tensorflow/tensorflow/issues/48919) for context). If
+issue](https://github.com/galeone/tensorflow/issues/48919) for context). If
 you want to debug a kernel, you can compile specific files with `-g` using the
 `--per_file_copt` bazel option. For example, if you want to debug the Identity
 op, which are in files starting with `identity_op`, you can run

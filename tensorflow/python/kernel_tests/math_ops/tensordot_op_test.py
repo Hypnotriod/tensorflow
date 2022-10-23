@@ -94,7 +94,7 @@ class TensordotTest(test_lib.TestCase):
                   axes_ph: axes_value
               })
 
-  # Test case for https://github.com/tensorflow/tensorflow/issues/11950
+  # Test case for https://github.com/galeone/tensorflow/issues/11950
   @test_util.run_in_graph_and_eager_modes(use_gpu=True)
   def test_valid_axis(self):
     for axes_value in [1, 2], [[1], [2]], [[], []], 0:

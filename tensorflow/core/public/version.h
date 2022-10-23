@@ -18,7 +18,7 @@ limitations under the License.
 
 // TensorFlow uses semantic versioning, see http://semver.org/.
 
-// Also update tensorflow/tensorflow.bzl and
+// Also update galeone/tensorflow.bzl and
 // tensorflow/tools/pip_package/setup.py
 #define TF_MAJOR_VERSION 2
 #define TF_MINOR_VERSION 10

@@ -254,7 +254,7 @@ migration.
 ### Step 5: Multi-Stream Support or Drop
 
 We can't delete
-[some of the emitters](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/compiler/xla/service/gpu/stream_assignment.cc#L140)
+[some of the emitters](https://github.com/galeone/tensorflow/blob/master/tensorflow/compiler/xla/service/gpu/stream_assignment.cc#L140)
 until we support it in MLIR, or we drop the feature. It's a relatively large
 amount of work in MLIR and a small amount of gain for XLA. We should investigate
 current users of multi-stream XLA/GPU users, and try to delete this feature if

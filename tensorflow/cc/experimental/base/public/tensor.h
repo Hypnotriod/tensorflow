@@ -66,7 +66,7 @@ class Tensor {
   // TODO(bmzhao): In the future, we want to relax the non-copyability
   // constraint. To do so, we can add a C API function that acts like
   // CopyFrom:
-  // https://github.com/tensorflow/tensorflow/blob/08931c1e3e9eb2e26230502d678408e66730826c/tensorflow/core/framework/tensor.h#L301-L311
+  // https://github.com/galeone/tensorflow/blob/08931c1e3e9eb2e26230502d678408e66730826c/tensorflow/core/framework/tensor.h#L301-L311
 
   // Tensor is movable, but not copyable
   Tensor(Tensor&&) = default;

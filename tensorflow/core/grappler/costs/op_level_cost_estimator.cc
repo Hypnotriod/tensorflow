@@ -1865,7 +1865,7 @@ Status OpLevelCostEstimator::PredictSparseTensorDenseMatMul(
   // input[2]: shape of matrix a
   // input[3]: matrix b
   // See
-  // https://github.com/tensorflow/tensorflow/blob/9a43dfeac5/tensorflow/core/ops/sparse_ops.cc#L85
+  // https://github.com/galeone/tensorflow/blob/9a43dfeac5/tensorflow/core/ops/sparse_ops.cc#L85
   int64_t num_elems_in_a =
       CalculateTensorElementCount(op_info.inputs(1), &found_unknown_shapes);
   auto b_matrix = op_info.inputs(3);
@@ -2045,7 +2045,7 @@ Status OpLevelCostEstimator::PredictScatter(const OpContext& op_context,
   // input[2]: updates where updates.shape = indices.shape + ref.shape[1:]
   // See
   // https://www.tensorflow.org/api_docs/python/tf/scatter_add and
-  // https://github.com/tensorflow/tensorflow/blob/master/tensorflow/core/ops/state_ops.cc#L146
+  // https://github.com/galeone/tensorflow/blob/master/tensorflow/core/ops/state_ops.cc#L146
 
   const int64_t num_indices =
       CalculateTensorElementCount(op_info.inputs(1), &found_unknown_shapes);

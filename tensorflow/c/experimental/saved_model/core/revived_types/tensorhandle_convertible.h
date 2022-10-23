@@ -24,7 +24,7 @@ namespace tensorflow {
 // Examples of objects that implement this include Variables, Constants, Assets,
 // etc. This is used to convert captured objects into a ConcreteFunction's
 // captured TensorHandles:
-// https://github.com/tensorflow/tensorflow/blob/676a68963ea4b64fe479b9cede06aa8f5b290ab8/tensorflow/python/saved_model/load.py#L229-L240
+// https://github.com/galeone/tensorflow/blob/676a68963ea4b64fe479b9cede06aa8f5b290ab8/tensorflow/python/saved_model/load.py#L229-L240
 class TensorHandleConvertible {
  public:
   explicit TensorHandleConvertible(ImmediateTensorHandlePtr handle)

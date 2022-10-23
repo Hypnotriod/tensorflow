@@ -229,7 +229,7 @@ SP_Stream TF_GetStream(TF_OpKernelContext* ctx, TF_Status* status) {
 #if defined(IS_MOBILE_PLATFORM) || defined(IS_SLIM_BUILD)
   status->status = tensorflow::errors::Unimplemented(
       "Accessing device stream is not supported on mobile. File a bug at "
-      "https://github.com/tensorflow/tensorflow/issues if this feature is "
+      "https://github.com/galeone/tensorflow/issues if this feature is "
       "important to you");
   return nullptr;
 #else

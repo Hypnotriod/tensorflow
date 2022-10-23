@@ -44,7 +44,7 @@ flags.DEFINE_bool(
 # This tool expects to live within a directory structure that hosts multiple
 # repositories, like so:
 # /root (name not important)
-#   /tensorflow (github.com/tensorflow/tensorflow - home of this script)
+#   /tensorflow (github.com/galeone/tensorflow - home of this script)
 #   /tensorflow_lite_support (github.com/tensorflow/tflite-support)
 #   /android/sdk (android.googlesource.com/platform/prebuilts/sdk
 #     - Note that this needs a branch with an api/ dir, such as *-release)

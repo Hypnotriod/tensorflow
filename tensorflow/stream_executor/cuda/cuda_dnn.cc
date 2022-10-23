@@ -3202,7 +3202,7 @@ struct FftTilingForward {
 // A helper struct to decide whether to enable the WINOGRAD_NONFUSED algorithms.
 // By default it is turned on, users can explicitly disable them through an
 // env-var "TF_ENABLE_WINOGRAD_NONFUSED=0".
-// https://github.com/tensorflow/tensorflow/pull/4901
+// https://github.com/galeone/tensorflow/pull/4901
 // For CUDNN v8.1, when this env-var is turned off, both the winograd and
 // winograd-non-fused engines will be ruled out.
 struct WinogradNonfused {

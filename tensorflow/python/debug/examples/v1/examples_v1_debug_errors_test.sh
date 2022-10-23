@@ -44,7 +44,7 @@ while true; do
 done
 
 if [[ -z "${PYTHON_BIN_PATH}" ]]; then
-  DEBUG_ERRORS_BIN="$TEST_SRCDIR/org_tensorflow/tensorflow/python/debug/examples/v1/debug_errors"
+  DEBUG_ERRORS_BIN="$TEST_SRCDIR/org_galeone/tensorflow/python/debug/examples/v1/debug_errors"
 else
   DEBUG_ERRORS_BIN="${PYTHON_BIN_PATH} -m tensorflow.python.debug.examples.v1.debug_errors"
 fi

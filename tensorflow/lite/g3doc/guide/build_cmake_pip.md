@@ -5,7 +5,7 @@ library for x86_64 and various ARM devices.
 
 The following instructions have been tested on Ubuntu 16.04.3 64-bit PC (AMD64)
 , macOS Catalina (x86_64) and TensorFlow devel Docker image
-[tensorflow/tensorflow:devel](https://hub.docker.com/r/tensorflow/tensorflow/tags/).
+[galeone/tensorflow:devel](https://hub.docker.com/r/galeone/tensorflow/tags/).
 
 **Note:** This feature is available since version 2.4.
 

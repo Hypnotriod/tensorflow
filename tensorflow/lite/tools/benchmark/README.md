@@ -9,12 +9,12 @@ of runs. Aggregate latency statistics are reported after running the benchmark.
 
 The instructions below are for running the binary on Desktop and Android,
 for iOS please use the
-[iOS benchmark app](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/tools/benchmark/ios).
+[iOS benchmark app](https://github.com/galeone/tensorflow/tree/master/tensorflow/lite/tools/benchmark/ios).
 
 An experimental Android APK wrapper for the benchmark model utility offers more
 faithful execution behavior on Android (via a foreground Activity). It is
 located
-[here](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/tools/benchmark/android).
+[here](https://github.com/galeone/tensorflow/tree/master/tensorflow/lite/tools/benchmark/android).
 
 ## Parameters
 
@@ -107,7 +107,7 @@ running the benchmark tool:
     does not need to match that encoded in the model. Additionally, the order
     of input layer names specified here is assumed to be same with that is seen
     by the Tensorflow Lite interpreter. This is a bit inconvenient but the
-    [visualization tool](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/tools/visualize.py)
+    [visualization tool](https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/tools/visualize.py)
     should help to find this order.
 *   `input_layer_shape`: `string` \
     A colon-separated list of input layer shapes, where each shape is a
@@ -135,10 +135,10 @@ running the benchmark tool:
 
 ### TFLite delegate parameters
 The tool supports all runtime/delegate parameters introduced by
-[the delegate registrar](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/tools/delegates).
+[the delegate registrar](https://github.com/galeone/tensorflow/tree/master/tensorflow/lite/tools/delegates).
 The following simply lists the names of these parameters and additional notes
 where applicable. For details about each parameter, please refer to
-[this page](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/tools/delegates/README.md#tflite-delegate-registrar).
+[this page](https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/tools/delegates/README.md#tflite-delegate-registrar).
 #### Common parameters
 * `max_delegated_partitions`: `int` (default=0)
 * `min_nodes_per_partition`:`int` (default=0)

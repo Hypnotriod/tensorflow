@@ -42,9 +42,9 @@ int main(int argc, char** argv) {
   </licenses>
 
   <scm>
-    <url>https://github.com/tensorflow/tensorflow.git</url>
-    <connection>git@github.com:tensorflow/tensorflow.git</connection>
-    <developerConnection>scm:git:https://github.com/tensorflow/tensorflow.git</developerConnection>
+    <url>https://github.com/galeone/tensorflow.git</url>
+    <connection>git@github.com:galeone/tensorflow.git</connection>
+    <developerConnection>scm:git:https://github.com/galeone/tensorflow.git</developerConnection>
   </scm>
 </project>
   )EOF");

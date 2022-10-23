@@ -140,7 +140,7 @@ from tensorflow.lite.testing.op_tests.relu6 import make_relu6_tests
 from tensorflow.lite.testing.op_tests.reshape import make_reshape_tests
 from tensorflow.lite.testing.op_tests.resize_bilinear import make_resize_bilinear_tests
 from tensorflow.lite.testing.op_tests.resize_nearest_neighbor import make_resize_nearest_neighbor_tests
-# For verifying https://github.com/tensorflow/tensorflow/issues/23599
+# For verifying https://github.com/galeone/tensorflow/issues/23599
 from tensorflow.lite.testing.op_tests.resolve_constant_strided_slice import make_resolve_constant_strided_slice_tests
 from tensorflow.lite.testing.op_tests.reverse_sequence import make_reverse_sequence_tests
 from tensorflow.lite.testing.op_tests.reverse_v2 import make_reverse_v2_tests

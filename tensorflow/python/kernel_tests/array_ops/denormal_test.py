@@ -38,7 +38,7 @@ class DenormalTest(test.TestCase):
         platform.machine() == "aarch64"):
       # Disabled denormal_test on power/s390x/aarch64 platform
       # Check relevant discussion -
-      # https://github.com/tensorflow/tensorflow/issues/11902
+      # https://github.com/galeone/tensorflow/issues/11902
       return
     for dtype in dtypes:
       tiny = np.finfo(dtype).tiny

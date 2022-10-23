@@ -95,7 +95,7 @@
 
     *   Changed the TensorBoard tag names produced by the `tf.keras.callbacks.TensorBoard` callback, so that summaries logged automatically for model weights now include either a `/histogram` or `/image` suffix in their tag names, in order to prevent tag name collisions across summary types.
 
-*   When running on GPU (with cuDNN version 7.6.3 or later),`tf.nn.depthwise_conv2d` backprop to `filter` (and therefore also `tf.keras.layers.DepthwiseConv2D`) now operate deterministically (and `tf.errors.UnimplementedError` is no longer thrown) when op-determinism has been enabled via `tf.config.experimental.enable_op_determinism`. This closes issue [47174](https://github.com/tensorflow/tensorflow/issues/47174).
+*   When running on GPU (with cuDNN version 7.6.3 or later),`tf.nn.depthwise_conv2d` backprop to `filter` (and therefore also `tf.keras.layers.DepthwiseConv2D`) now operate deterministically (and `tf.errors.UnimplementedError` is no longer thrown) when op-determinism has been enabled via `tf.config.experimental.enable_op_determinism`. This closes issue [47174](https://github.com/galeone/tensorflow/issues/47174).
 
 * `tf.random`
     * Added `tf.random.experimental.stateless_shuffle`, a stateless version of `tf.random.shuffle`.
@@ -170,19 +170,19 @@ Abolfazl Shahbazi, Adam Lanicek, Amin Benarieb, andreii, Andrew Fitzgibbon, Andr
 
 # Release 2.9.1
 
-Add an upper bound for `protobuf` in `setup.py` since `protobuf` after version 3.20 is currently incompatible with TensorFlow. See https://github.com/tensorflow/tensorflow/issues/53234, https://github.com/protocolbuffers/protobuf/issues/9954 and https://github.com/tensorflow/tensorflow/issues/56077.
+Add an upper bound for `protobuf` in `setup.py` since `protobuf` after version 3.20 is currently incompatible with TensorFlow. See https://github.com/galeone/tensorflow/issues/53234, https://github.com/protocolbuffers/protobuf/issues/9954 and https://github.com/galeone/tensorflow/issues/56077.
 
 # Release 2.8.2
 
-Add an upper bound for `protobuf` in `setup.py` since `protobuf` after version 3.20 is currently incompatible with TensorFlow. See https://github.com/tensorflow/tensorflow/issues/53234, https://github.com/protocolbuffers/protobuf/issues/9954 and https://github.com/tensorflow/tensorflow/issues/56077.
+Add an upper bound for `protobuf` in `setup.py` since `protobuf` after version 3.20 is currently incompatible with TensorFlow. See https://github.com/galeone/tensorflow/issues/53234, https://github.com/protocolbuffers/protobuf/issues/9954 and https://github.com/galeone/tensorflow/issues/56077.
 
 # Release 2.7.3
 
-Add an upper bound for `protobuf` in `setup.py` since `protobuf` after version 3.20 is currently incompatible with TensorFlow. See https://github.com/tensorflow/tensorflow/issues/53234, https://github.com/protocolbuffers/protobuf/issues/9954 and https://github.com/tensorflow/tensorflow/issues/56077.
+Add an upper bound for `protobuf` in `setup.py` since `protobuf` after version 3.20 is currently incompatible with TensorFlow. See https://github.com/galeone/tensorflow/issues/53234, https://github.com/protocolbuffers/protobuf/issues/9954 and https://github.com/galeone/tensorflow/issues/56077.
 
 # Release 2.6.5
 
-Add an upper bound for `protobuf` in `setup.py` since `protobuf` after version 3.20 is currently incompatible with TensorFlow. See https://github.com/tensorflow/tensorflow/issues/53234, https://github.com/protocolbuffers/protobuf/issues/9954 and https://github.com/tensorflow/tensorflow/issues/56077.
+Add an upper bound for `protobuf` in `setup.py` since `protobuf` after version 3.20 is currently incompatible with TensorFlow. See https://github.com/galeone/tensorflow/issues/53234, https://github.com/protocolbuffers/protobuf/issues/9954 and https://github.com/galeone/tensorflow/issues/56077.
 
 # Release 2.9.0
 
@@ -296,12 +296,12 @@ Add an upper bound for `protobuf` in `setup.py` since `protobuf` after version 3
         consistent feature support in future releases.
     *   It is available for immediate use.
         *   See the `TF_RUN_EAGER_OP_AS_FUNCTION` environment variable in
-            [eager context](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/python/eager/context.py).
+            [eager context](https://github.com/galeone/tensorflow/blob/master/tensorflow/python/eager/context.py).
         *   Eager performance should be similar with this feature enabled.
             *   A roughly 5us per-op overhead may be observed when running many
                 small functions.
             *   Note a
-                [known issue](https://github.com/tensorflow/tensorflow/issues/55414)
+                [known issue](https://github.com/galeone/tensorflow/issues/55414)
                 with GPU performance.
         *   The behavior of `tf.function` itself is unaffected.
     *   Note: This feature will be enabled by default in an upcoming version of
@@ -673,7 +673,7 @@ This releases introduces several vulnerability fixes:
             `InvalidArgument` from C++
 
 *   TensorFlow-oneDNN no longer supports
-    [explicit use of oneDNN blocked tensor format](https://github.com/tensorflow/tensorflow/pull/53288),
+    [explicit use of oneDNN blocked tensor format](https://github.com/galeone/tensorflow/pull/53288),
     e.g., setting the environment variable `TF_ENABLE_MKL_NATIVE_FORMAT` will
     not have any effect.
 
@@ -1960,9 +1960,9 @@ This release introduces several vulnerability fixes:
     `"true"` or `"1"`):
     *   Add a deterministic GPU implementation of
         `tf.nn.softmax_cross_entropy_with_logits`. See PR
-        [49178](https://github.com/tensorflow/tensorflow/pull/49178).
+        [49178](https://github.com/galeone/tensorflow/pull/49178).
     *   Add a deterministic CPU implementation of `tf.image.crop_and_resize`.
-        See PR [48905](https://github.com/tensorflow/tensorflow/pull/48905).
+        See PR [48905](https://github.com/galeone/tensorflow/pull/48905).
     *   Add determinism-unimplemented exception-throwing to the following ops.
         When op-determinism is expected, an attempt to use the specified paths
         through the following ops on a GPU will cause
@@ -1970,12 +1970,12 @@ This release introduces several vulnerability fixes:
         thrown.
         *   `tf.nn.sparse_softmax_cross_entropy_with_logits` forwards and/or
             backwards. See PR
-            [47925](https://github.com/tensorflow/tensorflow/pull/47925).
+            [47925](https://github.com/galeone/tensorflow/pull/47925).
         *   `tf.image.crop_and_resize` gradient w.r.t. either `image` or
             `boxes`. See PR
-            [48905](https://github.com/tensorflow/tensorflow/pull/48905).
+            [48905](https://github.com/galeone/tensorflow/pull/48905).
         *   `tf.sparse.sparse_dense_matmul` forwards. See PR
-            [50355](https://github.com/tensorflow/tensorflow/pull/50355).
+            [50355](https://github.com/galeone/tensorflow/pull/50355).
 
 ## Security
 
@@ -3954,13 +3954,13 @@ This release introduces several vulnerability fixes:
         `tf.math.unsorted_segment_sum`, and therefore also
         `tf.convert_to_tensor` when `value` is of type `tf.IndexedSlices` (such
         as in the back prop though `tf.gather` into a dense embedding). See
-        issue [39751](https://github.com/tensorflow/tensorflow/issues/39751)
+        issue [39751](https://github.com/galeone/tensorflow/issues/39751)
         which this change addresses, but does not solve. This exception-throwing
         behavior can be disabled by setting the environment variable
         `TF_DISABLE_SEGMENT_REDUCTION_OP_DETERMINISM_EXCEPTIONS` to `"true"` or
         `"1"`. For more information about these changes, see the description in
         pull request
-        [47772](https://github.com/tensorflow/tensorflow/pull/47772).
+        [47772](https://github.com/galeone/tensorflow/pull/47772).
     *   In previous versions of TensorFlow, when a GPU was available,
         `tf.sparse.sparse_dense_matmul` introduced truly random noise in the
         forward path for data of type `tf.float32` but not for data of type
@@ -4629,7 +4629,7 @@ Note that this is the last patch release for the TensorFlow 1.x series.
         `Nadam.apply_gradients` outside a `tf.function` does not work and will
         raise the AttributeError "Tensor.op is meaningless when eager execution
         is enabled". See this
-        [issue](https://github.com/tensorflow/tensorflow/issues/45536) for
+        [issue](https://github.com/galeone/tensorflow/issues/45536) for
         details and a workaround.
 
 ## Bug Fixes and Other Changes
@@ -4643,7 +4643,7 @@ Note that this is the last patch release for the TensorFlow 1.x series.
     wraps an immutable `tf.Tensor` under the hood. A subset of NumPy functions
     (e.g. `numpy.add`) are provided. Their inter-operation with TF facilities is
     seamless in most cases. See
-    [tensorflow/python/ops/numpy_ops/README.md](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/python/ops/numpy_ops/README.md)
+    [tensorflow/python/ops/numpy_ops/README.md](https://github.com/galeone/tensorflow/blob/master/tensorflow/python/ops/numpy_ops/README.md)
     for details of what operations are supported and what are the differences
     from NumPy.
 *   `tf.types.experimental.TensorLike` is a new `Union` type that can be used as
@@ -4672,7 +4672,7 @@ Note that this is the last patch release for the TensorFlow 1.x series.
     inference functions.
 *   `tf.debugging`:
     *   `tf.debugging.assert_shapes()` now works on `SparseTensor`s (Fixes
-        [#36268](https://github.com/tensorflow/tensorflow/issues/36268)).
+        [#36268](https://github.com/galeone/tensorflow/issues/36268)).
 *   GPU
     *   Adds Support for
         [TensorFloat-32](https://blogs.nvidia.com/blog/2020/05/14/tensorfloat-32-precision-format/)
@@ -5253,13 +5253,13 @@ ZhuBaohe, zilinzhu, zmx
 
 *   TFLite now properly supports dynamic shapes during conversion and inference.
     We’ve also added opt-in support on Android and iOS for
-    [XNNPACK](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/delegates/xnnpack),
+    [XNNPACK](https://github.com/galeone/tensorflow/tree/master/tensorflow/lite/delegates/xnnpack),
     a highly optimized set of CPU kernels, as well as opt-in support for
-    [executing quantized models on the GPU](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/g3doc/performance/gpu_advanced.md#running-quantized-models-experimental).
+    [executing quantized models on the GPU](https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/g3doc/performance/gpu_advanced.md#running-quantized-models-experimental).
 
 *   Libtensorflow packages are available in GCS starting this release. We have
     also started to
-    [release a nightly version of these packages](https://github.com/tensorflow/tensorflow#official-builds).
+    [release a nightly version of these packages](https://github.com/galeone/tensorflow#official-builds).
 
 *   The experimental Python API
     [`tf.debugging.experimental.enable_dump_debug_info()`](https://www.tensorflow.org/api_docs/python/tf/debugging/experimental/enable_dump_debug_info)
@@ -5338,7 +5338,7 @@ ZhuBaohe, zilinzhu, zmx
     *   Optimize `tf.function` invocation, by removing redundant list converter.
     *   `tf.function` will retrace when called with a different variable instead
         of simply using the `dtype` & `shape`.
-    *   [Improve support](https://github.com/tensorflow/tensorflow/issues/33862)
+    *   [Improve support](https://github.com/galeone/tensorflow/issues/33862)
         for dynamically-sized TensorArray inside `tf.function`.
 *   `tf.math`:
     *   Narrow down `argmin`/`argmax` contract to always return the smallest
@@ -5728,7 +5728,7 @@ as following
 [Python 2's EOL on January 1, 2020](https://www.python.org/dev/peps/pep-0373/#update).
 
 Coinciding with this change, new releases of
-[TensorFlow's Docker images](https://hub.docker.com/r/tensorflow/tensorflow/)
+[TensorFlow's Docker images](https://hub.docker.com/r/galeone/tensorflow/)
 provide Python 3 exclusively. Because all images now use Python 3, Docker tags
 containing `-py3` will no longer be provided and existing `-py3` tags like
 `latest-py3` will not be updated.
@@ -5776,7 +5776,7 @@ containing `-py3` will no longer be provided and existing `-py3` tags like
             all of the features `Model.fit` handles for you (distribution
             strategies, callbacks, data formats, looping logic, etc)
         *   See the default
-            [`Model.train_step`](https://github.com/tensorflow/tensorflow/blob/1381fc8e15e22402417b98e3881dfd409998daea/tensorflow/python/keras/engine/training.py#L540)
+            [`Model.train_step`](https://github.com/galeone/tensorflow/blob/1381fc8e15e22402417b98e3881dfd409998daea/tensorflow/python/keras/engine/training.py#L540)
             for an example of what this function should look like. Same applies
             for validation and inference via `Model.test_step` and
             `Model.predict_step`.
@@ -5938,7 +5938,7 @@ containing `-py3` will no longer be provided and existing `-py3` tags like
     *   Add `tf.linalg.LinearOperatorTridiag`.
     *   Add `LinearOperatorBlockLowerTriangular`
     *   Add broadcasting support to
-        tf.linalg.triangular_solve[#26204](https://github.com/tensorflow/tensorflow/issues/26204),
+        tf.linalg.triangular_solve[#26204](https://github.com/galeone/tensorflow/issues/26204),
         tf.math.invert_permutation.
     *   Add `tf.math.sobol_sample` op.
     *   Add `tf.math.xlog1py`.
@@ -5977,7 +5977,7 @@ containing `-py3` will no longer be provided and existing `-py3` tags like
     *   Add traceme event to `fastpathexecute`.
 *   Other:
     *   Fix an issue with AUC.reset_states for multi-label AUC
-        [#35852](https://github.com/tensorflow/tensorflow/issues/35852)
+        [#35852](https://github.com/galeone/tensorflow/issues/35852)
     *   Fix the TF upgrade script to not delete files when there is a parsing
         error and the output mode is `in-place`.
     *   Move `tensorflow/core:framework/*_pyclif` rules to
@@ -6710,7 +6710,7 @@ We have also released a collection of
 Refer to our
 [public project status tracker](https://github.com/orgs/tensorflow/projects/4)
 and
-[issues tagged with `2.0`](https://github.com/tensorflow/tensorflow/issues?q=is%3Aopen+is%3Aissue+label%3A2.0)
+[issues tagged with `2.0`](https://github.com/galeone/tensorflow/issues?q=is%3Aopen+is%3Aissue+label%3A2.0)
 on GitHub for insight into recent issues and development progress.
 
 If you experience any snags when using TF 2.0, please let us know at the
@@ -7788,7 +7788,7 @@ Facai (颜发才), Yanbo Liang, Yash Katariya, Yong Tang, 在原佐为
         multiple GPUs.
     *   Add multi-worker DistributionStrategy and standalone client support in
         Estimator. See
-        [README](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/contrib/distribute)
+        [README](https://github.com/galeone/tensorflow/tree/master/tensorflow/contrib/distribute)
         for more details.
 *   Add C, C++, and Python functions for querying kernels.
 
@@ -7924,7 +7924,7 @@ Yamazaki, Yuan (Terry) Tang, Yuan, Man, zhaoyongke, ÁRon Ricardo Perez-Lopez,
 
 *   The `tf.lite` runtime now supports `complex64`.
 *   Initial
-    [Google Cloud Bigtable integration](https://github.com/tensorflow/tensorflow/tree/r1.10/tensorflow/contrib/bigtable)
+    [Google Cloud Bigtable integration](https://github.com/galeone/tensorflow/tree/r1.10/tensorflow/contrib/bigtable)
     for `tf.data`.
 *   Improved local run behavior in `tf.estimator.train_and_evaluate` which does
     not reload checkpoints for evaluation.
@@ -8098,7 +8098,7 @@ Irons, Yan Facai (颜发才), Yong Tang, Yu Yi, Yuxin Wu, Zé ViníCius
     and
     [`tf.keras.layers.CuDNNLSTM`](https://www.tensorflow.org/versions/r1.9/api_docs/python/tf/keras/layers/CuDNNLSTM)
     layers.
-    [Try it](https://colab.sandbox.google.com/github/tensorflow/tensorflow/blob/master/tensorflow/contrib/eager/python/examples/nmt_with_attention/nmt_with_attention.ipynb?linkId=53292082).
+    [Try it](https://colab.sandbox.google.com/github/galeone/tensorflow/blob/master/tensorflow/contrib/eager/python/examples/nmt_with_attention/nmt_with_attention.ipynb?linkId=53292082).
 *   Adding support of core
     [feature columns](https://www.tensorflow.org/get_started/feature_columns)
     and [losses](https://www.tensorflow.org/api_docs/python/tf/losses) to
@@ -8106,7 +8106,7 @@ Irons, Yan Facai (颜发才), Yong Tang, Yu Yi, Yuxin Wu, Zé ViníCius
 *   The
     [python interface](https://www.tensorflow.org/versions/r1.9/api_docs/python/tf/lite)
     for the
-    [TFLite Optimizing Converter](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/toco/README.md)
+    [TFLite Optimizing Converter](https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/toco/README.md)
     has been expanded, and the command line interface (AKA: `toco`,
     `tflite_convert`) is once again included in the standard `pip` installation.
 *   Improved data-loading and text processing with:
@@ -8293,7 +8293,7 @@ Yihong Wang, Yilei (Dolee) Yang, Yong Tang, Yuan (Terry) Tang
         should be invisible to most users, but can be disabled by setting the
         environment variable `TF_C_API_GRAPH_CONSTRUCTION=0` in this release.
         Future releases will remove the ability to disable this change. Please
-        [file a bug](https://github.com/tensorflow/tensorflow/issues/new) if you
+        [file a bug](https://github.com/galeone/tensorflow/issues/new) if you
         find yourself using this escape hatch.
     *   Add description of shapes and a pointer to tutorial notebook in
         `tf.distributions.Distribution`.
@@ -8571,9 +8571,9 @@ Yoni Tsafir, yordun, Yuan (Terry) Tang, Yuxin Wu, zhengdi, Zhengsheng Wei, 田�
 
 ## Major Features And Improvements
 
-*   [Eager execution](https://github.com/tensorflow/tensorflow/tree/r1.5/tensorflow/contrib/eager)
+*   [Eager execution](https://github.com/galeone/tensorflow/tree/r1.5/tensorflow/contrib/eager)
     preview version is now available.
-*   [TensorFlow Lite](https://github.com/tensorflow/tensorflow/tree/r1.5/tensorflow/lite)
+*   [TensorFlow Lite](https://github.com/galeone/tensorflow/tree/r1.5/tensorflow/lite)
     dev preview is now available.
 *   CUDA 9.0 and cuDNN 7 support.
 *   Accelerated Linear Algebra (XLA):
@@ -8772,7 +8772,7 @@ answered questions, and were part of inspiring discussions.
     TensorFlow API.
     *   The API is now subject to backwards compatibility guarantees.
     *   For a guide to migrating from the `tf.contrib.data` API, see the
-        [README](https://github.com/tensorflow/tensorflow/blob/r1.4/tensorflow/contrib/data/README.md).
+        [README](https://github.com/galeone/tensorflow/blob/r1.4/tensorflow/contrib/data/README.md).
     *   Major new features include `Dataset.from_generator()` (for building an
         input pipeline from a Python generator), and the `Dataset.apply()`
         method for applying custom transformation functions.
@@ -9035,7 +9035,7 @@ release notes.
 *   Script to create iOS framework for CocoaPods.
 *   Android releases of TensorFlow are now pushed to jcenter for easier
     integration into apps. See
-    https://github.com/tensorflow/tensorflow/blob/master/tensorflow/tools/android/inference_interface/README.md
+    https://github.com/galeone/tensorflow/blob/master/tensorflow/tools/android/inference_interface/README.md
     for more details.
 *   TensorFlow Debugger (tfdbg):
     *   Fixed a bug that prevented tfdbg from functioning with multi-GPU setups.
@@ -9116,7 +9116,7 @@ answered questions, and were part of inspiring discussions.
     have been changed to "kernel" and "bias", respectively. This may cause
     backward incompatibility with regard to your old checkpoints containing such
     RNN cells, in which case you can use the tool
-    [checkpoint_convert script](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/contrib/rnn/python/tools/checkpoint_convert.py)
+    [checkpoint_convert script](https://github.com/galeone/tensorflow/blob/master/tensorflow/contrib/rnn/python/tools/checkpoint_convert.py)
     to convert the variable names in your old checkpoints.
 *   Many of the RNN functions and classes that were in the `tf.nn` namespace
     before the 1.0 release and which were moved to `tf.contrib.rnn` have now
@@ -9157,7 +9157,7 @@ answered questions, and were part of inspiring discussions.
 
 *   Android releases of TensorFlow are now pushed to jcenter for easier
     integration into apps. See
-    https://github.com/tensorflow/tensorflow/blob/master/tensorflow/tools/android/inference_interface/README.md
+    https://github.com/galeone/tensorflow/blob/master/tensorflow/tools/android/inference_interface/README.md
     for more details.
 
 ## Deprecations
@@ -9183,7 +9183,7 @@ answered questions, and were part of inspiring discussions.
     "biases" are changed to "kernel" and "bias", respectively. This may cause
     backward incompatibility with regard to your old checkpoints containing such
     RNN cells, in which case you can use the
-    [checkpoint_convert script](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/contrib/rnn/python/tools/checkpoint_convert.py)
+    [checkpoint_convert script](https://github.com/galeone/tensorflow/blob/master/tensorflow/contrib/rnn/python/tools/checkpoint_convert.py)
     to convert the variable names in your old checkpoints.
 *   Added `tf.contrib.kernel_methods` module with Ops and estimators for primal
     (explicit) kernel methods in TensorFlow.
@@ -9446,7 +9446,7 @@ answered questions, and were part of inspiring discussions.
 *   Android: person detection + tracking demo implementing Scalable Object
     Detection using Deep Neural Networks.
 *   New (experimental)
-    [Java API](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/java).
+    [Java API](https://github.com/galeone/tensorflow/tree/master/tensorflow/java).
 *   Add new Android image stylization demo based on "A Learned Representation
     For Artistic Style", and add YOLO object detector support.
 
@@ -9454,7 +9454,7 @@ answered questions, and were part of inspiring discussions.
 
 To help you upgrade your existing TensorFlow Python code to match the API
 changes below, we have prepared a
-[conversion script](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/tools/compatibility).
+[conversion script](https://github.com/galeone/tensorflow/tree/master/tensorflow/tools/compatibility).
 * TensorFlow/models have been moved to a separate github repository. * Division
 and modulus operators (/, //, %) now match Python (flooring) semantics. This
 applies to `tf.div` and `tf.mod` as well. To obtain forced integer truncation
@@ -9611,7 +9611,7 @@ answered questions, and were part of inspiring discussions.
     QuantizeDownAndShrinkRange, QuantizedRelu, QuantizedRelu6, QuantizedReshape,
     QuantizeV2, RequantizationRange, and Requantize.
 *   Go: Experimental API in Go to create and execute graphs
-    (https://godoc.org/github.com/tensorflow/tensorflow/tensorflow/go)
+    (https://godoc.org/github.com/galeone/tensorflow/tensorflow/go)
 *   New checkpoint format becomes the default in `tf.train.Saver`. Old V1
     checkpoints continue to be readable; controlled by the `write_version`
     argument, `tf.train.Saver` now by default writes out in the new V2 format.

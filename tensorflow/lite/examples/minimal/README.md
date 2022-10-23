@@ -17,7 +17,7 @@ Or you can follow
 #### Step 2. Clone TensorFlow repository
 
 ```sh
-git clone https://github.com/tensorflow/tensorflow.git tensorflow_src
+git clone https://github.com/galeone/tensorflow.git tensorflow_src
 ```
 
 #### Step 3. Create CMake build directory and run CMake tool

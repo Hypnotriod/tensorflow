@@ -405,7 +405,7 @@ class SnapshotTest(tf_record_test_base.TFRecordTestBase,
 
   @combinations.generate(test_base.default_test_combinations())
   def testRepeatAndPrefetch(self):
-    """This test reproduces github.com/tensorflow/tensorflow/issues/48903."""
+    """This test reproduces github.com/galeone/tensorflow/issues/48903."""
     dataset = dataset_ops.Dataset.from_tensor_slices(np.random.rand(16, 32))
     dataset = dataset.snapshot(path=self._snapshot_dir)
     dataset = dataset.shuffle(buffer_size=16)

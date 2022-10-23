@@ -1779,7 +1779,7 @@ class ListOpsTest(test_util.TensorFlowTestCase, parameterized.TestCase):
     self.assertAllEqual(f(), [b"A", b"B", b"C"])
 
   def testPopBackGrad(self):
-    # https://github.com/tensorflow/tensorflow/issues/37230
+    # https://github.com/galeone/tensorflow/issues/37230
 
     @def_function.function
     def g(x):

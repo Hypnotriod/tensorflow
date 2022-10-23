@@ -30,7 +30,7 @@ The Hexagon delegate supports all models that conform to our
 including those generated using
 [post-training integer quantization](https://www.tensorflow.org/lite/performance/post_training_integer_quant).
 UInt8 models trained with the legacy
-[quantization-aware training](https://github.com/tensorflow/tensorflow/tree/r1.13/tensorflow/contrib/quantize)
+[quantization-aware training](https://github.com/galeone/tensorflow/tree/r1.13/tensorflow/contrib/quantize)
 path are also supported, for e.g.,
 [these quantized versions](https://www.tensorflow.org/lite/guide/hosted_models#quantized_models)
 on our Hosted Models page.
@@ -88,7 +88,7 @@ Note: As of 02/23/2021 you should use v1.20.0.1.
 Note: You must use the hexagon_nn libraries with the compatible version of
 interface library. Interface library is part of the AAR and fetched by bazel
 through the
-[config](https://github.com/tensorflow/tensorflow/blob/master/third_party/hexagon/workspace.bzl)
+[config](https://github.com/galeone/tensorflow/blob/master/third_party/hexagon/workspace.bzl)
 The version in the bazel config is the version you should use.
 
 *   Include all 3 in your app with other shared libraries. See
@@ -196,7 +196,7 @@ Note: As of 02/23/2021 you should use v1.20.0.1.
 Note: You must use the hexagon_nn libraries with the compatible version of
 interface library. Interface library is part of the AAR and fetched by bazel
 through the
-[config](https://github.com/tensorflow/tensorflow/blob/master/third_party/hexagon/workspace.bzl).
+[config](https://github.com/galeone/tensorflow/blob/master/third_party/hexagon/workspace.bzl).
 The version in the bazel config is the version you should use.
 
 *   Include all 3 in your app with other shared libraries. See
@@ -210,7 +210,7 @@ will need to add the Hexagon shared libs to both 32 and 64-bit lib folders.
 #### Step 3. Include the C header
 
 *   The header file "hexagon_delegate.h" can be downloaded from
-    [GitHub](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/delegates/hexagon/hexagon_delegate.h)
+    [GitHub](https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/delegates/hexagon/hexagon_delegate.h)
     or extracted from the Hexagon delegate AAR.
 
 #### Step 4. Create a delegate and initialize a TensorFlow Lite Interpreter
@@ -259,7 +259,7 @@ gradle.properties file.
 ## Feedback
 
 For issues, please create a
-[GitHub](https://github.com/tensorflow/tensorflow/issues/new?template=50-other-issues.md)
+[GitHub](https://github.com/galeone/tensorflow/issues/new?template=50-other-issues.md)
 issue with all the necessary repro details, including the phone model and board
 used (`adb shell getprop ro.product.device` and `adb shell getprop
 ro.board.platform`).
@@ -268,7 +268,7 @@ ro.board.platform`).
 
 *   Which ops are supported by the delegate?
     *   See the current list of
-        [supported ops and constraints](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/delegates/hexagon/README.md)
+        [supported ops and constraints](https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/delegates/hexagon/README.md)
 *   How can I tell that the model is using the DSP when I enable the delegate?
     *   Two log messages will be printed when you enable the delegate - one to
         indicate if the delegate was created and another to indicate how many

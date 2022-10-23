@@ -78,13 +78,13 @@ The following optional parameters can be used to modify the inference runtime:
     Valid values: "nnapi", "gpu", "hexagon".
 
     NOTE: Please refer to the
-    [Hexagon delegate documentation](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/g3doc/performance/hexagon_delegate.md)
+    [Hexagon delegate documentation](https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/g3doc/performance/hexagon_delegate.md)
     for instructions on how to set it up for the Hexagon delegate. The tool
     assumes that `libhexagon_interface.so` and Qualcomm libraries lie in
     `/data/local/tmp`.
 
 This script also supports runtime/delegate arguments introduced by the
-[delegate registrar](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/tools/delegates).
+[delegate registrar](https://github.com/galeone/tensorflow/tree/master/tensorflow/lite/tools/delegates).
 If there is any conflict (for example, `num_threads` vs
 `num_interpreter_threads` here), the parameters of this
 script are given precedence.
@@ -188,7 +188,7 @@ The script generates the following within the output folder:
 ### On Android
 
 (0) Refer to
-https://github.com/tensorflow/tensorflow/tree/master/tensorflow/examples/android
+https://github.com/galeone/tensorflow/tree/master/tensorflow/examples/android
 for configuring NDK and SDK.
 
 (1) Build using the following command:

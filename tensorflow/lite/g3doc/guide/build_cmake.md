@@ -5,7 +5,7 @@ This page describes how to build and use the TensorFlow Lite library with
 
 The following instructions have been tested on Ubuntu 16.04.3 64-bit PC (AMD64)
 , macOS Catalina (x86_64), Windows 10 and TensorFlow devel Docker image
-[tensorflow/tensorflow:devel](https://hub.docker.com/r/tensorflow/tensorflow/tags/).
+[galeone/tensorflow:devel](https://hub.docker.com/r/galeone/tensorflow/tags/).
 
 **Note:** This feature is available since version 2.4.
 
@@ -24,7 +24,7 @@ Or you can follow
 ### Step 2. Clone TensorFlow repository
 
 ```sh
-git clone https://github.com/tensorflow/tensorflow.git tensorflow_src
+git clone https://github.com/galeone/tensorflow.git tensorflow_src
 ```
 
 **Note:** If you're using the TensorFlow Docker image, the repo is already
@@ -224,7 +224,7 @@ disable XNNPACK which is enabled by default.
 ## Create a CMake project which uses TensorFlow Lite
 
 Here is the CMakeLists.txt of
-[TFLite minimal example](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/examples/minimal).
+[TFLite minimal example](https://github.com/galeone/tensorflow/tree/master/tensorflow/lite/examples/minimal).
 
 You need to have add_subdirectory() for TensorFlow Lite directory and link
 `tensorflow-lite` with target_link_libraries().
@@ -251,7 +251,7 @@ target_link_libraries(minimal tensorflow-lite)
 ## Build TensorFlow Lite C library
 
 If you want to build TensorFlow Lite shared library for
-[C API](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/c/README.md),
+[C API](https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/c/README.md),
 follow [step 1](#step-1-install-cmake-tool) to
 [step 3](#step-3-create-cmake-build-directory) first. After that, run the
 following commands.

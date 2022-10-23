@@ -779,7 +779,7 @@ Status MinOrMaxGrad(const Scope& scope, const Operation& op,
   // equally among all matching inputs.
   //
   // Please note this comment
-  // https://github.com/tensorflow/tensorflow/issues/4886#issuecomment-256836063
+  // https://github.com/galeone/tensorflow/issues/4886#issuecomment-256836063
   // for details.
 
   // Running example:

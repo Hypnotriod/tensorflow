@@ -16,7 +16,7 @@ files. The flag `--output_file` is always required. Additionally, either
     containing the tf.keras model.
 *   `--graph_def_file`. Type: string. Specifies the full path of the input
     GraphDef file frozen using
-    [freeze_graph.py](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/python/tools/freeze_graph.py).
+    [freeze_graph.py](https://github.com/galeone/tensorflow/blob/master/tensorflow/python/tools/freeze_graph.py).
 *   `--output_format`. Type: string. Default: `TFLITE`. Specifies the format of
     the output file. Allowed values:
     *   `TFLITE`: TensorFlow Lite model format.
@@ -36,7 +36,7 @@ The following flags specify optional parameters when using SavedModels.
 
 *   `--saved_model_tag_set`. Type: string. Default: "serve" (for more options,
     refer to
-    [tag_constants.h](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/cc/saved_model/tag_constants.h)).
+    [tag_constants.h](https://github.com/galeone/tensorflow/blob/master/tensorflow/cc/saved_model/tag_constants.h)).
     Specifies a comma-separated set of tags identifying the MetaGraphDef within
     the SavedModel to analyze. All tags in the tag set must be specified.
 *   `--saved_model_signature_key`. Type: string. Default: "serving_default" (for

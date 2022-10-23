@@ -136,7 +136,7 @@ function prepare_src() {
       bazel-bin/tensorflow/tools/pip_package/simple_console_for_window_unzip/runfiles/org_tensorflow/LICENSE \
       "${TMPDIR}"
     cp -LR \
-      bazel-bin/tensorflow/tools/pip_package/simple_console_for_window_unzip/runfiles/org_tensorflow/tensorflow \
+      bazel-bin/tensorflow/tools/pip_package/simple_console_for_window_unzip/runfiles/org_galeone/tensorflow \
       "${TMPDIR}"
     cp_external \
       bazel-bin/tensorflow/tools/pip_package/simple_console_for_window_unzip/runfiles \
@@ -158,7 +158,7 @@ function prepare_src() {
         bazel-bin/tensorflow/tools/pip_package/build_pip_package.runfiles/org_tensorflow/LICENSE \
         "${TMPDIR}"
       cp -LR \
-        bazel-bin/tensorflow/tools/pip_package/build_pip_package.runfiles/org_tensorflow/tensorflow \
+        bazel-bin/tensorflow/tools/pip_package/build_pip_package.runfiles/org_galeone/tensorflow \
         "${TMPDIR}"
       cp_external \
         bazel-bin/tensorflow/tools/pip_package/build_pip_package.runfiles/org_tensorflow/external \
@@ -181,7 +181,7 @@ function prepare_src() {
         bazel-bin/tensorflow/tools/pip_package/build_pip_package.runfiles/org_tensorflow/LICENSE \
         "${TMPDIR}"
       cp -LR \
-        bazel-bin/tensorflow/tools/pip_package/build_pip_package.runfiles/org_tensorflow/tensorflow \
+        bazel-bin/tensorflow/tools/pip_package/build_pip_package.runfiles/org_galeone/tensorflow \
         "${TMPDIR}"
       cp_external \
         bazel-bin/tensorflow/tools/pip_package/build_pip_package.runfiles \

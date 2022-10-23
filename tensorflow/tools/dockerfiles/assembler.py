@@ -62,7 +62,7 @@ flags.DEFINE_string(
 
 flags.DEFINE_string(
     'hub_repository', None,
-    'Push tags to this Docker Hub repository, e.g. tensorflow/tensorflow')
+    'Push tags to this Docker Hub repository, e.g. galeone/tensorflow')
 
 flags.DEFINE_boolean(
     'upload_to_hub',

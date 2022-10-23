@@ -54,7 +54,7 @@ class TfToPlatformDeviceIdMap {
           type, " configurations (ConfigProto.gpu_options, for example ",
           "different visible_device_list) when creating multiple Sessions in ",
           "the same process. This is not currently supported, see ",
-          "https://github.com/tensorflow/tensorflow/issues/19083");
+          "https://github.com/galeone/tensorflow/issues/19083");
     }
     return OkStatus();
   }

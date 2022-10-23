@@ -303,7 +303,7 @@ class ConstantTest(test.TestCase):
     # This is inspired by how many objects in pandas are implemented:
     # - They implement the Python sequence protocol
     # - But may raise a KeyError on __getitem__(self, 0)
-    # See https://github.com/tensorflow/tensorflow/issues/20347
+    # See https://github.com/galeone/tensorflow/issues/20347
     class MySeq(object):
 
       def __getitem__(self, key):

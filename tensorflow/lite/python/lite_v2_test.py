@@ -3600,12 +3600,12 @@ class UnknownShapes(lite_v2_test_util.ModelTest):
     # 1. rhs const num_elements >= 1024, since dynamic range quantization
     # requires const tensor num_elements to be larger than
     # min_elements_for_weights (which defaults to 1024).
-    # (https://github.com/tensorflow/tensorflow/blob/25e649ac3688655547da998eba2715cf70b3e5c9/tensorflow/compiler/mlir/lite/transforms/prepare_quantize_dynamic_range.cc#L262)
+    # (https://github.com/galeone/tensorflow/blob/25e649ac3688655547da998eba2715cf70b3e5c9/tensorflow/compiler/mlir/lite/transforms/prepare_quantize_dynamic_range.cc#L262)
     # 2. batch_size (256) > accum_dim_size (128) and
     # num_units (256) > accum_dim_size (128), to test if the sizes are set
     # correctly according to dimensions. See HybridAsymmetricBatchMatMulOpTest
     # tests in
-    # https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/kernels/batch_matmul_test.cc.
+    # https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/kernels/batch_matmul_test.cc.
     input_data = tf.constant(
         np.array(np.random.random_sample((1, 256, 128)), dtype=np.float32))
 

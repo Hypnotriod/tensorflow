@@ -29,7 +29,7 @@ public interface Tensor {
   /**
    * Quantization parameters that corresponds to the table, {@code QuantizationParameters}, in the
    * <a
-   * href="https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/schema/schema.fbs">TFLite
+   * href="https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/schema/schema.fbs">TFLite
    * Model schema file.</a>
    *
    * <p>Since per-channel quantization does not apply to input and output tensors, {@code scale} and

@@ -792,7 +792,7 @@ to avoid parse errors.
 The Python runtime exposes the source code of lambda functions, however it
 may omit parts of the actual body, or include surrounding code. This may make it
 impossible to parse the exact source code of the lambda function (see
-https://github.com/tensorflow/tensorflow/issues/39832).
+https://github.com/galeone/tensorflow/issues/39832).
 
 AutoGraph uses alternate methods to parse the source code more robustly, but
 in rare cases it may be unable to distinguish between nested lambda functions

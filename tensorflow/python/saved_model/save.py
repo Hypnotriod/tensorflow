@@ -1052,7 +1052,7 @@ def save(obj, export_dir, signatures=None, options=None):
   """Exports a [tf.Module](https://www.tensorflow.org/api_docs/python/tf/Module) (and subclasses) `obj` to [SavedModel format](https://www.tensorflow.org/guide/saved_model#the_savedmodel_format_on_disk).
 
   The `obj` must inherit from the [`Trackable`
-  class](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/python/training/tracking/base.py#L591).
+  class](https://github.com/galeone/tensorflow/blob/master/tensorflow/python/training/tracking/base.py#L591).
 
   Example usage:
 
@@ -1192,7 +1192,7 @@ def save(obj, export_dir, signatures=None, options=None):
       placements to be hard-coded in the function.
 
   SavedModels exported with `tf.saved_model.save` [strip default-valued
-  attributes](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/python/saved_model/README.md#stripping-default-valued-attributes)
+  attributes](https://github.com/galeone/tensorflow/blob/master/tensorflow/python/saved_model/README.md#stripping-default-valued-attributes)
   automatically, which removes one source of incompatibilities when the consumer
   of a SavedModel is running an older TensorFlow version than the
   producer. There are however other sources of incompatibilities which are not

@@ -367,7 +367,7 @@ class AutoCastVariable(variables.Variable, core.Tensor):
   # Delegate the private attributes _handle_name and _initializer_op to
   # self._variable. SavedModel sets these attributes when loading a model. For
   # example, it sets _handle_name here:
-  # https://github.com/tensorflow/tensorflow/blob/db26bd574fa95b5bdd53c08463dd19407cc0297e/tensorflow/python/keras/saving/saved_model/load.py#L211
+  # https://github.com/galeone/tensorflow/blob/db26bd574fa95b5bdd53c08463dd19407cc0297e/tensorflow/python/keras/saving/saved_model/load.py#L211
   # We need to expose these attributes on AutoCastVariable as well for
   # SavedModel to work properly.
   # TODO(reedwm/kathywu): Find a better way to support SavedModel. Exposing

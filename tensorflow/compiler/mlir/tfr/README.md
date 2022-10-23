@@ -113,9 +113,9 @@ Utilities have been built to compile the Python composition functions down to
 the backend IR. The project also provides a set of graph optimization passes to
 expand the composite ops in the graph by using the input backend IR. These
 passes have been added to the TF
-[common runtime](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/core/common_runtime)
+[common runtime](https://github.com/galeone/tensorflow/blob/master/tensorflow/core/common_runtime)
 for graph execution and
-[eager runtime](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/core/common_runtime/eager)
+[eager runtime](https://github.com/galeone/tensorflow/blob/master/tensorflow/core/common_runtime/eager)
 for eager execution.
 
 ## Compiling Op Composition
@@ -123,7 +123,7 @@ for eager execution.
 ### Ahead-Of-Time (AOT) mode
 
 Like the op kernels, the op composition can be pre-compiled to the backend IR
-so the decomposition can be invoked at runtime. A Python [define_op_template.py](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/compiler/mlir/tfr/define_op_template.py)
+so the decomposition can be invoked at runtime. A Python [define_op_template.py](https://github.com/galeone/tensorflow/blob/master/tensorflow/compiler/mlir/tfr/define_op_template.py)
 file is provided as an example to build composite ops in the users project
 directory. All the targets required to build the new ops are created by the
 following target:
@@ -142,7 +142,7 @@ gen_op_libraries(
 ```
 
 More composite op definitions and usages are here included in the
-[examples](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/compiler/mlir/tfr/examples)
+[examples](https://github.com/galeone/tensorflow/blob/master/tensorflow/compiler/mlir/tfr/examples)
 directory.
 
 ### Just-In-Time (JIT) mode

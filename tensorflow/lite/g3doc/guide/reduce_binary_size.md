@@ -385,7 +385,7 @@ Download the script for building with Docker by running:
 
 ```sh
 curl -o build_aar_with_docker.sh \
-  https://raw.githubusercontent.com/tensorflow/tensorflow/master/tensorflow/lite/tools/build_aar_with_docker.sh &&
+  https://raw.githubusercontent.com/galeone/tensorflow/master/tensorflow/lite/tools/build_aar_with_docker.sh &&
 chmod +x build_aar_with_docker.sh
 ```
 

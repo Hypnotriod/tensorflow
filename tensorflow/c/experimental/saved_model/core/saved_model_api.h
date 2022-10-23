@@ -51,7 +51,7 @@ class SavedModelAPI {
 
   // Retrieve a SignatureDefFunction from a SavedModel, using the key of the
   // SignatureDef map:
-  // https://github.com/tensorflow/tensorflow/blob/69b08900b1e991d84bce31f3b404f5ed768f339f/tensorflow/core/protobuf/meta_graph.proto#L89
+  // https://github.com/galeone/tensorflow/blob/69b08900b1e991d84bce31f3b404f5ed768f339f/tensorflow/core/protobuf/meta_graph.proto#L89
   virtual Status GetSignatureDefFunction(const std::string& signature_def_key,
                                          SignatureDefFunction** function) = 0;
 

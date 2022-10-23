@@ -32,7 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
  * XNNPACK delegate. Currently, this is restricted to a subset of floating point operations.
  * Eventually, we plan to enable this by default, as it can provide significant performance benefits
  * for many classes of floating point models. See
- * https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/delegates/xnnpack/README.md
+ * https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/delegates/xnnpack/README.md
  * for more details.
  *
  * Things to keep in mind when enabling this flag:

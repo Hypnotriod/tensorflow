@@ -55,7 +55,7 @@ cc_library(
         # While adding graph_optimization_pass_registration to
         # libtensorflow_framework.so is possible with some modification in
         # dependency, many tests will fail due to multiple copies of LLVM.
-        # See https://github.com/tensorflow/tensorflow/pull/39231 for details.
+        # See https://github.com/galeone/tensorflow/pull/39231 for details.
         # Alternatively, we place graph_optimization_pass_registration here
         # because:
         # - tensorflow/python/_pywrap_mlir.so already depends on LLVM anyway

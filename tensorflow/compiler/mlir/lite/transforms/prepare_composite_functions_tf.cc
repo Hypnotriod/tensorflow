@@ -264,7 +264,7 @@ LogicalResult CheckFusableKerasLstm(func::FuncOp lstm_func, ModuleOp module) {
           lstm_func.emitWarning(
               "we cannot fuse this lstm func because the batch size is not "
               "fixed, please consider setting fixed batch size like "
-              "https://github.com/tensorflow/tensorflow/blob/master/tensorflow/"
+              "https://github.com/galeone/tensorflow/blob/master/tensorflow/"
               "lite/examples/experimental_new_converter/"
               "Keras_LSTM_fusion_Codelab.ipynb");
           return failure();
@@ -277,7 +277,7 @@ LogicalResult CheckFusableKerasLstm(func::FuncOp lstm_func, ModuleOp module) {
           lstm_func.emitWarning(
               "we cannot fuse this lstm func because the weight & bias are not "
               "fixed, please consider setting fixed batch size like "
-              "https://github.com/tensorflow/tensorflow/blob/master/tensorflow/"
+              "https://github.com/galeone/tensorflow/blob/master/tensorflow/"
               "lite/examples/experimental_new_converter/"
               "Keras_LSTM_fusion_Codelab.ipynb");
           return failure();

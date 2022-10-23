@@ -349,7 +349,7 @@ def _SetDefaultAttrValues(node_def, op_def):
 
 @tf_export('graph_util.import_graph_def', 'import_graph_def')
 @deprecated_args(None, 'Please file an issue at '
-                 'https://github.com/tensorflow/tensorflow/issues if you depend'
+                 'https://github.com/galeone/tensorflow/issues if you depend'
                  ' on this feature.', 'op_dict')
 def import_graph_def(graph_def,
                      input_map=None,

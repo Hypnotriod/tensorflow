@@ -16,7 +16,7 @@
 # ============================================================================
 
 set -ex
-git clone --branch=master --depth=1 https://github.com/tensorflow/tensorflow.git /tensorflow || true
+git clone --branch=master --depth=1 https://github.com/galeone/tensorflow.git /tensorflow || true
 cd /tensorflow
 ln -snf $(which ${PYTHON}) /usr/local/bin/python
 # Run configure.
@@ -25,7 +25,7 @@ export TF_NEED_HDFS=1
 export TF_NEED_S3=1
 export TF_NEED_CUDA=1
 # TensorRT build failing as of 2019-12-18, see
-# https://github.com/tensorflow/tensorflow/issues/35115
+# https://github.com/galeone/tensorflow/issues/35115
 export TF_NEED_TENSORRT=0
 export CC_OPT_FLAGS='-mavx'
 export PYTHON_BIN_PATH=$(which python3.7)

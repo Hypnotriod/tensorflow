@@ -1694,7 +1694,7 @@ def is_sequence_right_padded(mask):
 
 
 def has_fully_masked_sequence(mask):
-  # See https://github.com/tensorflow/tensorflow/issues/33148 for more details.
+  # See https://github.com/galeone/tensorflow/issues/33148 for more details.
   # Cudnn kernel will error out if the input sequence contains any fully masked
   # data. We walk around this issue by rerouting the computation to standard
   # kernel, until the issue on cudnn side has been fixed.

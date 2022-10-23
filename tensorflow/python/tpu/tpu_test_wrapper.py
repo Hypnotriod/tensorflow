@@ -71,7 +71,7 @@ def calculate_parent_python_path(test_filepath):
 
   Args:
     test_filepath: The filepath which Bazel invoked
-      (ex: /filesystem/path/tensorflow/tensorflow/python/tpu/tpu_test)
+      (ex: /filesystem/path/galeone/tensorflow/python/tpu/tpu_test)
 
   Returns:
     Absolute import path of parent (ex: tensorflow.python.tpu).

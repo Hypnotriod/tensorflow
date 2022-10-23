@@ -497,7 +497,7 @@ def _py_for_stmt(iter_, extra_test, body, get_state, set_state):
             'break and return statements which depend on a TF condition are not'
             ' supported in Python for loops. Did you intend to make it a TF'
             ' loop?\nSee '
-            'https://github.com/tensorflow/tensorflow/blob/master/tensorflow/'
+            'https://github.com/galeone/tensorflow/blob/master/tensorflow/'
             'python/autograph/g3doc/reference/limitations.md'
             '#consistency-of-control-flow-types for more info.') from e
 
@@ -943,7 +943,7 @@ class _PythonLoopChecker(object):
         'Large unrolled loop detected. Did you mean to use a TF loop?'
         ' The following ops were created after iteration %s: %s'
         '\nSee'
-        ' https://github.com/tensorflow/tensorflow/blob/master/'
+        ' https://github.com/galeone/tensorflow/blob/master/'
         'tensorflow/python/autograph/g3doc/reference/common_errors.md'
         '#warning-large-unrolled-loop-detected'
         '\n'
@@ -1009,7 +1009,7 @@ def _py_while_stmt(test, body, get_state, set_state, opts):
           ' when a break or return statement inside the loop depends on a'
           ' Tensor condition. In both cases, changing to a TF loop should'
           ' remove the error.\nSee '
-          'https://github.com/tensorflow/tensorflow/blob/master/tensorflow/'
+          'https://github.com/galeone/tensorflow/blob/master/tensorflow/'
           'python/autograph/g3doc/reference/limitations.md'
           '#consistency-of-control-flow-types for more info.') from e
   while guarded_test():

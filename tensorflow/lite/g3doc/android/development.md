@@ -31,9 +31,9 @@ performance and usability. Task Library works cross-platform and is supported on
 Java and C++.
 
 To use the Task Library in your Android app, use the AAR from MavenCentral for
-[Task Vision library](https://search.maven.org/artifact/org.tensorflow/tensorflow-lite-task-vision)
+[Task Vision library](https://search.maven.org/artifact/org.galeone/tensorflow-lite-task-vision)
 and
-[Task Text library](https://search.maven.org/artifact/org.tensorflow/tensorflow-lite-task-text)
+[Task Text library](https://search.maven.org/artifact/org.galeone/tensorflow-lite-task-text)
 , respectively.
 
 You can specify this in your `build.gradle` dependencies as follows:
@@ -57,7 +57,7 @@ for more details.
 ### TensorFlow Lite library {:#lite_lib}
 
 Use the TensorFlow Lite library in your Android app by adding the
-[AAR hosted at MavenCentral](https://search.maven.org/artifact/org.tensorflow/tensorflow-lite)
+[AAR hosted at MavenCentral](https://search.maven.org/artifact/org.galeone/tensorflow-lite)
 to your development project.
 
 You can specify this in your `build.gradle` dependencies as follows:
@@ -108,7 +108,7 @@ arrays. It also provides pre- and post-processing units that perform tasks such
 as image resizing and cropping.
 
 Use the Support Library in your Android app by including the TensorFlow Lite
-[Support Library AAR hosted at MavenCentral](https://search.maven.org/artifact/org.tensorflow/tensorflow-lite-support).
+[Support Library AAR hosted at MavenCentral](https://search.maven.org/artifact/org.galeone/tensorflow-lite-support).
 
 You can specify this in your `build.gradle` dependencies as follows:
 
@@ -193,7 +193,7 @@ There are two ways to use TFLite through C++ if you build your app with the NDK:
 
 Using this API is the *recommended* approach for developers using the NDK.
 Download the
-[TensorFlow Lite AAR hosted at MavenCentral](https://search.maven.org/artifact/org.tensorflow/tensorflow/tensorflow-lite)
+[TensorFlow Lite AAR hosted at MavenCentral](https://search.maven.org/artifact/org.galeone/tensorflow/tensorflow-lite)
 file, rename to `tensorflow-lite-*.zip`, and unzip it. You must include the four
 header files in the `headers/tensorflow/lite/` and `headers/tensorflow/lite/c/`
 folders and the relevant `libtensorflowlite_jni.so` dynamic library in the `jni/`

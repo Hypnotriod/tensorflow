@@ -1565,7 +1565,7 @@ class AssertTypeTest(test.TestCase):
 
   def test_raise_when_tf_type_is_not_dtype(self):
     # Test case for GitHub issue:
-    # https://github.com/tensorflow/tensorflow/issues/45975
+    # https://github.com/galeone/tensorflow/issues/45975
     value = constant_op.constant(0.0)
     with self.assertRaisesRegexp(TypeError,
                                  "Cannot convert.*to a TensorFlow DType"):

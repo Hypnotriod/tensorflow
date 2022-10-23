@@ -24,7 +24,7 @@ on:
 
 jobs:
   build:
-    if: github.repository == 'tensorflow/tensorflow' # Don't do this in forks
+    if: github.repository == 'galeone/tensorflow' # Don't do this in forks
     runs-on: [self-hosted, linux, ARM64]
     strategy:
       matrix:
@@ -43,7 +43,7 @@ jobs:
           docker container prune -f
       - name: Clean repository
         shell: bash
-        run: find /home/ubuntu/actions-runner/_work/tensorflow/tensorflow/. -name . -o -prune -exec sudo rm -rf -- {} + || true
+        run: find /home/ubuntu/actions-runner/_work/galeone/tensorflow/. -name . -o -prune -exec sudo rm -rf -- {} + || true
       - name: Checkout repository for nightly (skipped for releases)
         if: ${{ github.event_name == 'schedule' }}
         uses: actions/checkout@v3
@@ -61,4 +61,4 @@ jobs:
           ./tensorflow/tools/ci_build/ci_build.sh cpu.arm64 bash tensorflow/tools/ci_build/rel/ubuntu/cpu_arm64_pip.sh
       - name: Upload pip wheel to PyPI
         shell: bash
-        run: python3 -m twine upload --verbose /home/ubuntu/actions-runner/_work/tensorflow/tensorflow/whl/* -u "__token__" -p ${{ secrets.AWS_PYPI_ACCOUNT_TOKEN }}
+        run: python3 -m twine upload --verbose /home/ubuntu/actions-runner/_work/galeone/tensorflow/whl/* -u "__token__" -p ${{ secrets.AWS_PYPI_ACCOUNT_TOKEN }}

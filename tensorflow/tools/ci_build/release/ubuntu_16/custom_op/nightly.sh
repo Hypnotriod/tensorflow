@@ -16,8 +16,8 @@
 set -e
 
 # 1. Build the test server
-UBUNTU16_CPU_IMAGE="tensorflow/tensorflow:nightly-custom-op-ubuntu16"
-UBUNTU16_GPU_IMAGE="tensorflow/tensorflow:nightly-custom-op-gpu-ubuntu16"
+UBUNTU16_CPU_IMAGE="galeone/tensorflow:nightly-custom-op-ubuntu16"
+UBUNTU16_GPU_IMAGE="galeone/tensorflow:nightly-custom-op-gpu-ubuntu16"
 
 # Build the docker image
 cd tensorflow/tools/ci_build

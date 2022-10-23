@@ -6,7 +6,7 @@ import "tensorflow/core/framework/tensor.proto";
 import "tensorflow/core/framework/tensor_shape.proto";
 import "tensorflow/core/framework/types.proto";
 
-option go_package = "github.com/tensorflow/tensorflow/tensorflow/go/core/protobuf/for_core_protos_go_proto";
+option go_package = "github.com/galeone/tensorflow/tensorflow/go/core/protobuf/for_core_protos_go_proto";
 
 // Each SnapshotRecord represents one batch of pre-processed input data. A batch
 // consists of a list of tensors that we encode as TensorProtos. This message

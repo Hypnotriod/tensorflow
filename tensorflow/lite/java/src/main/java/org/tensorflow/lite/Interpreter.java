@@ -108,7 +108,7 @@ public final class Interpreter extends InterpreterImpl implements InterpreterApi
      * (disallow).
      *
      * @deprecated Prefer using <a
-     *     href="https://github.com/tensorflow/tensorflow/blob/5dc7f6981fdaf74c8c5be41f393df705841fb7c5/tensorflow/lite/delegates/nnapi/java/src/main/java/org/tensorflow/lite/nnapi/NnApiDelegate.java#L127">NnApiDelegate.Options#setAllowFp16(boolean
+     *     href="https://github.com/galeone/tensorflow/blob/5dc7f6981fdaf74c8c5be41f393df705841fb7c5/tensorflow/lite/delegates/nnapi/java/src/main/java/org/tensorflow/lite/nnapi/NnApiDelegate.java#L127">NnApiDelegate.Options#setAllowFp16(boolean
      *     enable)</a>.
      */
     @Deprecated
@@ -157,7 +157,7 @@ public final class Interpreter extends InterpreterImpl implements InterpreterApi
      * <p>Disabling this flag will disable use of a highly optimized set of CPU kernels provided via
      * the XNNPACK delegate. Currently, this is restricted to a subset of floating point operations.
      * See
-     * https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/delegates/xnnpack/README.md
+     * https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/delegates/xnnpack/README.md
      * for more details.
      *
      * <p>WARNING: This is an experimental interface that is subject to change.

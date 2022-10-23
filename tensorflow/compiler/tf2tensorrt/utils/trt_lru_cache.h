@@ -177,7 +177,7 @@ struct EngineContext {
   // for inference at a time therefore we need a mutex. More details at
   // https://docs.nvidia.com/deeplearning/sdk/tensorrt-best-practices/index.html#thread-safety
   // Additional discussion about execution context management and thread safety
-  // at https://github.com/tensorflow/tensorflow/issues/36959
+  // at https://github.com/galeone/tensorflow/issues/36959
   std::vector<ExecutionContext> execution_contexts TF_GUARDED_BY(mu);
 
  private:

@@ -3,8 +3,8 @@ Pod::Spec.new do |s|
   s.version          = '2.9.1'
   s.authors          = 'Google Inc.'
   s.license          = { :type => 'Apache' }
-  s.homepage         = 'https://github.com/tensorflow/tensorflow'
-  s.source           = { :git => 'https://github.com/tensorflow/tensorflow.git', :commit => 'd8ce9f9c301d021a69953134185ab728c1c248d3' }
+  s.homepage         = 'https://github.com/galeone/tensorflow'
+  s.source           = { :git => 'https://github.com/galeone/tensorflow.git', :commit => 'd8ce9f9c301d021a69953134185ab728c1c248d3' }
   s.summary          = 'TensorFlow Lite for Objective-C'
   s.description      = <<-DESC
 

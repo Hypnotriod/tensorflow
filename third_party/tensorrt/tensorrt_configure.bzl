@@ -129,7 +129,7 @@ def _create_local_tensorrt_repository(repository_ctx):
     # Resolve all labels before doing any real work. Resolving causes the
     # function to be restarted with all previous state being lost. This
     # can easily lead to a O(n^2) runtime in the number of labels.
-    # See https://github.com/tensorflow/tensorflow/commit/62bd3534525a036f07d9851b3199d68212904778
+    # See https://github.com/galeone/tensorflow/commit/62bd3534525a036f07d9851b3199d68212904778
     find_cuda_config_path = repository_ctx.path(Label("@org_tensorflow//third_party/gpus:find_cuda_config.py.gz.base64"))
     tpl_paths = {
         "build_defs.bzl": _tpl_path(repository_ctx, "build_defs.bzl"),

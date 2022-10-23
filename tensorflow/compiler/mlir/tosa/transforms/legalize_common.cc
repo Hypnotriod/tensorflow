@@ -624,7 +624,7 @@ llvm::Optional<Value> convertConcatV2Op(PatternRewriter& rewriter,
 
     // tfl.concat currently allows different scales for each input tensor, which
     // TFlite team will fix in:
-    // https://github.com/tensorflow/tensorflow/issues/39658
+    // https://github.com/galeone/tensorflow/issues/39658
     // For backward compatibility, we still need to support this artifact by
     // scaling inputs to let them have the same scales.
     if (result_quant_type && operand_quant_type) {

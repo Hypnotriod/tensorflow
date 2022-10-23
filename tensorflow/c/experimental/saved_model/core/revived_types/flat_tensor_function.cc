@@ -67,9 +67,9 @@ Status FlatTensorFunction::MakeCallOp(
   out->reset(ctx_->CreateOperation());
   // In eager mode, TF2 python executes functions by constructing an op with
   // the name of the functiondef:
-  // https://github.com/tensorflow/tensorflow/blob/66668ec0ca432e2f38a575b814f45b6d299d01ed/tensorflow/python/eager/function.py#L545
+  // https://github.com/galeone/tensorflow/blob/66668ec0ca432e2f38a575b814f45b6d299d01ed/tensorflow/python/eager/function.py#L545
   // In graph mode, we create a PartitionedCallOp instead:
-  // https://github.com/tensorflow/tensorflow/blob/66668ec0ca432e2f38a575b814f45b6d299d01ed/tensorflow/python/eager/function.py#L573
+  // https://github.com/galeone/tensorflow/blob/66668ec0ca432e2f38a575b814f45b6d299d01ed/tensorflow/python/eager/function.py#L573
 
   // TODO(bmzhao): After discussing with Allen, we should execute this via a
   // PartitionedCallOp for compatibility with "tooling that assumes functions in

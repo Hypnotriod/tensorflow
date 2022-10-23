@@ -31,7 +31,7 @@ You can convert your model using one of the following options:
 2.  [Command line](#cmdline): This only supports basic model conversion.
 
 Note: In case you encounter any issues during model conversion, create a
-[GitHub issue](https://github.com/tensorflow/tensorflow/issues/new?template=60-tflite-converter-issue.md).
+[GitHub issue](https://github.com/galeone/tensorflow/issues/new?template=60-tflite-converter-issue.md).
 
 ## Python API <a name="python_api"></a>
 
@@ -157,7 +157,7 @@ The following are common conversion errors and their solutions:
     (recommended).
     If you want to generate a model with TFLite ops only, you can either add a
     request for the missing TFLite op in
-    [Github issue #21526](https://github.com/tensorflow/tensorflow/issues/21526)
+    [Github issue #21526](https://github.com/galeone/tensorflow/issues/21526)
     (leave a comment if your request hasn’t already been mentioned) or
     [create the TFLite op](../../guide/ops_custom#create_and_register_the_operator)
     yourself.

@@ -339,7 +339,7 @@ void dump_model_stats(std::stringstream& out_stream,
   out_stream << "  Non-data buffers area are used to store operators, "
                 "subgraphs and etc.\n";
   out_stream << "  You can find more details from "
-                "https://github.com/tensorflow/tensorflow/blob/master/"
+                "https://github.com/galeone/tensorflow/blob/master/"
                 "tensorflow/lite/schema/schema.fbs\n";
 }
 

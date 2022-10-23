@@ -84,7 +84,7 @@ Status SingleRestore(ImmediateExecutionContext* ctx, const std::string& prefix,
 
   // Note that empty string is the slice spec used for a non-partitioned
   // ResourceVariable:
-  // https://github.com/tensorflow/tensorflow/blob/06ff30f7ea35098cb68a231a9eb7ff3ff4be4e1e/tensorflow/python/training/saving/saveable_object_util.py#L194
+  // https://github.com/galeone/tensorflow/blob/06ff30f7ea35098cb68a231a9eb7ff3ff4be4e1e/tensorflow/python/training/saving/saveable_object_util.py#L194
   ImmediateTensorHandlePtr shapes_and_slices_handle;
   TF_RETURN_IF_ERROR(
       CreateStringVectorTensorHandle(ctx, "", &shapes_and_slices_handle));

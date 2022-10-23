@@ -478,9 +478,9 @@ float* output = interpreter->typed_output_tensor<float>(0);
 ```
 
 For more example code, see
-[`minimal.cc`](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/examples/minimal/minimal.cc)
+[`minimal.cc`](https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/examples/minimal/minimal.cc)
 and
-[`label_image.cc`](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/examples/label_image/label_image.cc).
+[`label_image.cc`](https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/examples/label_image/label_image.cc).
 
 ## Load and run a model in Python
 
@@ -598,7 +598,7 @@ interpreter.allocate_tensors()
 ```
 
 For more Python sample code, see
-[`label_image.py`](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/examples/python/label_image.py).
+[`label_image.py`](https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/examples/python/label_image.py).
 
 Tip: Run `help(tf.lite.Interpreter)` in the Python terminal to get detailed
 documentation about the interpreter.

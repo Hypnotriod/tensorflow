@@ -35,7 +35,7 @@ flags.DEFINE_string('output_dir', '/tmp/lite_api/',
                     'The path to output the files to')
 
 flags.DEFINE_string('code_url_prefix',
-                    'https://github.com/tensorflow/tensorflow/blob/master/',
+                    'https://github.com/galeone/tensorflow/blob/master/',
                     'The url prefix for links to code.')
 
 flags.DEFINE_bool('search_hints', True,

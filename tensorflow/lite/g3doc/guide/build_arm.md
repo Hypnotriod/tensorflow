@@ -15,7 +15,7 @@ Custom toolchains                                                               
 [GPU delegate](https://www.tensorflow.org/lite/performance/gpu)                           | only available for Android   | any platform that supports OpenCL
 XNNPack                                                                                   | supported                    | supported
 [Python Wheel](https://www.tensorflow.org/lite/guide/build_cmake_pip)                     | supported                    | supported
-[C API](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/c/README.md) | supported                    | [supported](https://www.tensorflow.org/lite/guide/build_cmake#build_tensorflow_lite_c_library)
+[C API](https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/c/README.md) | supported                    | [supported](https://www.tensorflow.org/lite/guide/build_cmake#build_tensorflow_lite_c_library)
 [C++ API](https://www.tensorflow.org/lite/guide/inference#load_and_run_a_model_in_c)      | supported for Bazel projects | supported for CMake projects
 
 ## Cross-compilation for ARM with CMake
@@ -29,7 +29,7 @@ page available for this.
 
 If you have a Bazel project or if you want to use TF ops, you'd better use Bazel
 build system. You'll use the integrated
-[ARM GCC 8.3 toolchains](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/tools/toolchains/embedded/arm-linux)
+[ARM GCC 8.3 toolchains](https://github.com/galeone/tensorflow/tree/master/tensorflow/tools/toolchains/embedded/arm-linux)
 with Bazel to build an ARM32/64 shared library.
 
 | Target Architecture | Bazel Configuration     | Compatible Devices         |
@@ -43,7 +43,7 @@ Note: The generated shared library requires glibc 2.28 or higher to run.
 
 The following instructions have been tested on Ubuntu 16.04.3 64-bit PC (AMD64)
 and TensorFlow devel docker image
-[tensorflow/tensorflow:devel](https://hub.docker.com/r/tensorflow/tensorflow/tags/).
+[galeone/tensorflow:devel](https://hub.docker.com/r/galeone/tensorflow/tags/).
 
 To cross compile TensorFlow Lite with Bazel, follow the steps:
 
@@ -58,7 +58,7 @@ available.
 #### Step 2. Clone TensorFlow repository
 
 ```sh
-git clone https://github.com/tensorflow/tensorflow.git tensorflow_src
+git clone https://github.com/galeone/tensorflow.git tensorflow_src
 ```
 
 **Note:** If you're using the TensorFlow Docker image, the repo is already
@@ -79,7 +79,7 @@ You can find a shared library in:
 [32bit ARM hard float](https://wiki.debian.org/ArmHardFloatPort) build.
 
 Check
-[TensorFlow Lite C API](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/c/README.md)
+[TensorFlow Lite C API](https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/c/README.md)
 page for the detail.
 
 ##### C++ library

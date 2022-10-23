@@ -336,7 +336,7 @@ def if_indexing_source_code(
     })
 
 # Linux systems may required -lrt linker flag for e.g. clock_gettime
-# see https://github.com/tensorflow/tensorflow/issues/15129
+# see https://github.com/galeone/tensorflow/issues/15129
 def lrt_if_needed():
     lrt = ["-lrt"]
     return select({
@@ -1790,7 +1790,7 @@ def tf_kernel_library(
 
     # Override EIGEN_STRONG_INLINE to inline when
     # --define=override_eigen_strong_inline=true to avoid long compiling time.
-    # See https://github.com/tensorflow/tensorflow/issues/10521
+    # See https://github.com/galeone/tensorflow/issues/10521
     copts = copts + if_override_eigen_strong_inline(["/DEIGEN_STRONG_INLINE=inline"])
     if prefix:
         if native.glob([prefix + "*.cu.cc"], exclude = ["*test*"]):
@@ -2144,7 +2144,7 @@ def tf_custom_op_library(name, srcs = [], gpu_srcs = [], deps = [], linkopts = [
 
     # Override EIGEN_STRONG_INLINE to inline when
     # --define=override_eigen_strong_inline=true to avoid long compiling time.
-    # See https://github.com/tensorflow/tensorflow/issues/10521
+    # See https://github.com/galeone/tensorflow/issues/10521
     copts = copts + if_override_eigen_strong_inline(["/DEIGEN_STRONG_INLINE=inline"])
 
     if gpu_srcs:
@@ -2333,8 +2333,8 @@ def pywrap_tensorflow_macro(
     # Due to b/149224972 we have to add libtensorflow_framework.so
     # as a dependency so the linker doesn't try and optimize and
     # remove it from pywrap_tensorflow_internal.so
-    # Issue: https://github.com/tensorflow/tensorflow/issues/34117
-    # Fix: https://github.com/tensorflow/tensorflow/commit/5caa9e83798cb510c9b49acee8a64efdb746207c
+    # Issue: https://github.com/galeone/tensorflow/issues/34117
+    # Fix: https://github.com/galeone/tensorflow/commit/5caa9e83798cb510c9b49acee8a64efdb746207c
     extra_deps += if_static(
         extra_deps = [],
         otherwise = [
@@ -2443,7 +2443,7 @@ def py_test(deps = [], data = [], kernels = [], exec_properties = None, **kwargs
 
 # Similar to py_test above, this macro is used to exclude dependencies for some py_binary
 # targets in order to reduce the size of //tensorflow/tools/pip_package:simple_console_windows.
-# See https://github.com/tensorflow/tensorflow/issues/22390
+# See https://github.com/galeone/tensorflow/issues/22390
 def py_binary(name, deps = [], **kwargs):
     # Add an extra target for dependencies to avoid nested select statement.
     native.py_library(

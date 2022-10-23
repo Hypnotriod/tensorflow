@@ -104,7 +104,7 @@ Status GetSignaturesMap(const SavedObjectGraph& saved_objects,
   // Some basic sanity checks that this object is actually our "signatures" map
   if (signatures == nullptr) {
     // This is where the "signatures" attribute is always set:
-    // https://github.com/tensorflow/tensorflow/blob/a2c542a0d83227568f9214a2af9a38ae3625976f/tensorflow/python/saved_model/save.py#L1106-L1109
+    // https://github.com/galeone/tensorflow/blob/a2c542a0d83227568f9214a2af9a38ae3625976f/tensorflow/python/saved_model/save.py#L1106-L1109
     return errors::FailedPrecondition(
         "SavedObjectGraph's root object must have a child 'signatures' object");
   }
@@ -114,7 +114,7 @@ Status GetSignaturesMap(const SavedObjectGraph& saved_objects,
   }
   if (signatures->user_object().identifier() != "signature_map") {
     // This is where the string comes from:
-    // https://github.com/tensorflow/tensorflow/blob/c59af2913aaec235d883f50428efef1086f4c0e6/tensorflow/python/saved_model/signature_serialization.py#L220
+    // https://github.com/galeone/tensorflow/blob/c59af2913aaec235d883f50428efef1086f4c0e6/tensorflow/python/saved_model/signature_serialization.py#L220
     return errors::FailedPrecondition(
         "Signatures SavedObject must have identifier 'signature_map'.");
   }
@@ -133,13 +133,13 @@ Status ValidateSavedFunctionCompatibleWithFunctionDef(
     const FunctionDef* function_def) {
   // tf.functions go through many transformations before becoming FunctionDefs
   // 1. flatten user-provided inputs:
-  // https://github.com/tensorflow/tensorflow/blob/1c064ab76064c58e54261b805027474885a1534d/tensorflow/python/eager/function.py#L2671-L2675
+  // https://github.com/galeone/tensorflow/blob/1c064ab76064c58e54261b805027474885a1534d/tensorflow/python/eager/function.py#L2671-L2675
   // 2. convert user-provided inputs to tensors:
-  // https://github.com/tensorflow/tensorflow/blob/1c064ab76064c58e54261b805027474885a1534d/tensorflow/python/eager/function.py#L2687-L2688
+  // https://github.com/galeone/tensorflow/blob/1c064ab76064c58e54261b805027474885a1534d/tensorflow/python/eager/function.py#L2687-L2688
   // 3. filter any non-tensor, non-variable inputs:
-  // https://github.com/tensorflow/tensorflow/blob/1c064ab76064c58e54261b805027474885a1534d/tensorflow/python/eager/function.py#L1840-L1841
+  // https://github.com/galeone/tensorflow/blob/1c064ab76064c58e54261b805027474885a1534d/tensorflow/python/eager/function.py#L1840-L1841
   // 4. concatenate any captured inputs:
-  // https://github.com/tensorflow/tensorflow/blob/1c064ab76064c58e54261b805027474885a1534d/tensorflow/python/eager/function.py#L1912
+  // https://github.com/galeone/tensorflow/blob/1c064ab76064c58e54261b805027474885a1534d/tensorflow/python/eager/function.py#L1912
 
   // Since our API is limited to tf.functions annotated with input signatures,
   // conditions 2 and 3 are trivially satisfied.
@@ -147,10 +147,10 @@ Status ValidateSavedFunctionCompatibleWithFunctionDef(
   // flatten(input_signature).size() + captures.size() = fdef.signature().size()
   // A concrete function's serialized "canonicalized_input_signature" comes
   // from encoding its "structured_input_signature" field:
-  // https://github.com/tensorflow/tensorflow/blob/1c064ab76064c58e54261b805027474885a1534d/tensorflow/python/saved_model/function_serialization.py#L70-L71
+  // https://github.com/galeone/tensorflow/blob/1c064ab76064c58e54261b805027474885a1534d/tensorflow/python/saved_model/function_serialization.py#L70-L71
   // The "structured_input_signature" is guaranteed to be a tuple of the python
   // args, kwargs that correspond to the tf.function:
-  // https://github.com/tensorflow/tensorflow/blob/1c064ab76064c58e54261b805027474885a1534d/tensorflow/python/eager/function.py#L1974-L1979
+  // https://github.com/galeone/tensorflow/blob/1c064ab76064c58e54261b805027474885a1534d/tensorflow/python/eager/function.py#L1974-L1979
 
   const std::string& name = function_def->signature().name();
 
@@ -188,7 +188,7 @@ Status ValidateSingleConcreteFunction(const SavedFunction& saved_function) {
   // which means there is 1:1 correspondence between tf.function
   // <=> SavedFunction <=> SavedConcreteFunction <=> FunctionDef. This is
   // the same restriction that MLIR has:
-  // https://github.com/tensorflow/tensorflow/blob/1c064ab76064c58e54261b805027474885a1534d/tensorflow/compiler/mlir/tensorflow/translate/import_model.cc#L2677-L2707
+  // https://github.com/galeone/tensorflow/blob/1c064ab76064c58e54261b805027474885a1534d/tensorflow/compiler/mlir/tensorflow/translate/import_model.cc#L2677-L2707
   if (saved_function.concrete_functions_size() != 1) {
     return errors::FailedPrecondition(
         "Only tf.functions annotated with an input signature are supported "
@@ -228,7 +228,7 @@ Status TensorProtoToConstant(ImmediateExecutionContext* ctx,
 }
 
 // This follows the python variable restoration logic:
-// https://github.com/tensorflow/tensorflow/blob/516608035f85cec8b126712b0ff8407220206b22/tensorflow/python/saved_model/load.py#L407
+// https://github.com/galeone/tensorflow/blob/516608035f85cec8b126712b0ff8407220206b22/tensorflow/python/saved_model/load.py#L407
 Status LoadSavedVariable(ImmediateExecutionContext* ctx,
                          const SavedVariable& variable,
                          std::unique_ptr<Variable>* output) {
@@ -278,7 +278,7 @@ Status LoadTFConcreteFunction(
 Status FlattenSignature(const StructuredValue& signature,
                         std::vector<const TensorSpecProto*>* flattened_specs) {
   // This follows the logic from
-  // https://github.com/tensorflow/tensorflow/blob/1c064ab76064c58e54261b805027474885a1534d/tensorflow/compiler/mlir/tensorflow/translate/import_model.cc#L2775
+  // https://github.com/galeone/tensorflow/blob/1c064ab76064c58e54261b805027474885a1534d/tensorflow/compiler/mlir/tensorflow/translate/import_model.cc#L2775
   switch (signature.kind_case()) {
     case StructuredValue::kDictValue: {
       // Dictionaries must be sorted in order of keys
@@ -509,7 +509,7 @@ Status PartiallyReviveSavedModelObjects(const MetaGraphDef& metagraph,
       int child_node_id = child.node_id();
       // Note(bmzhao): The expected functions saved by a resource object are:
       // "_create_resource", "_initialize", and "_destroy_resource".
-      // https://github.com/tensorflow/tensorflow/blob/ad66f588c1666ade8051feb42811fa27b285271c/tensorflow/python/training/tracking/tracking.py#L277-L281
+      // https://github.com/galeone/tensorflow/blob/ad66f588c1666ade8051feb42811fa27b285271c/tensorflow/python/training/tracking/tracking.py#L277-L281
       if (child.local_name() == "_create_resource" &&
           obj_graph.nodes(child.node_id()).kind_case() ==
               SavedObject::kFunction) {

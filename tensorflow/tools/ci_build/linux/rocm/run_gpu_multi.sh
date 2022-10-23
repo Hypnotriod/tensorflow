@@ -133,7 +133,7 @@ bazel test \
 # Starting with ROCm 4.1, see run : http://ml-ci.amd.com:21096/job/tensorflow/job/github-prs-rocmfork-develop-upstream/job/rocm-latest-ubuntu-gpu-multi/241/console
 
 # FAILED  //tensorflow/python/keras/distribute:minimize_loss_test_2gpu \
-# potential breaking commit : https://github.com/tensorflow/tensorflow/commit/74e39c8fa60079862597c9db506cd15b2443a5a2
+# potential breaking commit : https://github.com/galeone/tensorflow/commit/74e39c8fa60079862597c9db506cd15b2443a5a2
 
 # NO MORE MULTI_GPU : //tensorflow/python/keras/distribute:checkpointing_test_2gpu \
-# multi_gpu tag was commented out in this commit : https://github.com/tensorflow/tensorflow/commit/b87d02a3f8d8b55045bf4250dd72e746357a3eba
+# multi_gpu tag was commented out in this commit : https://github.com/galeone/tensorflow/commit/b87d02a3f8d8b55045bf4250dd72e746357a3eba

@@ -747,7 +747,7 @@ def to_graph(entity, recursive=True, experimental_optional_features=None):
   For a tutorial, see the
   [tf.function and AutoGraph guide](https://www.tensorflow.org/guide/function).
   For more detailed information, see the
-  [AutoGraph reference documentation](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/python/autograph/g3doc/reference/index.md).
+  [AutoGraph reference documentation](https://github.com/galeone/tensorflow/blob/master/tensorflow/python/autograph/g3doc/reference/index.md).
 
   Args:
     entity: Python callable or class to convert.

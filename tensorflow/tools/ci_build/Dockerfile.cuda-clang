@@ -11,7 +11,7 @@
 FROM local-manylinux-toolchain
 
 WORKDIR /
-RUN git clone https://github.com/tensorflow/tensorflow
+RUN git clone https://github.com/galeone/tensorflow
 
 WORKDIR /tensorflow
 ENV TF_NEED_GCP=1 \

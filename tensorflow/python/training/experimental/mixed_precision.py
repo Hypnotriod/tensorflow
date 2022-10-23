@@ -135,7 +135,7 @@ def enable_mixed_precision_graph_rewrite_v1(opt, loss_scale='dynamic'):
   that are either included or excluded by this rewrite operation. The following
   categories of Ops are defined inside corresponding functions under the class
   `AutoMixedPrecisionLists` in
-  <a href="https://github.com/tensorflow/tensorflow/blob/master/tensorflow/
+  <a href="https://github.com/galeone/tensorflow/blob/master/tensorflow/
   core/grappler/optimizers/auto_mixed_precision_lists.h">
   auto_mixed_precision_lists.h</a>:
 

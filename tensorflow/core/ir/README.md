@@ -82,7 +82,7 @@ before execution.
 
 Other cases involve the need for control dependencies beyond what the
 auto-control-dependency tracking offers. For example the
-[tf.recompute\_grad](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/python/ops/custom_gradient.py#L497)
+[tf.recompute\_grad](https://github.com/galeone/tensorflow/blob/master/tensorflow/python/ops/custom_gradient.py#L497)
 creates control-dependencies on non-side-effecting ops to have a finer grain
 control of memory usage.
 
@@ -177,7 +177,7 @@ attributes in the future in the same way as we do in the TensorFlow dialect.
 A structural operation is introduced as a container: `tfg.graph` acts as a bag
 of unordered TensorFlow operations, and carries a “version” attribute that
 corresponds to the
-[VersionDef](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/core/framework/versions.proto)
+[VersionDef](https://github.com/galeone/tensorflow/blob/master/tensorflow/core/framework/versions.proto)
 present in GraphDef:
 
 ```
@@ -210,17 +210,17 @@ to MLIR passes about TensorFlow operation without having to register them with
 MLIR in the first place.
 
 The `tfg.graph` operation round-trips almost perfectly to
-[Graph](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/core/graph/graph.h#L504),
+[Graph](https://github.com/galeone/tensorflow/blob/master/tensorflow/core/graph/graph.h#L504),
 with the exception of the `Function Library`, which I address below.
 
 ### Function Library
 
 Functions in TensorFlow are stored as
-[FunctionDef](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/core/framework/function.proto),
+[FunctionDef](https://github.com/galeone/tensorflow/blob/master/tensorflow/core/framework/function.proto),
 which has a signature, holds attributes, identifies argument and returned
 values, and finally contains a list of nodes for its body. While on the surface
 this `repeated NodeDef node_def` field looks identical to the body of
-[GraphDef](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/core/framework/graph.proto#L17),
+[GraphDef](https://github.com/galeone/tensorflow/blob/master/tensorflow/core/framework/graph.proto#L17),
 there are fundamental differences in the representation, and in particular the
 format the edges are represented is different.
 
@@ -257,7 +257,7 @@ looking them up by name `output_true:0` and `output_false:0`. This is required
 because the OpDef can define the number of output based on the attribute present
 on the NodeDef, and these attributes can in turn be dependent on the attributes
 added on the function during instantiation (you can read more about it in the
-[description of the placeholder attribute value](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/core/framework/attr_value.proto#L48-L55)).
+[description of the placeholder attribute value](https://github.com/galeone/tensorflow/blob/master/tensorflow/core/framework/attr_value.proto#L48-L55)).
 
 Post-instantiation, a function body is similar to the one of a graph:
 

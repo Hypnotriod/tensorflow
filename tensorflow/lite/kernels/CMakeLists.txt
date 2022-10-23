@@ -132,7 +132,7 @@ add_library(tensorflow-lite-test-external-main ${TEST_FRAMEWORK_MAIN_SRC})
 target_link_libraries(tensorflow-lite-test-external-main
   # We need the nnapi related symbols later.
   # Please check:
-  # https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/tools/delegates/BUILD#L96
+  # https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/tools/delegates/BUILD#L96
   -Wl,--whole-archive
   tensorflow-lite-test-base
   -Wl,--no-whole-archive

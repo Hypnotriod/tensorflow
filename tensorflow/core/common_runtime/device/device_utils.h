@@ -32,7 +32,7 @@ namespace device_utils {
 //   "Gpu" is not the same device type as "GPU".
 //   Note that lowercase "cpu" and "gpu" are currently supported only for
 //   legacy reasons:
-//   https://cs.opensource.google/tensorflow/tensorflow/+/master:tensorflow/python/framework/device_spec.py;l=46;drc=d3a378f9665d8eee827c74cb9ecbee81e4c288dd
+//   https://cs.opensource.google/galeone/tensorflow/+/master:tensorflow/python/framework/device_spec.py;l=46;drc=d3a378f9665d8eee827c74cb9ecbee81e4c288dd
 Status ValidateDeviceType(StringPiece type);
 
 }  // namespace device_utils

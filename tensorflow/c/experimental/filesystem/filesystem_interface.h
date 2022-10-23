@@ -333,7 +333,7 @@ typedef struct TF_FilesystemOps {
   /// TensorFlow and the `TF_Filesystem*` object is destroyed. However, due to
   /// registration being done in a static instance of `Env`, the destructor of
   /// `FileSystem` is never called (see
-  /// https://github.com/tensorflow/tensorflow/issues/27535). In turn, this
+  /// https://github.com/galeone/tensorflow/issues/27535). In turn, this
   /// function will never be called. There are plans to refactor registration
   /// and fix this.
   ///

@@ -463,7 +463,7 @@ def set_cc_opt_flags(environ_cp):
     # in instructions that are too modern being generated. Users that want
     # maximum performance should compile TF in their environment and can pass
     # `-march=native` there.
-    # See https://github.com/tensorflow/tensorflow/issues/45744 and duplicates
+    # See https://github.com/galeone/tensorflow/issues/45744 and duplicates
     default_cc_opt_flags = '-Wno-sign-compare'
   question = ('Please specify optimization flags to use during compilation when'
               ' bazel option "--config=opt" is specified [Default is %s]: '
@@ -1035,7 +1035,7 @@ def set_windows_build_flags(environ_cp):
       'Eigen strong inline overridden.', 'Not overriding eigen strong inline, '
       'some compilations could take more than 20 mins.'):
     # Due to a known MSVC compiler issue
-    # https://github.com/tensorflow/tensorflow/issues/10521
+    # https://github.com/galeone/tensorflow/issues/10521
     # Overriding eigen strong inline speeds up the compiling of
     # conv_grad_ops_3d.cc and conv_ops_3d.cc by 20 minutes,
     # but this also hurts the performance. Let users decide what they want.

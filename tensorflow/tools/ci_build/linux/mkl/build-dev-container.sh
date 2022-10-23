@@ -43,14 +43,14 @@ function die()
 # Set up WORKSPACE.
 WORKSPACE="${WORKSPACE:-$(upsearch WORKSPACE)}"
 
-ROOT_CONTAINER=${ROOT_CONTAINER:-tensorflow/tensorflow}
+ROOT_CONTAINER=${ROOT_CONTAINER:-galeone/tensorflow}
 TF_ROOT_CONTAINER_TAG=${ROOT_CONTAINER_TAG:-devel}
 
 # TF_BUILD_VERSION can be either a tag, branch, commit ID or PR number.
 # For a PR, set TF_BUILD_VERSION_IS_PR="yes"
 TF_BUILD_VERSION=${TF_DOCKER_BUILD_DEVEL_BRANCH:-master}
 TF_BUILD_VERSION_IS_PR=${TF_DOCKER_BUILD_DEVEL_BRANCH_IS_PR:-no}
-TF_REPO=${TF_REPO:-https://github.com/tensorflow/tensorflow}
+TF_REPO=${TF_REPO:-https://github.com/galeone/tensorflow}
 FINAL_IMAGE_NAME=${TF_DOCKER_BUILD_IMAGE_NAME:-intel-mkl/tensorflow}
 TF_DOCKER_BUILD_VERSION=${TF_DOCKER_BUILD_VERSION:-nightly}
 BUILD_AVX_CONTAINERS=${BUILD_AVX_CONTAINERS:-no}

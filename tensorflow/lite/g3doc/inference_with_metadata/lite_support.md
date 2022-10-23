@@ -45,7 +45,7 @@ added to the noCompress list by default and the aaptOptions above is not needed
 anymore.
 
 Explore the
-[TensorFlow Lite Support Library AAR hosted at MavenCentral](https://search.maven.org/artifact/org.tensorflow/tensorflow-lite-support)
+[TensorFlow Lite Support Library AAR hosted at MavenCentral](https://search.maven.org/artifact/org.galeone/tensorflow-lite-support)
 for different versions of the Support Library.
 
 ### Basic image manipulation and conversion

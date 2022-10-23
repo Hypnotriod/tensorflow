@@ -38,7 +38,7 @@ Note: This requires OpenCL or OpenGL ES (3.1 or higher).
 #### Step 1. Clone the TensorFlow source code and open it in Android Studio
 
 ```sh
-git clone https://github.com/tensorflow/tensorflow
+git clone https://github.com/galeone/tensorflow
 ```
 
 #### Step 2. Edit `app/build.gradle` to use the nightly GPU AAR
@@ -46,7 +46,7 @@ git clone https://github.com/tensorflow/tensorflow
 Note: You can now target **Android S+** with `targetSdkVersion="S"` in your
 manifest, or `targetSdkVersion "S"` in your Gradle `defaultConfig` (API level
 TBD). In this case, you should merge the contents of
-[`AndroidManifestGpu.xml`](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/java/AndroidManifestGpu.xml)
+[`AndroidManifestGpu.xml`](https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/java/AndroidManifestGpu.xml)
 into your Android application's manifest. Without this change, the GPU delegate
 cannot access OpenCL libraries for acceleration. *AGP 4.2.0 or above is required
 for this to work.*
@@ -109,7 +109,7 @@ use the Objective-C (from 2.4.0 release) or C API.
     <p>
       We have built a binary CocoaPod that includes the GPU delegate. To switch
       the project to use it, modify the
-      `tensorflow/tensorflow/lite/examples/ios/camera/Podfile` file to use the
+      `galeone/tensorflow/lite/examples/ios/camera/Podfile` file to use the
       `TensorFlowLiteGpuExperimental` pod instead of `TensorFlowLite`.
     </p>
     <pre class="prettyprint lang-ruby notranslate" translate="no"><code>

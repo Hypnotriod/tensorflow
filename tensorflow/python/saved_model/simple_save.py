@@ -50,16 +50,16 @@ def simple_save(session, export_dir, inputs, outputs, legacy_init_op=None):
       [tf.Estimator](https://www.tensorflow.org/api_docs/python/tf/estimator/Estimator)
       or the lower level
       [SavedModel
-      APIs](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/python/saved_model/README.md).
+      APIs](https://github.com/galeone/tensorflow/blob/master/tensorflow/python/saved_model/README.md).
     - Some TensorFlow ops depend on information on disk or other information
       called "assets". These are generally handled automatically by adding the
       assets to the `GraphKeys.ASSET_FILEPATHS` collection. Only assets in that
       collection are exported; if you need more custom behavior, you'll need to
       use the
-      [SavedModelBuilder](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/python/saved_model/builder.py).
+      [SavedModelBuilder](https://github.com/galeone/tensorflow/blob/master/tensorflow/python/saved_model/builder.py).
 
   More information about SavedModel and signatures can be found here:
-  https://github.com/tensorflow/tensorflow/blob/master/tensorflow/python/saved_model/README.md.
+  https://github.com/galeone/tensorflow/blob/master/tensorflow/python/saved_model/README.md.
 
   Args:
     session: The TensorFlow session from which to save the meta graph and

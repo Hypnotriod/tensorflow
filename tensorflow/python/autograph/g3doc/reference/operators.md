@@ -46,7 +46,7 @@ ag__.if_stmt(ag__.ld(x), if_body, else_body, get_state, set_state, ('y',), 1)
 In the example above, `ag__.if_stmt`, `ag__.ld` and `ag__.Undefined` are all
 AutoGraph operators.
 
-The source of truth for these operators is the [source code](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/python/autograph/operators)
+The source of truth for these operators is the [source code](https://github.com/galeone/tensorflow/tree/master/tensorflow/python/autograph/operators)
 . All public symbols exported by that module is considered an operator.
 
 ### Type-based dispatch
@@ -83,11 +83,11 @@ corresponding thunk is `lambda: foo`.
 
 #### Conditional expressions
 
-[Source](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/python/autograph/operators/conditional_expressions.py)
+[Source](https://github.com/galeone/tensorflow/blob/master/tensorflow/python/autograph/operators/conditional_expressions.py)
 
 ##### `if_exp`
 
-[Source](https://github.com/tensorflow/tensorflow/blob/bacd16a95d5a6f3d5081e3d56c515671c784d289/tensorflow/python/autograph/operators/conditional_expressions.py#L27)
+[Source](https://github.com/galeone/tensorflow/blob/bacd16a95d5a6f3d5081e3d56c515671c784d289/tensorflow/python/autograph/operators/conditional_expressions.py#L27)
 
 The Python conditional statement: `foo if bar else baz`.
 
@@ -115,7 +115,7 @@ Dispatch on `cond`:
 
 #### Control flow
 
-[Source](https://github.com/tensorflow/tensorflow/blob/bacd16a95d5a6f3d5081e3d56c515671c784d289/tensorflow/python/autograph/operators/control_flow.py)
+[Source](https://github.com/galeone/tensorflow/blob/bacd16a95d5a6f3d5081e3d56c515671c784d289/tensorflow/python/autograph/operators/control_flow.py)
 
 Unlike Python, AutoGraph control flow operators use explicit control flow
 variables, which include all symbols which are modified by the control flow.
@@ -134,7 +134,7 @@ subject to restrictions of the respective implementations. For example,
 
 ##### `for_stmt`
 
-[Source](https://github.com/tensorflow/tensorflow/blob/bacd16a95d5a6f3d5081e3d56c515671c784d289/tensorflow/python/autograph/operators/control_flow.py#L369)
+[Source](https://github.com/galeone/tensorflow/blob/bacd16a95d5a6f3d5081e3d56c515671c784d289/tensorflow/python/autograph/operators/control_flow.py#L369)
 
 For loop: `for var in target: body`, extended with a per-iteration
 condition to handle early termination (e.g. due to a `break`).
@@ -219,7 +219,7 @@ Dispatch on `iter_`:
 
 ##### `if_stmt`
 
-[Source](https://github.com/tensorflow/tensorflow/blob/bacd16a95d5a6f3d5081e3d56c515671c784d289/tensorflow/python/autograph/operators/control_flow.py#L1125)
+[Source](https://github.com/galeone/tensorflow/blob/bacd16a95d5a6f3d5081e3d56c515671c784d289/tensorflow/python/autograph/operators/control_flow.py#L1125)
 
 If statement: `if cond: body else: orelse-body`.
 
@@ -270,7 +270,7 @@ Dispatch on `cond`:
 
 ##### `while_stmt`
 
-[Source](https://github.com/tensorflow/tensorflow/blob/bacd16a95d5a6f3d5081e3d56c515671c784d289/tensorflow/python/autograph/operators/control_flow.py#L811)
+[Source](https://github.com/galeone/tensorflow/blob/bacd16a95d5a6f3d5081e3d56c515671c784d289/tensorflow/python/autograph/operators/control_flow.py#L811)
 
 While loop: `while cond: body`.
 
@@ -317,11 +317,11 @@ Dispatch on return type of `test`:
 
 #### Data structures
 
-[Source](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/python/autograph/operators/data_structures.py)
+[Source](https://github.com/galeone/tensorflow/blob/master/tensorflow/python/autograph/operators/data_structures.py)
 
 ##### `list_append`
 
-[Source](https://github.com/tensorflow/tensorflow/blob/bacd16a95d5a6f3d5081e3d56c515671c784d289/tensorflow/python/autograph/operators/data_structures.py#L171)
+[Source](https://github.com/galeone/tensorflow/blob/bacd16a95d5a6f3d5081e3d56c515671c784d289/tensorflow/python/autograph/operators/data_structures.py#L171)
 
 List append operation: `l.append(x)`. Callers should assume that the list
 argument is modified, if that is possible.
@@ -353,7 +353,7 @@ Dispatch on `list_`:
 
 ##### `list_pop`
 
-[Source](https://github.com/tensorflow/tensorflow/blob/bacd16a95d5a6f3d5081e3d56c515671c784d289/tensorflow/python/autograph/operators/data_structures.py#L235)
+[Source](https://github.com/galeone/tensorflow/blob/bacd16a95d5a6f3d5081e3d56c515671c784d289/tensorflow/python/autograph/operators/data_structures.py#L235)
 
 List pop operation: `l.pop(i)`. Callers should assume that the list
 argument is modified, if that is possible.

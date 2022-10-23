@@ -23,7 +23,7 @@ jobs:
   create-issue-on-pr-rollback:
     runs-on: ubuntu-latest
     if: |
-      github.repository == 'tensorflow/tensorflow' &&
+      github.repository == 'galeone/tensorflow' &&
       startsWith(github.event.head_commit.message, 'Rollback of PR #')
     steps:
       - name: Checkout repo

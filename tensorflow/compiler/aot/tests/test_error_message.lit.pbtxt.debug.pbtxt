@@ -1,4 +1,4 @@
-files: "org_tensorflow/tensorflow/compiler/aot/tests/test_error_message.lit.pbtxt.fake_py.debug"
+files: "org_galeone/tensorflow/compiler/aot/tests/test_error_message.lit.pbtxt.fake_py.debug"
 traces: {
   key: "x@"
   value: {

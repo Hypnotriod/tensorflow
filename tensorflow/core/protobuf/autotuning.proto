@@ -11,7 +11,7 @@ import "google/protobuf/any.proto";
 import "google/protobuf/duration.proto";
 import "tensorflow/stream_executor/dnn.proto";
 
-option go_package = "github.com/tensorflow/tensorflow/tensorflow/go/core/protobuf/for_core_protos_go_proto";
+option go_package = "github.com/galeone/tensorflow/tensorflow/go/core/protobuf/for_core_protos_go_proto";
 
 message CudnnVersion {
   int32 major = 1;

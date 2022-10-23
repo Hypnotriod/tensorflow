@@ -126,7 +126,7 @@ filegroup(
     *   change either `FLOAT_MODEL_PATH` or `QUANTIZED_MODEL_PATH` to
         `my_model.lite` depending on whether your model runs inference in float
         or
-        [8-bit](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/contrib/quantize).
+        [8-bit](https://github.com/galeone/tensorflow/tree/master/tensorflow/contrib/quantize).
 
     *   change `TEST_IMAGE_GROUNDTRUTH` (ImageNet class ID) to be consistent
         with your test image.
@@ -235,10 +235,10 @@ quantized_fpnlite.lite | 96      | 29
 
 All latency numbers are in milliseconds. The Pixel 1 and Pixel 2 latency numbers
 are measured on `Oct 17 2019` (Github commit hash
-[I05def66f58fa8f2161522f318e00c1b520cf0606](https://github.com/tensorflow/tensorflow/commit/4b02bc0e0ff7a0bc02264bc87528253291b7c949#diff-4e94df4d2961961ba5f69bbd666e0552))
+[I05def66f58fa8f2161522f318e00c1b520cf0606](https://github.com/galeone/tensorflow/commit/4b02bc0e0ff7a0bc02264bc87528253291b7c949#diff-4e94df4d2961961ba5f69bbd666e0552))
 
 The Pixel 4 latency numbers are measured on `Apr 14 2020` (Github commit hash
-[4b2cb67756009dda843c6b56a8b320c8a54373e0](https://github.com/tensorflow/tensorflow/commit/4b2cb67756009dda843c6b56a8b320c8a54373e0)).
+[4b2cb67756009dda843c6b56a8b320c8a54373e0](https://github.com/galeone/tensorflow/commit/4b2cb67756009dda843c6b56a8b320c8a54373e0)).
 
 Since Pixel 4 has excellent support for 8-bit quantized models, we strongly
 recommend you to check out the

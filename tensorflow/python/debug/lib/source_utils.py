@@ -127,7 +127,7 @@ def _try_load_par_source(source_file_path):
     source_file_path: The full path to the file inside the .par file. This
       path should include the path to the .par file itself, followed by the
       intra-par path, e.g.,
-      "/tmp/my_executable.par/org-tensorflow/tensorflow/python/foo/bar.py".
+      "/tmp/my_executable.par/org-galeone/tensorflow/python/foo/bar.py".
 
   Returns:
     If successful, lines of the source file as a `list` of `str`s.

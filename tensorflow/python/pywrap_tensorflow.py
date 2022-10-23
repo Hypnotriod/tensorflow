@@ -80,7 +80,7 @@ except ImportError:
       f'See https://www.tensorflow.org/install/errors '
       f'for some common causes and solutions.\n'
       f'If you need help, create an issue '
-      f'at https://github.com/tensorflow/tensorflow/issues '
+      f'at https://github.com/galeone/tensorflow/issues '
       f'and include the entire stack trace above this error message.')
 
 # pylint: enable=wildcard-import,g-import-not-at-top,unused-import,line-too-long

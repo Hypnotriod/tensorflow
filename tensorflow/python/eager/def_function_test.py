@@ -260,7 +260,7 @@ class DefFunctionTest(test.TestCase, parameterized.TestCase):
     foo = Foo()
     self.assertAllEqual(foo(0.3), 0.3)
     self.assertAllEqual(
-        foo(0.9), 0.9, 'https://github.com/tensorflow/tensorflow/issues/27120')
+        foo(0.9), 0.9, 'https://github.com/galeone/tensorflow/issues/27120')
 
   def testMethodAllowDynamicVariable(self):
 

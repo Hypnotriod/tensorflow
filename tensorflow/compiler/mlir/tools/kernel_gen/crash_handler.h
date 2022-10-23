@@ -29,7 +29,7 @@ inline void SetCrashReportMessage() {
 #else
   llvm::setBugReportMsg(
       "The TensorFlow Kernel Generator crashed, please report a bug with the "
-      "trace below on https://github.com/tensorflow/tensorflow/issues.\n");
+      "trace below on https://github.com/galeone/tensorflow/issues.\n");
 #endif
 }
 }  // namespace kernel_gen

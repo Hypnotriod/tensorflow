@@ -71,7 +71,7 @@ re-traced and re-vectorized every call to `tf.vectorized_map`.
 
 While `tf.vectorized_map` is the public-facing API, the implementation is
 written in terms of [an integer-indexed for
-loop](https://github.com/tensorflow/tensorflow/blob/8b000ce0d5395d399e08791ae9589b41358f651d/tensorflow/python/ops/parallel_for/control_flow_ops.py#L134). The
+loop](https://github.com/galeone/tensorflow/blob/8b000ce0d5395d399e08791ae9589b41358f651d/tensorflow/python/ops/parallel_for/control_flow_ops.py#L134). The
 loop does not execute as a regular for loop, but this is a good mental model and
 the implementation makes frequent references to `loop_len`, i.e. the number of
 iterations for the hypothetical loop. The user-visible outputs should ideally
@@ -104,7 +104,7 @@ As with `RegisterGradient`, converters are defined for op types (with a
 corresponding `REGISTER_OP` macro in C++, named WithUppercase), not Python
 endpoints. So if the user writes `tf.roll`, the corresponding
 [`RegisterPFor("Roll")`
-converter](https://github.com/tensorflow/tensorflow/blob/349172cf0ac29ba1346d244a40dc4761b4600f2e/tensorflow/python/ops/parallel_for/pfor.py#L2653)
+converter](https://github.com/galeone/tensorflow/blob/349172cf0ac29ba1346d244a40dc4761b4600f2e/tensorflow/python/ops/parallel_for/pfor.py#L2653)
 is triggered since `tf.roll` is implemented with the "Roll" op.
 
 Like gradients, the set of all TensorFlow ops would ideally be closed under
@@ -149,11 +149,11 @@ doesn't explicitly mention a loop).
 
 There isn't a great universal answer for this class of ops. Currently `tf.print`
 [prints the full vectorized
-tensors](https://github.com/tensorflow/tensorflow/blob/349172cf0ac29ba1346d244a40dc4761b4600f2e/tensorflow/python/ops/parallel_for/pfor.py#L3505-L3522) ([example](https://github.com/tensorflow/tensorflow/blob/8b202f08d52e8206af2bdb2112a62fafbc546ec7/tensorflow/python/ops/parallel_for/control_flow_ops_test.py#L956-L970))
+tensors](https://github.com/galeone/tensorflow/blob/349172cf0ac29ba1346d244a40dc4761b4600f2e/tensorflow/python/ops/parallel_for/pfor.py#L3505-L3522) ([example](https://github.com/galeone/tensorflow/blob/8b202f08d52e8206af2bdb2112a62fafbc546ec7/tensorflow/python/ops/parallel_for/control_flow_ops_test.py#L956-L970))
 rather than printing `loop_len` times. Stateful random ops are [vectorized by
-adding an extra dimension to their output](https://github.com/tensorflow/tensorflow/blob/349172cf0ac29ba1346d244a40dc4761b4600f2e/tensorflow/python/ops/parallel_for/pfor.py#L3276-L3294) shape attributes, even though this
+adding an extra dimension to their output](https://github.com/galeone/tensorflow/blob/349172cf0ac29ba1346d244a40dc4761b4600f2e/tensorflow/python/ops/parallel_for/pfor.py#L3276-L3294) shape attributes, even though this
 gives a different result (but follows the same distribution / independence
-structure). Stateless random ops [use the `tf.while_loop` fallback converter](https://github.com/tensorflow/tensorflow/blob/349172cf0ac29ba1346d244a40dc4761b4600f2e/tensorflow/python/ops/parallel_for/pfor.py#L3360-L3377)
+structure). Stateless random ops [use the `tf.while_loop` fallback converter](https://github.com/galeone/tensorflow/blob/349172cf0ac29ba1346d244a40dc4761b4600f2e/tensorflow/python/ops/parallel_for/pfor.py#L3360-L3377)
 since users might care more about the exact values; this may want revisiting if
 stateless random ops are used to implement popular APIs.
 
@@ -168,7 +168,7 @@ converts the function body and generates a new call operation referencing the
 vectorized function body. (See `RegisterPfor("PartitionedCall")`; the code is
 pretty readable.)
 
-Cond (["If"/"StatelessIf" ops](https://github.com/tensorflow/tensorflow/blob/349172cf0ac29ba1346d244a40dc4761b4600f2e/tensorflow/python/ops/parallel_for/pfor.py#L4499); [example](https://github.com/tensorflow/tensorflow/blob/8b202f08d52e8206af2bdb2112a62fafbc546ec7/tensorflow/python/ops/parallel_for/control_flow_ops_test.py#L2041-L2053)) can be a bit more complicated if the Boolean
+Cond (["If"/"StatelessIf" ops](https://github.com/galeone/tensorflow/blob/349172cf0ac29ba1346d244a40dc4761b4600f2e/tensorflow/python/ops/parallel_for/pfor.py#L4499); [example](https://github.com/galeone/tensorflow/blob/8b202f08d52e8206af2bdb2112a62fafbc546ec7/tensorflow/python/ops/parallel_for/control_flow_ops_test.py#L2041-L2053)) can be a bit more complicated if the Boolean
 condition is loop variant, in which case inputs/outputs must be partitioned
 between the branches and both run (although the ops in one branch could have
 zero-sized inputs if the loop variant condition happened to not trigger that
@@ -176,7 +176,7 @@ branch for any iteration of the virtual for loop). If the condition Boolean is
 loop invariant then cond is very similar to a function call operation, just with
 two function bodies to transform.
 
-[While loop vectorization](https://github.com/tensorflow/tensorflow/blob/349172cf0ac29ba1346d244a40dc4761b4600f2e/tensorflow/python/ops/parallel_for/pfor.py#L5001) is fairly complicated. This is unrelated to the
+[While loop vectorization](https://github.com/galeone/tensorflow/blob/349172cf0ac29ba1346d244a40dc4761b4600f2e/tensorflow/python/ops/parallel_for/pfor.py#L5001) is fairly complicated. This is unrelated to the
 fallback converter for ops; it triggers when users define a graph with a
 `tf.while_loop` and then request vectorization for it (although the fallback
 converter can trigger this case when `tf.vectorized_map` is nested). At a high

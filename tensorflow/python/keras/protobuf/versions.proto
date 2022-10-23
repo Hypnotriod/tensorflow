@@ -4,7 +4,7 @@ package third_party.tensorflow.python.keras.protobuf;
 
 // This file is a copy of the TensorFlow Versions proto.
 // Keep this file in sync with the source proto definition at
-// https://github.com/tensorflow/tensorflow/blob/master/tensorflow/core/framework/versions.proto
+// https://github.com/galeone/tensorflow/blob/master/tensorflow/core/framework/versions.proto
 
 // Version information for a piece of serialized data
 //

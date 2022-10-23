@@ -30,6 +30,6 @@ TensorFlow Lite models).
 operates on MLIR TensorFlow Lite dialect and is simple/direct translation.
 
 See
-https://github.com/tensorflow/tensorflow/blob/master/tensorflow/compiler/mlir/lite/tf_tfl_passes.cc
+https://github.com/galeone/tensorflow/blob/master/tensorflow/compiler/mlir/lite/tf_tfl_passes.cc
 for the full list of MLIR passes for conversion from TensorFlow to TensorFlow
 Lite.

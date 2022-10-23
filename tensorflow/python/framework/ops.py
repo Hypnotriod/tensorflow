@@ -527,7 +527,7 @@ class Tensor(internal.NativeObject, core_tf_types.Tensor):
   def _disallow_when_autograph_unavailable(self, task):
     raise errors.OperatorNotAllowedInGraphError(
         f"{task} is not allowed: AutoGraph is unavailable in this runtime. See"
-        " https://github.com/tensorflow/tensorflow/blob/master/tensorflow/python/autograph/g3doc/reference/limitations.md#access-to-source-code"
+        " https://github.com/galeone/tensorflow/blob/master/tensorflow/python/autograph/g3doc/reference/limitations.md#access-to-source-code"
         " for more information.")
 
   def _disallow_when_autograph_disabled(self, task):
@@ -3496,7 +3496,7 @@ class Graph(object):
 
     The serialized `GraphDef` can be imported into another `Graph`
     (using `tf.import_graph_def`) or used with the
-    [C++ Session API](https://chromium.googlesource.com/external/github.com/tensorflow/tensorflow/+/r0.10/tensorflow/g3doc/api_docs/cc/index.md).
+    [C++ Session API](https://chromium.googlesource.com/external/github.com/galeone/tensorflow/+/r0.10/tensorflow/g3doc/api_docs/cc/index.md).
 
     This method is thread-safe.
 

@@ -1,4 +1,4 @@
-FROM tensorflow/tensorflow:devel
+FROM galeone/tensorflow:devel
 
 ENV ANDROID_DEV_HOME /android
 RUN mkdir -p ${ANDROID_DEV_HOME}

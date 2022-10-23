@@ -337,7 +337,7 @@ class DynamicPartitionTest(test.TestCase):
     with self.assertRaises(ValueError):
       data_flow_ops.dynamic_partition(data, indices, num_partitions=4)
 
-  #  see https://github.com/tensorflow/tensorflow/issues/17106
+  #  see https://github.com/galeone/tensorflow/issues/17106
   def testCUBBug(self):
     x = constant_op.constant(np.random.randn(3072))
     inds = [0] * 189 + [1] * 184 + [2] * 184 + [3] * 191 + [4] * 192 + [
@@ -353,7 +353,7 @@ class DynamicPartitionTest(test.TestCase):
       res = self.evaluate(partitioned)
     self.assertEqual(res[-1].shape[0], 192)
 
-  #  see https://github.com/tensorflow/tensorflow/issues/42500
+  #  see https://github.com/galeone/tensorflow/issues/42500
   def testMultiGPU(self):
     device_list = config.list_logical_devices("GPU")
     results = []

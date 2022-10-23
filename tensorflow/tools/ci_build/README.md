@@ -16,10 +16,10 @@ natively on your system.
 1.  Install Docker following the [instructions on the docker website](https://docs.docker.com/engine/installation/).
 
 2.  Start a container with one of the devel images here:
-    https://hub.docker.com/r/tensorflow/tensorflow/tags/.
+    https://hub.docker.com/r/galeone/tensorflow/tags/.
 
 3.  Based on your choice of the image, pick one of the scripts under
-    https://github.com/tensorflow/tensorflow/tree/master/tensorflow/tools/ci_build/linux
+    https://github.com/galeone/tensorflow/tree/master/tensorflow/tools/ci_build/linux
     and run them from the TensorFlow repository root.
 
 ### Run TensorFlow CI Scripts Natively on your Machine

@@ -29,15 +29,15 @@ namespace cc {
 
 // SignatureDefFunctions are functions that correspond to either:
 // "signatures" saved from a TF2 SavedModel APIs:
-// https://github.com/tensorflow/tensorflow/blob/8ce0600f58ed84a8c84a7bbdb014d1f09e44f4c8/tensorflow/python/saved_model/save.py#L830-L854
+// https://github.com/galeone/tensorflow/blob/8ce0600f58ed84a8c84a7bbdb014d1f09e44f4c8/tensorflow/python/saved_model/save.py#L830-L854
 // Or the "SignatureDefMap" saved from TF1 SavedModel APIs:
-// https://github.com/tensorflow/tensorflow/blob/8ce0600f58ed84a8c84a7bbdb014d1f09e44f4c8/tensorflow/python/saved_model/load_v1_in_v2_test.py#L170-L174
+// https://github.com/galeone/tensorflow/blob/8ce0600f58ed84a8c84a7bbdb014d1f09e44f4c8/tensorflow/python/saved_model/load_v1_in_v2_test.py#L170-L174
 // In both cases, a SignatureDef is serialized as a SignatureDef protobuf:
-// https://github.com/tensorflow/tensorflow/blob/8ce0600f58ed84a8c84a7bbdb014d1f09e44f4c8/tensorflow/core/protobuf/meta_graph.proto#L260-L330
+// https://github.com/galeone/tensorflow/blob/8ce0600f58ed84a8c84a7bbdb014d1f09e44f4c8/tensorflow/core/protobuf/meta_graph.proto#L260-L330
 // and represents a computation defined by a TF subgraph.
 // These Signatures were primarily designed to be interoperable with the legacy
 // TF 1 Session-based C++ SavedModelBundle loading APIs:
-// https://github.com/tensorflow/tensorflow/blob/26c4ee0c833e74f94d0102d8b005c41a28b44445/tensorflow/cc/saved_model/loader.h#L96-L108
+// https://github.com/galeone/tensorflow/blob/26c4ee0c833e74f94d0102d8b005c41a28b44445/tensorflow/cc/saved_model/loader.h#L96-L108
 // SignatureDefFunctions have different semantics from regular TF2
 // ConcreteFunctions, and are mainly intended provide a serving-friendly
 // transition point from the TF1 Session API.

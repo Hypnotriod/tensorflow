@@ -23,7 +23,7 @@ sub-modules, as described below.
 
 Note that the file `__init__.py` in the TensorFlow source code tree is actually
 only a placeholder to enable test cases to run. The TensorFlow build replaces
-this file with a file generated from [`api_template.__init__.py`](https://www.github.com/tensorflow/tensorflow/blob/master/tensorflow/api_template.__init__.py)
+this file with a file generated from [`api_template.__init__.py`](https://www.github.com/galeone/tensorflow/blob/master/tensorflow/api_template.__init__.py)
 """
 
 import distutils as _distutils

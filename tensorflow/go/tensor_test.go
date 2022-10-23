@@ -129,7 +129,7 @@ func TestNewTensorValidateDimensions(t *testing.T) {
 	// are freed, a mismatch caught partway through encoding a string
 	// tensor may result in a segfault, once the finalizer is called. A
 	// single run of this test is not reliable at producing a segfault,
-	// hence iteration. See github.com/tensorflow/tensorflow/pull/52257
+	// hence iteration. See github.com/galeone/tensorflow/pull/52257
 	// for some detail on the issue.
 	for i := 0; i < 1e5; i++ {
 		for _, test := range errorTests {

@@ -19,7 +19,7 @@
 
 # Download and build TensorFlow.
 set -euxo pipefail
-git clone --branch=master --depth=1 https://github.com/tensorflow/tensorflow.git /tensorflow
+git clone --branch=master --depth=1 https://github.com/galeone/tensorflow.git /tensorflow
 cd /tensorflow
 
 ln -s $(which ${PYTHON}) /usr/local/bin/python

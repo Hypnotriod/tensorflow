@@ -46,7 +46,7 @@ includes the necessary library of TensorFlow ops.
 To reduce the binary size, please build your own custom AAR files as guided in
 the [next section](#building-the-android-aar). If the binary size is not a
 considerable concern, we recommend using the prebuilt
-[AAR with TensorFlow ops hosted at MavenCentral](https://search.maven.org/artifact/org.tensorflow/tensorflow-lite-select-tf-ops).
+[AAR with TensorFlow ops hosted at MavenCentral](https://search.maven.org/artifact/org.galeone/tensorflow-lite-select-tf-ops).
 
 You can specify this in your `build.gradle` dependencies by adding it alongside
 the standard TensorFlow Lite AAR as follows:

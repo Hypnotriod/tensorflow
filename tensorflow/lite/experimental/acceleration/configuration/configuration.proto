@@ -196,7 +196,7 @@ enum GPUInferenceUsage {
 // GPU Delegate settings.
 //
 // See
-// https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/delegates/gpu/delegate.h
+// https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/delegates/gpu/delegate.h
 message GPUSettings {
   // Ignored if inference_priority1/2/3 are set.
   optional bool is_precision_loss_allowed = 1;
@@ -246,7 +246,7 @@ message GPUSettings {
 // Hexagon Delegate settings.
 //
 // See
-// https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/delegates/hexagon/hexagon_delegate.h
+// https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/delegates/hexagon/hexagon_delegate.h
 message HexagonSettings {
   optional int32 debug_level = 1;
   optional int32 powersave_level = 2;
@@ -257,7 +257,7 @@ message HexagonSettings {
 // XNNPack Delegate settings.
 //
 // See
-// https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/delegates/xnnpack/xnnpack_delegate.h
+// https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/delegates/xnnpack/xnnpack_delegate.h
 enum XNNPackFlags {
   // These flags match the flags in xnnpack_delegate.h.
   TFLITE_XNNPACK_DELEGATE_NO_FLAGS = 0;
@@ -279,7 +279,7 @@ message XNNPackSettings {
 // CoreML Delegate settings.
 //
 // See
-// https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/delegates/coreml/coreml_delegate.h
+// https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/delegates/coreml/coreml_delegate.h
 message CoreMLSettings {
   // Note the enum order change from the above header for better proto practice.
   enum EnabledDevices {

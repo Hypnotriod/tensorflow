@@ -140,7 +140,7 @@ average time:10.348 ms
 ```
 
 To run a model with the Hexagon Delegate, assuming we have followed the
-[Hexagon Delegate Guide](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/g3doc/performance/hexagon_delegate.md)
+[Hexagon Delegate Guide](https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/g3doc/performance/hexagon_delegate.md)
 and installed Hexagon libraries in `/data/local/tmp`. Run it with (`-j 1`)
 
 ```
@@ -224,7 +224,7 @@ label_image
 See the `label_image.cc` source code for other command line options.
 
 Note that this binary also supports more runtime/delegate arguments introduced
-by the [delegate registrar](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/tools/delegates).
+by the [delegate registrar](https://github.com/galeone/tensorflow/tree/master/tensorflow/lite/tools/delegates).
 If there is any conflict, the arguments mentioned earlier are given precedence.
 For example, you can run the binary with additional command line options
 such as `--use_nnapi=true --nnapi_accelerator_name=google-edgetpu` to utilize

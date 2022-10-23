@@ -9,7 +9,7 @@
 
 -   Refer to [Installing TensorFlow for Java](https://www.tensorflow.org/install/lang_java)
 -   [Javadoc](https://www.tensorflow.org/api_docs/java/reference/org/tensorflow/package-summary)
--   [![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.tensorflow/tensorflow/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.tensorflow/tensorflow)
+-   [![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.galeone/tensorflow/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.galeone/tensorflow)
 
 ## Nightly builds
 

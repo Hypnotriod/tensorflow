@@ -1,5 +1,5 @@
 ARG ROOT_CONTAINER_TAG=devel
-ARG ROOT_CONTAINER=tensorflow/tensorflow
+ARG ROOT_CONTAINER=galeone/tensorflow
 
 FROM ${ROOT_CONTAINER}:${ROOT_CONTAINER_TAG}
 

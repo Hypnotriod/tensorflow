@@ -91,7 +91,7 @@ if(NOT "${CMAKE_SYSTEM_NAME}" STREQUAL "Android")
 endif()
 set(_TFLITE_ENABLE_MMAP "${TFLITE_ENABLE_MMAP}")
 if(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
-  # See https://github.com/tensorflow/tensorflow/blob/\
+  # See https://github.com/galeone/tensorflow/blob/\
   # 2b96f3662bd776e277f86997659e61046b56c315/tensorflow/lite/tools/make/\
   # Makefile#L157
   set(_TFLITE_ENABLE_MMAP OFF)

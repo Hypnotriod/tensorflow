@@ -967,7 +967,7 @@ def enable_op_determinism():
   Certain ops will raise an `UnimplementedError` because they do not yet have a
   deterministic implementation. Additionally, due to bugs, some ops might be
   nondeterministic and not raise an `UnimplementedError`. If you encounter such
-  ops, please [file an issue](https://github.com/tensorflow/tensorflow/issues).
+  ops, please [file an issue](https://github.com/galeone/tensorflow/issues).
 
   An example of enabling determinism follows. The
   `tf.nn.softmax_cross_entropy_with_logits` op is run multiple times and the

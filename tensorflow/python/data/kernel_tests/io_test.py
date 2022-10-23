@@ -119,7 +119,7 @@ class IOTest(test_base.DatasetTestBase, parameterized.TestCase):
 
   @combinations.generate(test_base.eager_only_combinations())
   def testRepeatAndPrefetch(self):
-    """This test reproduces github.com/tensorflow/tensorflow/issues/49165."""
+    """This test reproduces github.com/galeone/tensorflow/issues/49165."""
     dataset1 = dataset_ops.Dataset.from_tensor_slices(np.random.rand(16, 32))
     dataset1.save(self._test_dir)
     dataset = dataset_ops.Dataset.load(self._test_dir)

@@ -1,7 +1,7 @@
 # C++ gradients
 
 Gradients are currently being ported from
-[python](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/python/ops)
+[python](https://github.com/galeone/tensorflow/tree/master/tensorflow/python/ops)
 to C++ (in this directory).
 
 Contributions are welcome and much appreciated; please follow the instructions
@@ -27,10 +27,10 @@ below.
     [C++ API](https://www.tensorflow.org/api_docs/cc/).
 
 4.  Tests should be included in `foo_grad_test.cc`. Please see
-    [`array_grad_test.cc`](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/cc/gradients/array_grad_test.cc)
+    [`array_grad_test.cc`](https://github.com/galeone/tensorflow/blob/master/tensorflow/cc/gradients/array_grad_test.cc)
     for many examples. Tests are as simple as, creating a placeholder input for
     the op's inputs and calling `RunTest` (`RunTest` uses a
-    [gradient checker](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/cc/framework/gradient_checker.cc)
+    [gradient checker](https://github.com/galeone/tensorflow/blob/master/tensorflow/cc/framework/gradient_checker.cc)
     to verify that the theoretical gradient matches the numeric gradient). For
     example:
 

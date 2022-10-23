@@ -254,8 +254,8 @@ Status SignatureDefReturnsFromOutputs(const StructuredValue& output_signature,
 
 // The implementation takes advantage of the fact that SignatureDefFunction's
 // "traced" Signature wrapper function always has inputs/outputs of dictionaries
-// https://github.com/tensorflow/tensorflow/blob/53cdd5e87c423b195f33775753273286fd5a1a65/tensorflow/python/saved_model/signature_serialization.py#L119-L126
-// https://github.com/tensorflow/tensorflow/blob/53cdd5e87c423b195f33775753273286fd5a1a65/tensorflow/python/saved_model/signature_serialization.py#L153-L178
+// https://github.com/galeone/tensorflow/blob/53cdd5e87c423b195f33775753273286fd5a1a65/tensorflow/python/saved_model/signature_serialization.py#L119-L126
+// https://github.com/galeone/tensorflow/blob/53cdd5e87c423b195f33775753273286fd5a1a65/tensorflow/python/saved_model/signature_serialization.py#L153-L178
 // Additionally, we take advantage of the fact that the SignatureDefFunction's
 // associated functiondef has lexicographically ordered inputs/outputs due to
 // nest.flatten.
@@ -498,11 +498,11 @@ Status PartiallyRevivedObjects::Build(ImmediateExecutionContext* ctx,
   // constants, or resources. The first three are trivial; However,
   // tensorhandles that correspond to resources must be created by invoking
   // their "create_resource" function.
-  // https://github.com/tensorflow/tensorflow/blob/f19c6efb4a8ba60e2492eedc98ef5375abb39dc7/tensorflow/python/saved_model/load.py#L240
-  // https://github.com/tensorflow/tensorflow/blob/f19c6efb4a8ba60e2492eedc98ef5375abb39dc7/tensorflow/python/training/tracking/tracking.py#L233
+  // https://github.com/galeone/tensorflow/blob/f19c6efb4a8ba60e2492eedc98ef5375abb39dc7/tensorflow/python/saved_model/load.py#L240
+  // https://github.com/galeone/tensorflow/blob/f19c6efb4a8ba60e2492eedc98ef5375abb39dc7/tensorflow/python/training/tracking/tracking.py#L233
   // For now, we assert that all create_resource functions must have no
   // captures. This aligns with the current behavior in python.
-  // https://github.com/tensorflow/tensorflow/blob/50eac986bf7a0ad12594e080f083181f277e0b49/tensorflow/python/saved_model/load.py#L152-L155
+  // https://github.com/galeone/tensorflow/blob/50eac986bf7a0ad12594e080f083181f277e0b49/tensorflow/python/saved_model/load.py#L152-L155
   // TODO(bmzhao): We should do a topological sort instead.
 
   // 1a. Make sure all CreateResource functions have no captures.
@@ -513,7 +513,7 @@ Status PartiallyRevivedObjects::Build(ImmediateExecutionContext* ctx,
       InitializeCreateResourceFunctions(ctx, obj_graph, *this, revived));
 
   // 1c. Invoke all "CreateResource" functions and store their ResourceHandles
-  // https://github.com/tensorflow/tensorflow/blob/3b6b41b68a95dc70c26dc816b29d359bfb88c116/tensorflow/python/training/tracking/tracking.py#L241-L247
+  // https://github.com/galeone/tensorflow/blob/3b6b41b68a95dc70c26dc816b29d359bfb88c116/tensorflow/python/training/tracking/tracking.py#L241-L247
   // in *this->resources.
   // TODO(bmzhao): Maybe store them separately, not in *this?
   TF_RETURN_IF_ERROR(CreateAllResourceHandles(ctx, obj_graph, this, revived));

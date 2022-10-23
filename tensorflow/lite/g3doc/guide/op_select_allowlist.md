@@ -823,13 +823,13 @@ If you hit the case where the TensorFlow core operators are not in the above
 allowed
 [list](https://www.tensorflow.org/lite/guide/op_select_allowlist#tensorflow_core_operators),
 you can report the feature request at
-[here](https://github.com/tensorflow/tensorflow/issues) with the names of the
+[here](https://github.com/galeone/tensorflow/issues) with the names of the
 TensorFlow core operators, not listed in the allowed list.
 
 You can also create own your pull request from the source code. For example, if
 you want to add the `raw_ops.StringToNumber` op in the allowed list, there are
 three places to update like this
-[commit](https://github.com/tensorflow/tensorflow/commit/02e691329517eb5e76522ed8d8bef79ceb082ff8).
+[commit](https://github.com/galeone/tensorflow/commit/02e691329517eb5e76522ed8d8bef79ceb082ff8).
 
 (1) Add the operator kernel source code to the `portable_extended_ops_group2`
 BUILD rule.

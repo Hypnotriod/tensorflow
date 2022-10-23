@@ -124,7 +124,7 @@ with tf.Session() as sess:
 
 The following example shows how to convert a Frozen GraphDef (or a frozen
 graph), usually generated using the
-[freeze_graph.py](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/python/tools/freeze_graph.py)
+[freeze_graph.py](https://github.com/galeone/tensorflow/blob/master/tensorflow/python/tools/freeze_graph.py)
 script, into a TensorFlow Lite model.
 
 The example uses
@@ -155,7 +155,7 @@ with open('model.tflite', 'wb') as f:
 
     *   Install [bazel](https://docs.bazel.build/versions/master/install.html)
     *   Clone the TensorFlow repository: `git clone
-        https://github.com/tensorflow/tensorflow.git`
+        https://github.com/galeone/tensorflow.git`
     *   Build freeze graph tool: `bazel build
         tensorflow/python/tools:freeze_graph`
         *   The directory from which you run this should contain a file named
@@ -173,7 +173,7 @@ with open('model.tflite', 'wb') as f:
             `--input_graph=/path/to/graph.pb`
         *   You can find the output names by exploring the graph using
             [Netron](https://github.com/lutzroeder/netron) or
-            [summarize graph tool](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/tools/graph_transforms#inspecting-graphs).
+            [summarize graph tool](https://github.com/galeone/tensorflow/tree/master/tensorflow/tools/graph_transforms#inspecting-graphs).
 
 2.  Now [convert the Frozen GraphDef file](#basic_graphdef_file) to a TensorFlow
     Lite model as shown in the example above.

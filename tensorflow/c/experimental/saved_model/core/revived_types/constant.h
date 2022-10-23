@@ -31,7 +31,7 @@ namespace tensorflow {
 // For now this doesn't do much beyond wrap Context's CreateLocalHandle method,
 // and offer a subclass of TensorHandleConvertible. Note that similar to
 // the python's eager mode logic, we bypass calling the "Const" op:
-// https://github.com/tensorflow/tensorflow/blob/1c064ab76064c58e54261b805027474885a1534d/tensorflow/python/framework/constant_op.py#L301
+// https://github.com/galeone/tensorflow/blob/1c064ab76064c58e54261b805027474885a1534d/tensorflow/python/framework/constant_op.py#L301
 class Constant : public TensorHandleConvertible {
  public:
   static Status Create(ImmediateExecutionContext* ctx,

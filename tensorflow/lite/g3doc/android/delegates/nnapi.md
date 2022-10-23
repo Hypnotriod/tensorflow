@@ -83,7 +83,7 @@ the same manufacturer) that are representative of your user base before enabling
 NNAPI in production.
 
 For advanced developers, TensorFlow Lite also offers
-[a model benchmark tool for Android](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/tools/benchmark).
+[a model benchmark tool for Android](https://github.com/galeone/tensorflow/tree/master/tensorflow/lite/tools/benchmark).
 
 ### Create a device exclusion list
 

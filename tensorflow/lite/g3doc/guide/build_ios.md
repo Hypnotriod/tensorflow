@@ -235,9 +235,9 @@ TensorFlow Lite's C API, defined by the header files under
 `TensorFlowLiteC.framework/Headers` directory.
 
 [bazel-install]: https://docs.bazel.build/versions/master/install-os-x.html
-[bazelrc]: https://github.com/tensorflow/tensorflow/blob/master/.bazelrc
-[configure-py]: https://github.com/tensorflow/tensorflow/blob/master/configure.py
-[objc-api]: https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/objc
+[bazelrc]: https://github.com/galeone/tensorflow/blob/master/.bazelrc
+[configure-py]: https://github.com/galeone/tensorflow/blob/master/configure.py
+[objc-api]: https://github.com/galeone/tensorflow/tree/master/tensorflow/lite/objc
 [private-cocoapods]: https://guides.cocoapods.org/making/private-cocoapods.html
-[swift-api]: https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/swift
-[tflite-podspec]: https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/ios/TensorFlowLiteC.podspec
+[swift-api]: https://github.com/galeone/tensorflow/tree/master/tensorflow/lite/swift
+[tflite-podspec]: https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/ios/TensorFlowLiteC.podspec

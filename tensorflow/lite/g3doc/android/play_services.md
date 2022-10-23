@@ -302,7 +302,7 @@ following limitations:
 You can provide feedback and get support for this beta release feature, through
 the TensorFlow Issue Tracker. Please report issues and support requests using
 the
-[Issue template](https://github.com/tensorflow/tensorflow/issues/new?assignees=&labels=type%3Aothers&template=100-tflite-in-play-services.md)
+[Issue template](https://github.com/galeone/tensorflow/issues/new?assignees=&labels=type%3Aothers&template=100-tflite-in-play-services.md)
 for TensorFlow Lite in Google Play services.
 
 

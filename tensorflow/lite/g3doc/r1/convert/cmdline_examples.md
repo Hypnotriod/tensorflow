@@ -80,7 +80,7 @@ tflite_convert \
 ```
 
 Frozen GraphDef models (or frozen graphs) are produced by
-[freeze_graph.py](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/python/tools/freeze_graph.py)
+[freeze_graph.py](https://github.com/galeone/tensorflow/blob/master/tensorflow/python/tools/freeze_graph.py)
 and require additional flags `--input_arrays` and `--output_arrays` as this
 information is not stored in the model format.
 
@@ -143,7 +143,7 @@ Since TensorFlow Lite only supports a limited number of TensorFlow operators,
 not every model is convertible. For details, refer to
 [operator compatibility](https://www.tensorflow.org/lite/guide/ops_compatibility).
 To allow conversion, users can enable the usage of
-[certain TensorFlow ops](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/delegates/flex/allowlisted_flex_ops.cc)
+[certain TensorFlow ops](https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/delegates/flex/allowlisted_flex_ops.cc)
 in their TensorFlow Lite model, as shown in the following example.
 
 ```

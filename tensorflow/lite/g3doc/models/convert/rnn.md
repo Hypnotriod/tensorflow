@@ -16,9 +16,9 @@ two fold:
     **user-defined** **RNN implementations** to plug in and get converted to
     TensorFlow Lite. We provide a couple of out of box examples of such
     conversion using lingvo’s
-    [LSTMCellSimple](https://github.com/tensorflow/tensorflow/blob/82abf0dbf316526cd718ae8cd7b11cfcb805805e/tensorflow/compiler/mlir/lite/transforms/prepare_composite_functions_tf.cc#L130)
+    [LSTMCellSimple](https://github.com/galeone/tensorflow/blob/82abf0dbf316526cd718ae8cd7b11cfcb805805e/tensorflow/compiler/mlir/lite/transforms/prepare_composite_functions_tf.cc#L130)
     and
-    [LayerNormalizedLSTMCellSimple](https://github.com/tensorflow/tensorflow/blob/c11d5d8881fd927165eeb09fd524a80ebaf009f2/tensorflow/compiler/mlir/lite/transforms/prepare_composite_functions_tf.cc#L137)
+    [LayerNormalizedLSTMCellSimple](https://github.com/galeone/tensorflow/blob/c11d5d8881fd927165eeb09fd524a80ebaf009f2/tensorflow/compiler/mlir/lite/transforms/prepare_composite_functions_tf.cc#L137)
     RNN interfaces.
 
 ## Converter API
@@ -60,7 +60,7 @@ tflite_model = converter.convert()
 ## Example
 
 Keras LSTM to TensorFlow Lite
-[Colab](https://colab.research.google.com/github/tensorflow/tensorflow/blob/master/tensorflow/lite/examples/experimental_new_converter/Keras_LSTM_fusion_Codelab.ipynb)
+[Colab](https://colab.research.google.com/github/galeone/tensorflow/blob/master/tensorflow/lite/examples/experimental_new_converter/Keras_LSTM_fusion_Codelab.ipynb)
 illustrates the end to end usage with the TensorFlow Lite interpreter.
 
 ## TensorFlow RNNs APIs supported
@@ -71,9 +71,9 @@ illustrates the end to end usage with the TensorFlow Lite interpreter.
 
 We support out-of-the-box conversion of Keras LSTM to TensorFlow Lite. For
 details on how this works please refer to the
-[Keras LSTM interface](https://github.com/tensorflow/tensorflow/blob/35a3ab91b42503776f428bda574b74b9a99cd110/tensorflow/python/keras/layers/recurrent_v2.py#L1238)<span style="text-decoration:space;">
+[Keras LSTM interface](https://github.com/galeone/tensorflow/blob/35a3ab91b42503776f428bda574b74b9a99cd110/tensorflow/python/keras/layers/recurrent_v2.py#L1238)<span style="text-decoration:space;">
 </span>and to the conversion logic
-[here](https://github.com/tensorflow/tensorflow/blob/35a3ab91b42503776f428bda574b74b9a99cd110/tensorflow/compiler/mlir/lite/utils/lstm_utils.cc#L627).
+[here](https://github.com/galeone/tensorflow/blob/35a3ab91b42503776f428bda574b74b9a99cd110/tensorflow/compiler/mlir/lite/utils/lstm_utils.cc#L627).
 
 Also important is to highlight the TensorFlow Lite’s LSTM contract with respect
 to the Keras operation definition:
@@ -94,13 +94,13 @@ to the Keras operation definition:
 Users may choose time-major or no time-major. Keras LSTM adds a time-major
 attribute in the function def attributes. For Unidirectional sequence LSTM, we
 can simply map to unidirecional\_sequence\_lstm's
-[time major attribute](https://github.com/tensorflow/tensorflow/blob/35a3ab91b42503776f428bda574b74b9a99cd110/tensorflow/compiler/mlir/lite/ir/tfl_ops.td#L3902).
+[time major attribute](https://github.com/galeone/tensorflow/blob/35a3ab91b42503776f428bda574b74b9a99cd110/tensorflow/compiler/mlir/lite/ir/tfl_ops.td#L3902).
 
 ##### BiDirectional LSTM
 
 Bidirectional LSTM can be implemented with two Keras LSTM layers, one for
 forward and one for backward, see examples
-[here](https://github.com/tensorflow/tensorflow/blob/35a3ab91b42503776f428bda574b74b9a99cd110/tensorflow/python/keras/layers/wrappers.py#L382).
+[here](https://github.com/galeone/tensorflow/blob/35a3ab91b42503776f428bda574b74b9a99cd110/tensorflow/python/keras/layers/wrappers.py#L382).
 Once we see the go\_backward attribute, we recognize it as backward LSTM, then
 we group forward & backward LSTM together. **This is future work.** Currently,
 this creates two UnidirectionalSequenceLSTM operations in the TensorFlow Lite
@@ -113,11 +113,11 @@ implementations. Here we use Lingvo’s LSTM as an example of how that can be
 implemented. For details please refer to the
 [lingvo.LSTMCellSimple interface](https://github.com/tensorflow/lingvo/blob/91a4609dbc2579748a95110eda59c66d17c594c5/lingvo/core/rnn_cell.py#L228)
 and the conversion logic
-[here](https://github.com/tensorflow/tensorflow/blob/82abf0dbf316526cd718ae8cd7b11cfcb805805e/tensorflow/compiler/mlir/lite/transforms/prepare_composite_functions_tf.cc#L130).
+[here](https://github.com/galeone/tensorflow/blob/82abf0dbf316526cd718ae8cd7b11cfcb805805e/tensorflow/compiler/mlir/lite/transforms/prepare_composite_functions_tf.cc#L130).
 We also provide an example for another of Lingvo’s LSTM definitions in
 [lingvo.LayerNormalizedLSTMCellSimple interface](https://github.com/tensorflow/lingvo/blob/91a4609dbc2579748a95110eda59c66d17c594c5/lingvo/core/rnn_cell.py#L1173)
 and its conversion logic
-[here](https://github.com/tensorflow/tensorflow/blob/c11d5d8881fd927165eeb09fd524a80ebaf009f2/tensorflow/compiler/mlir/lite/transforms/prepare_composite_functions_tf.cc#L137).
+[here](https://github.com/galeone/tensorflow/blob/c11d5d8881fd927165eeb09fd524a80ebaf009f2/tensorflow/compiler/mlir/lite/transforms/prepare_composite_functions_tf.cc#L137).
 
 ## “Bring your own TensorFlow RNN” to TensorFlow Lite
 
@@ -136,7 +136,7 @@ functionality that is currently exposed by TensorFlow Lite’s fused LSTM op lik
 layer normalization), then extend the TensorFlow Lite converter by writing
 custom conversion code and plug it into the prepare-composite-functions
 MLIR-pass
-[here](https://github.com/tensorflow/tensorflow/blob/c11d5d8881fd927165eeb09fd524a80ebaf009f2/tensorflow/compiler/mlir/lite/transforms/prepare_composite_functions_tf.cc#L115).
+[here](https://github.com/galeone/tensorflow/blob/c11d5d8881fd927165eeb09fd524a80ebaf009f2/tensorflow/compiler/mlir/lite/transforms/prepare_composite_functions_tf.cc#L115).
 The function’s interface should be treated like an API contract and should
 contain the arguments needed to convert to fused TensorFlow Lite LSTM
 operations - i.e. input, bias, weights, projection, layer normalization, etc. It
@@ -162,7 +162,7 @@ follows:
     conversion code.
 1.  Extend the prepare-composite-functions pass to plug in a custom composite op
     to TensorFlow Lite fused LSTM op conversion. See
-    [LSTMCellSimple](https://github.com/tensorflow/tensorflow/blob/82abf0dbf316526cd718ae8cd7b11cfcb805805e/tensorflow/compiler/mlir/lite/transforms/prepare_composite_functions_tf.cc#L130)
+    [LSTMCellSimple](https://github.com/galeone/tensorflow/blob/82abf0dbf316526cd718ae8cd7b11cfcb805805e/tensorflow/compiler/mlir/lite/transforms/prepare_composite_functions_tf.cc#L130)
     conversion code.
 
     The conversion contract:
@@ -178,10 +178,10 @@ follows:
 1.  The **projection** is extracted by slicing the transposed projection tensor.
 
 1.  Similar conversion is written for
-    [LayerNormalizedLSTMCellSimple](https://github.com/tensorflow/tensorflow/blob/c11d5d8881fd927165eeb09fd524a80ebaf009f2/tensorflow/compiler/mlir/lite/transforms/prepare_composite_functions_tf.cc#L137).
+    [LayerNormalizedLSTMCellSimple](https://github.com/galeone/tensorflow/blob/c11d5d8881fd927165eeb09fd524a80ebaf009f2/tensorflow/compiler/mlir/lite/transforms/prepare_composite_functions_tf.cc#L137).
 
 1.  The rest of the TensorFlow Lite conversion infrastructure, including all the
-    [MLIR passes](https://github.com/tensorflow/tensorflow/blob/35a3ab91b42503776f428bda574b74b9a99cd110/tensorflow/compiler/mlir/lite/tf_tfl_passes.cc#L57)
+    [MLIR passes](https://github.com/galeone/tensorflow/blob/35a3ab91b42503776f428bda574b74b9a99cd110/tensorflow/compiler/mlir/lite/tf_tfl_passes.cc#L57)
     defined as well as the final export to TensorFlow Lite flatbuffer can be
     reused.
 

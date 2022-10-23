@@ -26,7 +26,7 @@ Originally developed by researchers and engineers from the Google Brain team
 within Google's AI organization, it comes with strong support for machine
 learning and deep learning and the flexible numerical computation core is used
 across many other scientific domains. TensorFlow is licensed under [Apache
-2.0](https://github.com/tensorflow/tensorflow/blob/master/LICENSE).
+2.0](https://github.com/galeone/tensorflow/blob/master/LICENSE).
 """
 
 import fnmatch
@@ -44,7 +44,7 @@ from setuptools.dist import Distribution
 # This version string is semver compatible, but incompatible with pip.
 # For pip, we will remove all '-' characters from this string, and use the
 # result for pip.
-# Also update tensorflow/tensorflow.bzl and
+# Also update galeone/tensorflow.bzl and
 # tensorflow/core/public/version.h
 _VERSION = '2.10.0'
 
@@ -96,9 +96,9 @@ REQUIRED_PACKAGES = [
     # TODO(b/182876485): Protobuf 3.20 results in linker errors on Windows
     # Protobuf 4.0 is binary incompatible with what C++ TF uses.
     # We need ~1 quarter to update properly.
-    # See also: https://github.com/tensorflow/tensorflow/issues/53234
+    # See also: https://github.com/galeone/tensorflow/issues/53234
     # See also: https://github.com/protocolbuffers/protobuf/issues/9954
-    # See also: https://github.com/tensorflow/tensorflow/issues/56077
+    # See also: https://github.com/galeone/tensorflow/issues/56077
     # This is a temporary patch for now, to patch previous TF releases.
     'protobuf >= 3.9.2, < 3.20',
     'setuptools',
@@ -109,7 +109,7 @@ REQUIRED_PACKAGES = [
     'tensorflow-io-gcs-filesystem >= 0.23.1',
     # grpcio does not build correctly on big-endian machines due to lack of
     # BoringSSL support.
-    # See https://github.com/tensorflow/tensorflow/issues/17882.
+    # See https://github.com/galeone/tensorflow/issues/17882.
     'grpcio >= 1.24.3, < 2.0' if sys.byteorder == 'little' else None,
     # TensorFlow exposes the TF API for certain TF ecosystem packages like
     # keras.  When TF depends on those packages, the package version needs to
@@ -309,7 +309,7 @@ setup(
     long_description='\n'.join(DOCLINES[2:]),
     long_description_content_type='text/markdown',
     url='https://www.tensorflow.org/',
-    download_url='https://github.com/tensorflow/tensorflow/tags',
+    download_url='https://github.com/galeone/tensorflow/tags',
     author='Google Inc.',
     author_email='packages@tensorflow.org',
     # Contained modules and scripts.

@@ -32,20 +32,20 @@ namespace tensorflow {
 // a SignatureDefFunction.
 // Note(bmzhao): Implementation-wise, SignatureDefFunctions are always saved as
 // a "BareConcreteFunction", w/o a FunctionSpec, rather than a SavedFunction:
-// https://github.com/tensorflow/tensorflow/blob/9bcefa44cd335c1db4a703a13da09f29ae1bbdb2/tensorflow/core/protobuf/saved_object_graph.proto#L60
+// https://github.com/galeone/tensorflow/blob/9bcefa44cd335c1db4a703a13da09f29ae1bbdb2/tensorflow/core/protobuf/saved_object_graph.proto#L60
 // Additionally they are guaranteed to be children of the .signatures attribute
 // of the root object, where the child object "name" is the signature_def key:
-// https://github.com/tensorflow/tensorflow/blob/9bcefa44cd335c1db4a703a13da09f29ae1bbdb2/tensorflow/python/saved_model/signature_serialization.py#L181-L230
+// https://github.com/galeone/tensorflow/blob/9bcefa44cd335c1db4a703a13da09f29ae1bbdb2/tensorflow/python/saved_model/signature_serialization.py#L181-L230
 // One of the critical requirements of SignatureDef functions is that their
 // inputs and outputs are "named". For example, a `.signatures` function:
 // a. Requires users to pass: kwargs of all inputs:
-// https://github.com/tensorflow/tensorflow/blob/26c4ee0c833e74f94d0102d8b005c41a28b44445/tensorflow/python/saved_model/signature_serialization.py#L119-L126
+// https://github.com/galeone/tensorflow/blob/26c4ee0c833e74f94d0102d8b005c41a28b44445/tensorflow/python/saved_model/signature_serialization.py#L119-L126
 // b. Returns a dictionary of named outputs.
-// https://github.com/tensorflow/tensorflow/blob/26c4ee0c833e74f94d0102d8b005c41a28b44445/tensorflow/python/saved_model/signature_serialization.py#L153-L161
+// https://github.com/galeone/tensorflow/blob/26c4ee0c833e74f94d0102d8b005c41a28b44445/tensorflow/python/saved_model/signature_serialization.py#L153-L161
 // Since SignatureDefFunctions do not have FunctionSpecs, but guarantee the
 // dictionary of inputs/outputs, we can parse these dictionaries' keys to obtain
 // the input/output names of the SignatureDef:
-// https://github.com/tensorflow/tensorflow/blob/9bcefa44cd335c1db4a703a13da09f29ae1bbdb2/tensorflow/core/protobuf/meta_graph.proto#L318-L321
+// https://github.com/galeone/tensorflow/blob/9bcefa44cd335c1db4a703a13da09f29ae1bbdb2/tensorflow/core/protobuf/meta_graph.proto#L318-L321
 class SignatureDefFunction {
  public:
   virtual ~SignatureDefFunction() = default;

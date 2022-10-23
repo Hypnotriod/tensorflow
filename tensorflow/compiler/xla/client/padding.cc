@@ -57,7 +57,7 @@ std::vector<std::pair<int64_t, int64_t>> MakePadding(
         int64_t window_stride = window_strides[i];
         // We follow the same convention as in Tensorflow, such that
         // output dimension := ceil(input_dimension / window_stride).
-        // See tensorflow/tensorflow/python/ops/nn.py
+        // See galeone/tensorflow/python/ops/nn.py
         // for the reference. See also tensorflow/core/kernels/ops_util.cc
         // for the part where we avoid negative padding using max(0, x).
         //

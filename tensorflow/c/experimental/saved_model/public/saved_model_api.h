@@ -88,7 +88,7 @@ TF_CAPI_EXPORT extern TF_ConcreteFunction* TF_GetSavedModelConcreteFunction(
 // Params:
 //  model - The SavedModel to load a function from.
 //  signature_def_key - The string key of the SignatureDef map of a SavedModel:
-//                      https://github.com/tensorflow/tensorflow/blob/69b08900b1e991d84bce31f3b404f5ed768f339f/tensorflow/core/protobuf/meta_graph.proto#L89
+//                      https://github.com/galeone/tensorflow/blob/69b08900b1e991d84bce31f3b404f5ed768f339f/tensorflow/core/protobuf/meta_graph.proto#L89
 //  status - Set to OK on success and an appropriate error on failure.
 // Returns:
 //  If status is not OK, returns nullptr. Otherwise, returns a

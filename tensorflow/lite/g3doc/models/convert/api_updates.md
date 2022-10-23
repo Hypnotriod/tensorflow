@@ -4,7 +4,7 @@ This page provides information about updates made to the
 `tf.lite.TFLiteConverter` [Python API](index.md) in TensorFlow 2.x.
 
 Note: If any of the changes raise concerns, please file a
-[GitHub issue](https://github.com/tensorflow/tensorflow/issues/new?template=60-tflite-converter-issue.md).
+[GitHub issue](https://github.com/galeone/tensorflow/issues/new?template=60-tflite-converter-issue.md).
 
 *   TensorFlow 2.3
 
@@ -38,7 +38,7 @@ Note: If any of the changes raise concerns, please file a
         *   _visualization_: `output_format`, `dump_graphviz_dir`,
             `dump_graphviz_video`. Instead, the recommended approach for
             visualizing a TensorFlow Lite model is to use
-            [visualize.py](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/tools/visualize.py).
+            [visualize.py](https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/tools/visualize.py).
         *   _frozen graphs_: `drop_control_dependency`, as frozen graphs are
             unsupported in TensorFlow 2.x.
     *   Removed other converter APIs such as `tf.lite.toco_convert` and

@@ -25,9 +25,9 @@ Model metadata is defined in
 a
 [FlatBuffer](https://google.github.io/flatbuffers/index.html#flatbuffers_overview)
 file. As shown in Figure 1, it is stored in the
-[metadata](https://github.com/tensorflow/tensorflow/blob/bd73701871af75539dd2f6d7fdba5660a8298caf/tensorflow/lite/schema/schema.fbs#L1208)
+[metadata](https://github.com/galeone/tensorflow/blob/bd73701871af75539dd2f6d7fdba5660a8298caf/tensorflow/lite/schema/schema.fbs#L1208)
 field of the
-[TFLite model schema](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/schema/schema.fbs),
+[TFLite model schema](https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/schema/schema.fbs),
 under the name, `"TFLITE_METADATA"`. Some models may come with associated files,
 such as
 [classification label files](https://github.com/tensorflow/examples/blob/dd98bc2b595157c03ac9fa47ac8659bb20aa8bbd/lite/examples/image_classification/android/models/src/main/assets/labels.txt#L1).
@@ -186,9 +186,9 @@ are two independent steps. Here are the details.
 : it in data processing?  :                         :                          :
 
 [1] The
-[TensorFlow Lite Java API](https://github.com/tensorflow/tensorflow/blob/09ec15539eece57b257ce9074918282d88523d56/tensorflow/lite/java/src/main/java/org/tensorflow/lite/Tensor.java#L73)
+[TensorFlow Lite Java API](https://github.com/galeone/tensorflow/blob/09ec15539eece57b257ce9074918282d88523d56/tensorflow/lite/java/src/main/java/org/tensorflow/lite/Tensor.java#L73)
 and the
-[TensorFlow Lite C++ API](https://github.com/tensorflow/tensorflow/blob/09ec15539eece57b257ce9074918282d88523d56/tensorflow/lite/c/common.h#L391).
+[TensorFlow Lite C++ API](https://github.com/galeone/tensorflow/blob/09ec15539eece57b257ce9074918282d88523d56/tensorflow/lite/c/common.h#L391).
 \
 [2] The [metadata extractor library](#read-the-metadata-from-models)
 
@@ -443,12 +443,12 @@ Flatbuffers library.
 
 To use the Metadata Extractor library in your Android app, we recommend using
 the
-[TensorFlow Lite Metadata AAR hosted at MavenCentral](https://search.maven.org/artifact/org.tensorflow/tensorflow-lite-metadata).
+[TensorFlow Lite Metadata AAR hosted at MavenCentral](https://search.maven.org/artifact/org.galeone/tensorflow-lite-metadata).
 It contains the `MetadataExtractor` class, as well as the FlatBuffers Java
 bindings for the
 [metadata schema](https://github.com/tensorflow/tflite-support/blob/master/tensorflow_lite_support/metadata/metadata_schema.fbs)
 and the
-[model schema](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/schema/schema.fbs).
+[model schema](https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/schema/schema.fbs).
 
 You can specify this in your `build.gradle` dependencies as follows:
 
@@ -509,7 +509,7 @@ public int[] getoutputTensorShape(int inputIndex);
 ```
 
 Though the
-[TensorFlow Lite model schema](https://github.com/tensorflow/tensorflow/blob/aa7ff6aa28977826e7acae379e82da22482b2bf2/tensorflow/lite/schema/schema.fbs#L1075)
+[TensorFlow Lite model schema](https://github.com/galeone/tensorflow/blob/aa7ff6aa28977826e7acae379e82da22482b2bf2/tensorflow/lite/schema/schema.fbs#L1075)
 supports multiple subgraphs, the TFLite Interpreter currently only supports a
 single subgraph. Therefore, `MetadataExtractor` omits subgraph index as an input
 argument in its methods.

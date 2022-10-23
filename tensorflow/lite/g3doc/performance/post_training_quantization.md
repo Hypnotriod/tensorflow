@@ -256,7 +256,7 @@ provided for specific networks on
 [TensorFlow Hub](https://tfhub.dev/s?deployment-format=lite&q=quantized){:.external}.
 It is important to check the accuracy of the quantized model to verify that any
 degradation in accuracy is within acceptable limits. There are tools to evaluate
-[TensorFlow Lite model accuracy](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/tools/evaluation/tasks){:.external}.
+[TensorFlow Lite model accuracy](https://github.com/galeone/tensorflow/tree/master/tensorflow/lite/tools/evaluation/tasks){:.external}.
 
 Alternatively, if the accuracy drop is too high, consider using
 [quantization aware training](https://www.tensorflow.org/model_optimization/guide/quantization/training)

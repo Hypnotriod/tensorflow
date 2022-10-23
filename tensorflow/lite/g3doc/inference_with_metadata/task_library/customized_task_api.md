@@ -97,9 +97,9 @@ To build an API object,you must provide the following information by extending
     and
     [`BaseTaskApi::Postprocess`](https://github.com/tensorflow/tflite-support/blob/5cea306040c40b06d6e0ed4e5baf6c307db7bd00/tensorflow_lite_support/cc/task/core/base_task_api.h#L80).
     The two functions provide
-    [inputs](https://github.com/tensorflow/tensorflow/blob/1b84e5af78f85b8d3c4687b7dee65b78113f81cc/tensorflow/lite/schema/schema.fbs#L1007)
+    [inputs](https://github.com/galeone/tensorflow/blob/1b84e5af78f85b8d3c4687b7dee65b78113f81cc/tensorflow/lite/schema/schema.fbs#L1007)
     and
-    [outputs](https://github.com/tensorflow/tensorflow/blob/1b84e5af78f85b8d3c4687b7dee65b78113f81cc/tensorflow/lite/schema/schema.fbs#L1008)
+    [outputs](https://github.com/galeone/tensorflow/blob/1b84e5af78f85b8d3c4687b7dee65b78113f81cc/tensorflow/lite/schema/schema.fbs#L1008)
     from the TFLite `FlatBuffer`. The subclass is responsible for assigning
     values from the API I/O to I/O tensors. See the complete implementation
     example in
@@ -146,19 +146,19 @@ To build an API object,you must provide the following information by extending
     ```
 
 *   **Create factory functions of the API** - A model file and a
-    [`OpResolver`](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/core/api/op_resolver.h)
+    [`OpResolver`](https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/core/api/op_resolver.h)
     are needed to initialize the
-    [`tflite::Interpreter`](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/interpreter.h).
+    [`tflite::Interpreter`](https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/interpreter.h).
     [`TaskAPIFactory`](https://github.com/tensorflow/tflite-support/blob/master/tensorflow_lite_support/cc/task/core/task_api_factory.h)
     provides utility functions to create BaseTaskApi instances.
 
     Note: By default
     [`TaskAPIFactory`](https://github.com/tensorflow/tflite-support/blob/master/tensorflow_lite_support/cc/task/core/task_api_factory.h)
     provides a
-    [`BuiltInOpResolver`](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/kernels/register.h).
+    [`BuiltInOpResolver`](https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/kernels/register.h).
     If your model needs customized ops or a subset of built-in ops, you can
     register them by creating a
-    [`MutableOpResolver`](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/mutable_op_resolver.h).
+    [`MutableOpResolver`](https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/mutable_op_resolver.h).
 
     You must also provide any files associated with the model. e.g,
     `BertQuestionAnswerer` can also have an additional file for its tokenizer's

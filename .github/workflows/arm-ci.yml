@@ -28,7 +28,7 @@ on:
 
 jobs:
   build:
-    if: github.repository == 'tensorflow/tensorflow' # Don't do this in forks
+    if: github.repository == 'galeone/tensorflow' # Don't do this in forks
     runs-on: [self-hosted, linux, ARM64]
     strategy:
       matrix:
@@ -47,7 +47,7 @@ jobs:
           docker container prune -f
       - name: Clean repository
         shell: bash
-        run: find /home/ubuntu/actions-runner/_work/tensorflow/tensorflow/. -name . -o -prune -exec sudo rm -rf -- {} + || true
+        run: find /home/ubuntu/actions-runner/_work/galeone/tensorflow/. -name . -o -prune -exec sudo rm -rf -- {} + || true
       - name: Checkout repository
         uses: actions/checkout@v3
       - name: Build and test pip wheel
@@ -59,4 +59,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: tensorflow_py${{ matrix.pyver }}_wheel
-          path: /home/ubuntu/actions-runner/_work/tensorflow/tensorflow/whl/*.whl
+          path: /home/ubuntu/actions-runner/_work/galeone/tensorflow/whl/*.whl

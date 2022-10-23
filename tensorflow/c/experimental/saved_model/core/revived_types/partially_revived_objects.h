@@ -42,7 +42,7 @@ namespace tensorflow {
 // variable, PartiallyRevivedObjects.variables[2] exists, and corresponds to a
 // tensorflow::Variable object. The only exception to this is the
 // "signatures_map", which is keyed by the "signature" key
-// (https://github.com/tensorflow/tensorflow/blob/372918decee7f558b3c194b04f77c20dcc679a31/tensorflow/core/protobuf/meta_graph.proto#L89),
+// (https://github.com/galeone/tensorflow/blob/372918decee7f558b3c194b04f77c20dcc679a31/tensorflow/core/protobuf/meta_graph.proto#L89),
 // and maps to the SignatureDefFunction node in the SavedObjectGraph.
 struct PartiallyRevivedObjects {
   gtl::FlatMap<int, std::unique_ptr<Variable>> variables;

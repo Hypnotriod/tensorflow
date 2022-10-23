@@ -101,5 +101,5 @@ except OSError:
       'AutoGraph is not available in this environment: functions lack code'
       ' information. This is typical of some environments like the interactive'
       ' Python shell. See'
-      ' https://github.com/tensorflow/tensorflow/blob/master/tensorflow/python/autograph/g3doc/reference/limitations.md#access-to-source-code'
+      ' https://github.com/galeone/tensorflow/blob/master/tensorflow/python/autograph/g3doc/reference/limitations.md#access-to-source-code'
       ' for more information.')

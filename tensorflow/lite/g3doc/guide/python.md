@@ -57,7 +57,7 @@ instead follow the appropriate [Coral setup documentation](https://coral.ai/docs
 
 Note: We no longer update the Debian package `python3-tflite-runtime`. The
 latest Debian package is for TF version 2.5, which you can install by following
-[these older instructions](https://github.com/tensorflow/tensorflow/blob/v2.5.0/tensorflow/lite/g3doc/guide/python.md#install-tensorflow-lite-for-python).
+[these older instructions](https://github.com/galeone/tensorflow/blob/v2.5.0/tensorflow/lite/g3doc/guide/python.md#install-tensorflow-lite-for-python).
 
 Note: We no longer release pre-built `tflite-runtime` wheels for Windows and
 macOS. For these platforms, you should use the
@@ -71,7 +71,7 @@ import it from `tflite_runtime`.
 
 For example, after you install the package above, copy and run the
 [`label_image.py`](
-https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/examples/python/)
+https://github.com/galeone/tensorflow/tree/master/tensorflow/lite/examples/python/)
 file. It will (probably) fail because you don't have the `tensorflow` library
 installed. To fix it, edit this line of the file:
 

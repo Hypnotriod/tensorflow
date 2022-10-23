@@ -69,10 +69,10 @@ class RevivedObjectContainer {
 
 // RevivedObjects is mainly used as a container for all the "state" owned by
 // SavedModel. It stores all non-"user object" nodes from a SavedModel
-// (https://github.com/tensorflow/tensorflow/blob/568e2bef00f24af1159a0846abf67c099ca78a21/tensorflow/core/protobuf/saved_object_graph.proto#L57-L62)
+// (https://github.com/galeone/tensorflow/blob/568e2bef00f24af1159a0846abf67c099ca78a21/tensorflow/core/protobuf/saved_object_graph.proto#L57-L62)
 // in a "fully constructed" state. It is effectively a strongly typed map, where
 // each member is a map from the node id in the SavedObjectGraph's nodes
-// (https://github.com/tensorflow/tensorflow/blob/568e2bef00f24af1159a0846abf67c099ca78a21/tensorflow/core/protobuf/saved_object_graph.proto#L25-L29)
+// (https://github.com/galeone/tensorflow/blob/568e2bef00f24af1159a0846abf67c099ca78a21/tensorflow/core/protobuf/saved_object_graph.proto#L25-L29)
 // to the revived object of the corresponding type.
 struct RevivedObjects {
   // Order of declaration is important here: we want the RestoredResources to be

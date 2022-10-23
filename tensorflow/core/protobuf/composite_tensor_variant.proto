@@ -4,7 +4,7 @@ package tensorflow;
 
 import "tensorflow/core/protobuf/struct.proto";
 
-option go_package = "github.com/tensorflow/tensorflow/tensorflow/go/core/protobuf/for_core_protos_go_proto";
+option go_package = "github.com/galeone/tensorflow/tensorflow/go/core/protobuf/for_core_protos_go_proto";
 
 // Metadata for CompositeTensorVariant, used when serializing as Variant.
 //

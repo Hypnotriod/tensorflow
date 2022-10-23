@@ -318,7 +318,7 @@ def profile(graph=None,
   """Profile model.
 
     Tutorials and examples can be found in:
-    https://github.com/tensorflow/tensorflow/blob/master/tensorflow/core/profiler/g3doc/python_api.md
+    https://github.com/galeone/tensorflow/blob/master/tensorflow/core/profiler/g3doc/python_api.md
 
   Args:
     graph: tf.Graph. If None and eager execution is not enabled, use default
@@ -390,7 +390,7 @@ def advise(graph=None, run_meta=None, options=_DEFAULT_ADVISE_OPTIONS):
 
     Builds profiles and automatically check anomalies of various
     aspects. For more details:
-    https://github.com/tensorflow/tensorflow/tree/master/tensorflow/core/profiler/README.md
+    https://github.com/galeone/tensorflow/tree/master/tensorflow/core/profiler/README.md
 
   Args:
     graph: tf.Graph. If None and eager execution is not enabled, use default

@@ -2,7 +2,7 @@
 
 This directory houses TensorFlow's Dockerfiles and the infrastructure used to
 create and deploy them to
-[TensorFlow's Docker Hub](https://hub.docker.com/r/tensorflow/tensorflow).
+[TensorFlow's Docker Hub](https://hub.docker.com/r/galeone/tensorflow).
 
 **DO NOT EDIT THE DOCKERFILES/ DIRECTORY MANUALLY!** The files within are
 maintained by `assembler.py`, which builds Dockerfiles from the files in

@@ -2,7 +2,7 @@
 
 ## TFLite Delegate Registrar
 
-[A TFLite delegate registrar](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/tools/delegates/delegate_provider.h)
+[A TFLite delegate registrar](https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/tools/delegates/delegate_provider.h)
 is provided here. The registrar keeps a list of TFLite delegate providers, each
 of which defines a list parameters that could be initialized from commandline
 arguments and provides a TFLite delegate instance creation based on those
@@ -51,7 +51,7 @@ the delegate library is built with "-DCL_DELEGATE_NO_GL" macro.
 #### Common options
 *   `use_gpu`: `bool` (default=false) \
     Whether to use the
-    [GPU accelerator delegate](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/delegates/gpu).
+    [GPU accelerator delegate](https://github.com/galeone/tensorflow/tree/master/tensorflow/lite/delegates/gpu).
 *   `gpu_precision_loss_allowed`: `bool` (default=true) \
     Whether to allow the GPU delegate to carry out computation with some
     precision loss (i.e. processing in FP16) or not. If allowed, the performance
@@ -136,7 +136,7 @@ the delegate library is built with "-DCL_DELEGATE_NO_GL" macro.
 
 ### CoreML delegate provider
 *   `use_coreml`: `bool` (default=false) \
-    Whether to use the [Core ML delegate](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/delegates/coreml).
+    Whether to use the [Core ML delegate](https://github.com/galeone/tensorflow/tree/master/tensorflow/lite/delegates/coreml).
     This option is only available in iOS.
 *   `coreml_version`: `int` (default=0) \
     Target Core ML version for model conversion. The default value is 0 and it

@@ -21,8 +21,8 @@ if [[ -z "${TF_VERSION}" ]]; then
   exit
 fi
 
-VERSIONED_UBUNTU16_CPU_IMAGE="tensorflow/tensorflow:${TF_VERSION}-custom-op-ubuntu16"
-VERSIONED_UBUNTU16_GPU_IMAGE="tensorflow/tensorflow:${TF_VERSION}-custom-op-gpu-ubuntu16"
+VERSIONED_UBUNTU16_CPU_IMAGE="galeone/tensorflow:${TF_VERSION}-custom-op-ubuntu16"
+VERSIONED_UBUNTU16_GPU_IMAGE="galeone/tensorflow:${TF_VERSION}-custom-op-gpu-ubuntu16"
 
 # Build the docker image
 cd tensorflow/tools/ci_build
@@ -39,8 +39,8 @@ docker push "${VERSIONED_UBUNTU16_GPU_IMAGE}"
 if [[ ${TF_VERSION} == *"rc"* ]]; then
   echo "Do not update default images as ${TF_VERSION} is a release candidate."
 else
-  UBUNTU16_CPU_IMAGE="tensorflow/tensorflow:custom-op-ubuntu16"
-  UBUNTU16_GPU_IMAGE="tensorflow/tensorflow:custom-op-gpu-ubuntu16"
+  UBUNTU16_CPU_IMAGE="galeone/tensorflow:custom-op-ubuntu16"
+  UBUNTU16_GPU_IMAGE="galeone/tensorflow:custom-op-gpu-ubuntu16"
 
   docker tag "${VERSIONED_UBUNTU16_CPU_IMAGE}" "${UBUNTU16_CPU_IMAGE}"
   docker push "${UBUNTU16_CPU_IMAGE}"

@@ -15,7 +15,7 @@ For prebuilt libraries, see the
 page for a recent build.
 
 The TensorFlow Inference Interface is also available as a
-[JCenter package](https://bintray.com/google/tensorflow/tensorflow)
+[JCenter package](https://bintray.com/google/galeone/tensorflow)
 (see the tensorflow-android directory) and can be included quite simply in your
 android project with a couple of lines in the project's `build.gradle` file:
 
@@ -32,9 +32,9 @@ dependencies {
 ```
 
 This will tell Gradle to use the
-[latest version](https://bintray.com/google/tensorflow/tensorflow/_latestVersion)
+[latest version](https://bintray.com/google/galeone/tensorflow/_latestVersion)
 of the TensorFlow AAR that has been released to
-[JCenter](https://jcenter.bintray.com/org/tensorflow/tensorflow-android/).
+[JCenter](https://jcenter.bintray.com/org/galeone/tensorflow-android/).
 You may replace the `+` with an explicit version label if you wish to
 use a specific release of TensorFlow in your app.
 

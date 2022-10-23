@@ -44,7 +44,7 @@ while true; do
 done
 
 if [[ -z "${PYTHON_BIN_PATH}" ]]; then
-  DEBUG_MNIST_BIN="$TEST_SRCDIR/org_tensorflow/tensorflow/python/debug/examples/v1/debug_mnist"
+  DEBUG_MNIST_BIN="$TEST_SRCDIR/org_galeone/tensorflow/python/debug/examples/v1/debug_mnist"
 else
   DEBUG_MNIST_BIN="${PYTHON_BIN_PATH} -m tensorflow.python.debug.examples.v1.debug_mnist"
 fi

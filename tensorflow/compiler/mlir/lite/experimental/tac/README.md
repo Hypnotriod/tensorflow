@@ -11,7 +11,7 @@ TAC is designed to leverage hardwares' capabilities to:
     importer/exporter from any format to MLIR and export MLIR to anything.
 
 For more details, please checkout the
-[TAC workflow](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/compiler/mlir/lite/experimental/tac/README.md#tac-workflow)
+[TAC workflow](https://github.com/galeone/tensorflow/tree/master/tensorflow/compiler/mlir/lite/experimental/tac/README.md#tac-workflow)
 section
 
 ## How to use

@@ -261,7 +261,7 @@ class SoftmaxTest(test.TestCase):
 
   def testLargeDims(self):
     # Make sure that we properly handle large inputs. See
-    # https://github.com/tensorflow/tensorflow/issues/4425 for details
+    # https://github.com/galeone/tensorflow/issues/4425 for details
     for dims in [129, 256]:
       ones = np.random.rand(dims, dims).astype(np.float32)
       np_softmax = self._npSoftmax(ones)

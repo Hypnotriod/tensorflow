@@ -6,7 +6,7 @@ recommended approaches to address these issues.
 ## Delegate Creation
 
 We recommend using
-[SimpleDelegateInterface and SimpleDelegateKernelInterface](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/delegates/utils/simple_delegate.h).
+[SimpleDelegateInterface and SimpleDelegateKernelInterface](https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/delegates/utils/simple_delegate.h).
 We believe such APIs will make it easier to create a TFLite delegate. At a high
 level, developers only need to focus on
 
@@ -15,18 +15,18 @@ level, developers only need to focus on
 graph), implement a delegate kernel that executes this set of nodes.
 
 The dummy delegate implementation here is a good starting point to understand
-the ideas above. For more sophisticated examples, refer to [Flex delegate](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/delegates/flex),
-    [Hexagon delegate](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/delegates/hexagon).
+the ideas above. For more sophisticated examples, refer to [Flex delegate](https://github.com/galeone/tensorflow/tree/master/tensorflow/lite/delegates/flex),
+    [Hexagon delegate](https://github.com/galeone/tensorflow/tree/master/tensorflow/lite/delegates/hexagon).
 
 ## Testing & Tooling
 
 There are currently **two options** to plug in a newly created TFLite delegate
 to reuse existing TFLite kernel tests and tooling:
 
-- Utilize the **[delegate registrar](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/tools/delegates)**
+- Utilize the **[delegate registrar](https://github.com/galeone/tensorflow/tree/master/tensorflow/lite/tools/delegates)**
 mechanism
 - Utilize the
-**[external delegate](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/delegates/external)**
+**[external delegate](https://github.com/galeone/tensorflow/tree/master/tensorflow/lite/delegates/external)**
 mechanism.
 
 The former approach requires few changes as detailed below. The latter one
@@ -39,21 +39,21 @@ We now describe each option above in more details in the following sections.
 
 ### Option 1: Utilize Delegate Registrar
 In this approach, create a delegate provider like the
-[`dummy_delegate_provider.cc`](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/delegates/utils/dummy_delegate/dummy_delegate_provider.cc)
+[`dummy_delegate_provider.cc`](https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/delegates/utils/dummy_delegate/dummy_delegate_provider.cc)
 here, and then add it as an extra dependency when building the binary. Refer
-[here](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/tools/delegates)
+[here](https://github.com/galeone/tensorflow/tree/master/tensorflow/lite/tools/delegates)
 for more delegate provider examples. Now we look at using this provider for
 testing and evaluation.
 
 #### Kernel Tests
-Tests referred here are defined in [tensorflow/lite/kernels](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/kernels).
+Tests referred here are defined in [tensorflow/lite/kernels](https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/kernels).
 They are based on the
- [test_util library](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/kernels/test_util.h)
- and the [testing main function stub](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/kernels/test_main.cc).
+ [test_util library](https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/kernels/test_util.h)
+ and the [testing main function stub](https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/kernels/test_main.cc).
 
 To plug in the newly created delegate and reuse these tests, simply add the
 created delegate provider as an extra dependency to
-[`test_util_delegate_providers`](https://github.com/tensorflow/tensorflow/blob/f09dc5cf6e7fde978f9891638f529cd52a3c878f/tensorflow/lite/kernels/BUILD#L203)
+[`test_util_delegate_providers`](https://github.com/galeone/tensorflow/blob/f09dc5cf6e7fde978f9891638f529cd52a3c878f/tensorflow/lite/kernels/BUILD#L203)
 and remove others that are not relevant, like the following:
 
 ```
@@ -81,14 +81,14 @@ bazel-bin/tensorflow/lite/kernels/add_test --use_dummy_delegate=true
 #### Benchmark and Task Evaluation Tools
 
 In TFLite, we have developed
-[model benchmark tool](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/tools/benchmark)
+[model benchmark tool](https://github.com/galeone/tensorflow/tree/master/tensorflow/lite/tools/benchmark)
 and
-[evaluation tools](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/tools/evaluation/tasks)
+[evaluation tools](https://github.com/galeone/tensorflow/tree/master/tensorflow/lite/tools/evaluation/tasks)
 that already have integrated existing various TFLite delegates. To reuse these
 tools for the new delegate, similar to the kernel testing above, we simply add
 the created delegate provider as an additional dependency when building the
 binary. See rules in the
-[BUILD](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/delegates/utils/BUILD)
+[BUILD](https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/delegates/utils/BUILD)
 file for details.
 
 Take reusing the TFLite model benchmark tool as an example, after the delegate
@@ -109,7 +109,7 @@ cc_binary(
 
 Now build the binary, and specify the commandline flags defined in this new
 delegate provider and others detailed in the benchmark model tool
-[doc](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/tools/benchmark/README.md)
+[doc](https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/tools/benchmark/README.md)
 when running the benchmark tool like the following:
 
 ```
@@ -123,14 +123,14 @@ bazel-bin/tensorflow/lite/delegates/utils/dummy_delegate/benchmark_model_plus_du
 
 ### Option 2: Utilize Tensorflow Lite External Delegate
 In this **alternative approach to reuse existing Tensorflow Lite kernel testing
-and tooling**, we first create an external delegate adaptor like the [`external_delegate_adaptor.cc`](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/delegates/utils/dummy_delegate/external_delegate_adaptor.cc) here, and create the corresponding BUILD target
+and tooling**, we first create an external delegate adaptor like the [`external_delegate_adaptor.cc`](https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/delegates/utils/dummy_delegate/external_delegate_adaptor.cc) here, and create the corresponding BUILD target
 to build a dynamic library.
 
 Afterwards, one could build binaries or use pre-built ones to run with the
 dummy delegate as long as the binary is linked with the
-[`external_delegate_provider`](https://github.com/tensorflow/tensorflow/blob/8c6f2d55762f3fc94f98fdd8b3c5d59ee1276dba/tensorflow/lite/tools/delegates/BUILD#L145-L159)
+[`external_delegate_provider`](https://github.com/galeone/tensorflow/blob/8c6f2d55762f3fc94f98fdd8b3c5d59ee1276dba/tensorflow/lite/tools/delegates/BUILD#L145-L159)
 library which supports command-line flags as described
-[here](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/tools/delegates#external-delegate-provider).
+[here](https://github.com/galeone/tensorflow/tree/master/tensorflow/lite/tools/delegates#external-delegate-provider).
 Note this external delegate provider has already been linked to existing testing
 and tooling binaries.
 
@@ -157,7 +157,7 @@ bazel-bin/tensorflow/lite/tools/benchmark/benchmark_model \
 
 It is worth noting the *external delegate* is the corresponding C++
 implementation of the *delegate* in Tensorflow Lite Python binding as shown
-[here](https://github.com/tensorflow/tensorflow/blob/7145fc0e49be01ef6943f4df386ce38567e37797/tensorflow/lite/python/interpreter.py#L42).
+[here](https://github.com/galeone/tensorflow/blob/7145fc0e49be01ef6943f4df386ce38567e37797/tensorflow/lite/python/interpreter.py#L42).
 Therefore, the dynamic external delegate adaptor library created here could be
 directly used with Tensorflow Lite Python APIs.
 

@@ -65,7 +65,7 @@ performance gains especially when there are a large amount of memory copies.
 ## Implementing your own Custom delegate
 
 The preferred method to add a delegate is using
-[SimpleDelegate API](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/delegates/utils/simple_delegate.h).
+[SimpleDelegate API](https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/delegates/utils/simple_delegate.h).
 
 To create a new delegate, you need to implement 2 interfaces and provide your
 own implementation for the interface methods.
@@ -75,7 +75,7 @@ own implementation for the interface methods.
 This class represents the capabilities of the delegate, which operations are
 supported, and a factory class for creating a kernel which encapsulates the
 delegated graph. For more details, see the interface defined in this
-[C++ header file](https://github.com/tensorflow/tensorflow/blob/8a643858ce174b8bd1b4bb8fa4bfaa62f7e8c45f/tensorflow/lite/delegates/utils/simple_delegate.h#L71).
+[C++ header file](https://github.com/galeone/tensorflow/blob/8a643858ce174b8bd1b4bb8fa4bfaa62f7e8c45f/tensorflow/lite/delegates/utils/simple_delegate.h#L71).
 The comments in the code explain each API in detail.
 
 ### 2 - `SimpleDelegateKernelInterface`
@@ -84,7 +84,7 @@ This class encapsulates the logic for initializing / preparing / and running the
 delegated partition.
 
 It has: (See
-[definition](https://github.com/tensorflow/tensorflow/blob/8a643858ce174b8bd1b4bb8fa4bfaa62f7e8c45f/tensorflow/lite/delegates/utils/simple_delegate.h#L43))
+[definition](https://github.com/galeone/tensorflow/blob/8a643858ce174b8bd1b4bb8fa4bfaa62f7e8c45f/tensorflow/lite/delegates/utils/simple_delegate.h#L43))
 
 *   Init(...): which will be called once to do any one-time initialization.
 *   Prepare(...): called for each different instance of this node - this happens
@@ -232,11 +232,11 @@ class MyDelegateKernel : public SimpleDelegateKernelInterface {
 
 TFLite has a set of tools that you can quickly test against a TFLite model.
 
-*   [Model Benchmark Tool](https://github.com/tensorflow/tensorflow/tree/f9ef3a8a0b64ad6393785f3259e9a24af09c84ad/tensorflow/lite/tools/benchmark):
+*   [Model Benchmark Tool](https://github.com/galeone/tensorflow/tree/f9ef3a8a0b64ad6393785f3259e9a24af09c84ad/tensorflow/lite/tools/benchmark):
     The tool takes a TFLite model, generates random inputs, and then repeatedly
     runs the model for a specified number of runs. It prints aggregated latency
     statistics at the end.
-*   [Inference Diff Tool](https://github.com/tensorflow/tensorflow/tree/f9ef3a8a0b64ad6393785f3259e9a24af09c84ad/tensorflow/lite/tools/evaluation/tasks/inference_diff):
+*   [Inference Diff Tool](https://github.com/galeone/tensorflow/tree/f9ef3a8a0b64ad6393785f3259e9a24af09c84ad/tensorflow/lite/tools/evaluation/tasks/inference_diff):
     For a given model, the tool generates random Gaussian data and passes it
     through two different TFLite interpreters, one running single threaded CPU
     kernel and the other using a user-defined spec. It measures the absolute
@@ -255,10 +255,10 @@ To achieve reusing TFLite tests and tooling for the new delegate, you can use
 either of the following two options:
 
 *   Utilize the
-    [delegate registrar](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/tools/delegates)
+    [delegate registrar](https://github.com/galeone/tensorflow/tree/master/tensorflow/lite/tools/delegates)
     mechanism.
 *   Utilize the
-    [external delegate](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/delegates/external)
+    [external delegate](https://github.com/galeone/tensorflow/tree/master/tensorflow/lite/delegates/external)
     mechanism.
 
 ### Choosing the best approach
@@ -277,15 +277,15 @@ integration tests. Use the delegate registrar approach for better clarity.
 ### Option 1: Leverage delegate registrar
 
 The
-[delegate registrar](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/tools/delegates)
+[delegate registrar](https://github.com/galeone/tensorflow/tree/master/tensorflow/lite/tools/delegates)
 keeps a list of delegate providers, each of which provides an easy way to create
 TFLite delegates based on command-line flags, and are hence, convenient for
 tooling. To plug in the new delegate to all the Tensorflow Lite tools mentioned
 above, you first create a new delegate provider like this
-[one](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/tools/delegates/hexagon_delegate_provider.cc),
+[one](https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/tools/delegates/hexagon_delegate_provider.cc),
 and then makes only a few changes to the BUILD rules. A full example of this
 integration process is shown below (and code can be found
-[here](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/delegates/utils/dummy_delegate)).
+[here](https://github.com/galeone/tensorflow/tree/master/tensorflow/lite/delegates/utils/dummy_delegate)).
 
 Assuming you have a delegate that implements the SimpleDelegate APIs, and the
 extern "C" APIs of creating/deleting this 'dummy' delegate as shown below:
@@ -413,12 +413,12 @@ cc_binary(
 ```
 
 You can also plug in this delegate provider to TFLite kernel tests as described
-[here](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/delegates/utils/dummy_delegate/README.md#kernel-tests).
+[here](https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/delegates/utils/dummy_delegate/README.md#kernel-tests).
 
 ### Option 2: Leverage external delegate
 
 In this alternative, you first create an external delegate adaptor the
-[external\_delegate\_adaptor.cc](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/delegates/utils/dummy_delegate/external_delegate_adaptor.cc)
+[external\_delegate\_adaptor.cc](https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/delegates/utils/dummy_delegate/external_delegate_adaptor.cc)
 as shown below. Note, this approach is slightly less preferred as compared to
 Option 1 as has been [aforementioned](#comparison-between-the-two-options).
 
@@ -506,21 +506,21 @@ cc_binary(
 After this external delegate .so file is created, you can build binaries or use
 pre-built ones to run with the new delegate as long as the binary is linked with
 the
-[external\_delegate\_provider](https://github.com/tensorflow/tensorflow/blob/8c6f2d55762f3fc94f98fdd8b3c5d59ee1276dba/tensorflow/lite/tools/delegates/BUILD#L145-L159)
+[external\_delegate\_provider](https://github.com/galeone/tensorflow/blob/8c6f2d55762f3fc94f98fdd8b3c5d59ee1276dba/tensorflow/lite/tools/delegates/BUILD#L145-L159)
 library which supports command-line flags as described
-[here](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/tools/delegates#external-delegate-provider).
+[here](https://github.com/galeone/tensorflow/tree/master/tensorflow/lite/tools/delegates#external-delegate-provider).
 Note: this external delegate provider has already been linked to existing
 testing and tooling binaries.
 
 Refer to descriptions
-[here](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/delegates/utils/dummy_delegate/README.md#option-2-utilize-tensorflow-lite-external-delegate)
+[here](https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/delegates/utils/dummy_delegate/README.md#option-2-utilize-tensorflow-lite-external-delegate)
 for an illustration of how to benchmark the dummy delegate via this
 external-delegate approach. You can use similar commands for the testing and
 evaluation tools mentioned earlier.
 
 It is worth noting the _external delegate_ is the corresponding C++
 implementation of the _delegate_ in Tensorflow Lite Python binding as shown
-[here](https://github.com/tensorflow/tensorflow/blob/7145fc0e49be01ef6943f4df386ce38567e37797/tensorflow/lite/python/interpreter.py#L42).
+[here](https://github.com/galeone/tensorflow/blob/7145fc0e49be01ef6943f4df386ce38567e37797/tensorflow/lite/python/interpreter.py#L42).
 Therefore, the dynamic external delegate adaptor library created here could be
 directly used with Tensorflow Lite Python APIs.
 

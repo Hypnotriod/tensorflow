@@ -58,7 +58,7 @@
 # custom op registration; see comments on
 # //tensorflow:libtensorflow_framework.so. It does mean that TensorFlow cc_test
 # and cc_binary rules will not build. Using tf_cc_test and tf_cc_binary (from
-# //tensorflow/tensorflow.bzl) will include the necessary symbols in binary
+# //galeone/tensorflow.bzl) will include the necessary symbols in binary
 # build targets.
 
 load(

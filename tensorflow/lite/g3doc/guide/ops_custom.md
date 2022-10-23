@@ -26,7 +26,7 @@ Using custom operators consists of four steps.
 *   [Test and profile your operator.](#test-and-profile-your-operator) If you
     wish to test just your custom operator, it is best to create a model with
     just your custom operator and use the
-    [benchmark_model](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/tools/benchmark/benchmark_model.cc)
+    [benchmark_model](https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/tools/benchmark/benchmark_model.cc)
     program.
 
 Let’s walk through an end-to-end example of running a model with a custom
@@ -130,7 +130,7 @@ typedef struct {
 ```
 
 Refer to
-[`common.h`](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/c/common.h)
+[`common.h`](https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/c/common.h)
 for details on `TfLiteContext` and `TfLiteNode`. The former provides error
 reporting facilities and access to global objects, including all the tensors.
 The latter allows implementations to access their inputs and outputs.
@@ -278,10 +278,10 @@ in a given model. This is the equivalent of TensorFlow's selective registration
 
 If you want to define your custom operators in Java, you would currently need to
 build your own custom JNI layer and compile your own AAR
-[in this jni code](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/java/src/main/native/nativeinterpreterwrapper_jni.cc).
+[in this jni code](https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/java/src/main/native/nativeinterpreterwrapper_jni.cc).
 Similarly, if you wish to define these operators available in Python you can
 place your registrations in the
-[Python wrapper code](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/python/interpreter_wrapper/interpreter_wrapper.cc).
+[Python wrapper code](https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/python/interpreter_wrapper/interpreter_wrapper.cc).
 
 Note that a similar process as above can be followed for supporting a set of
 operations instead of a single operator. Just add as many `AddCustom` operators
@@ -291,11 +291,11 @@ implementations of builtins by using the `AddBuiltin`.
 ### Test and profile your operator
 
 To profile your op with the TensorFlow Lite benchmark tool, you can use the
-[benchmark model tool](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/tools/benchmark#tflite-model-benchmark-tool)
+[benchmark model tool](https://github.com/galeone/tensorflow/tree/master/tensorflow/lite/tools/benchmark#tflite-model-benchmark-tool)
 for TensorFlow Lite. For testing purposes, you can make your local build of
 TensorFlow Lite aware of your custom op by adding the appropriate `AddCustom`
 call (as show above) to
-[register.cc](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/kernels/register.cc)
+[register.cc](https://github.com/galeone/tensorflow/tree/master/tensorflow/lite/kernels/register.cc)
 
 ## Best practices
 
@@ -309,7 +309,7 @@ call (as show above) to
     pre-allocating the memory using temporary tensors. You may need to use
     OpData struct to reference the tensor indices in other functions. See the
     example in the
-    [kernel for convolution](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/kernels/conv.cc).
+    [kernel for convolution](https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/kernels/conv.cc).
     A sample code snippet is below
 
     ```

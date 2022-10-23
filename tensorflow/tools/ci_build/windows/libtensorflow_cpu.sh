@@ -61,8 +61,8 @@ mkdir -p ${DIR}/include/tensorflow/c
 mkdir -p ${DIR}/include/tensorflow/c/eager
 mkdir -p ${DIR}/include/tensorflow/core/platform
 mkdir -p ${DIR}/lib
-cp bazel-bin/tensorflow/tensorflow.dll ${DIR}/lib/tensorflow.dll
-cp bazel-bin/tensorflow/tensorflow.lib ${DIR}/lib/tensorflow.lib
+cp bazel-bin/galeone/tensorflow.dll ${DIR}/lib/tensorflow.dll
+cp bazel-bin/galeone/tensorflow.lib ${DIR}/lib/tensorflow.lib
 cp tensorflow/c/c_api.h \
   tensorflow/c/tf_attrtype.h \
   tensorflow/c/tf_datatype.h \

@@ -28,12 +28,12 @@ namespace tensorflow {
 
 // RestoredResource represents a TF2 "Resource" object loaded from a savedmodel,
 // analogous to the Python _RestoredResource object:
-// https://github.com/tensorflow/tensorflow/blob/fda326e542ca67534e8411edb180e8760a4828b7/tensorflow/python/saved_model/load.py#L481
+// https://github.com/galeone/tensorflow/blob/fda326e542ca67534e8411edb180e8760a4828b7/tensorflow/python/saved_model/load.py#L481
 // TF2 resource objects typically extend TrackableResource:
-// https://github.com/tensorflow/tensorflow/blob/fda326e542ca67534e8411edb180e8760a4828b7/tensorflow/python/training/tracking/tracking.py#L285
+// https://github.com/galeone/tensorflow/blob/fda326e542ca67534e8411edb180e8760a4828b7/tensorflow/python/training/tracking/tracking.py#L285
 // and are expected to implement "_create_resource", "_initialize", and
 // "_destroy_resource" functions:
-// https://github.com/tensorflow/tensorflow/blob/139ba9c5284799beafdd1d7f895127cf00e7c48f/tensorflow/python/training/tracking/tracking.py#L262-L281
+// https://github.com/galeone/tensorflow/blob/139ba9c5284799beafdd1d7f895127cf00e7c48f/tensorflow/python/training/tracking/tracking.py#L262-L281
 class RestoredResource : TensorHandleConvertible {
  public:
   // Note(bmzhao): RestoredResource stores non-owning pointers to its associated
@@ -45,13 +45,13 @@ class RestoredResource : TensorHandleConvertible {
   //
   // Params:
   //  device - The device string associated with the SavedResource
-  //           https://github.com/tensorflow/tensorflow/blob/master/tensorflow/core/protobuf/saved_object_graph.proto#L182
+  //           https://github.com/galeone/tensorflow/blob/master/tensorflow/core/protobuf/saved_object_graph.proto#L182
   //           Conceptually, this is the same device used in CapturableResource:
-  //           https://github.com/tensorflow/tensorflow/blob/568e2bef00f24af1159a0846abf67c099ca78a21/tensorflow/python/training/tracking/tracking.py#L222-L225
+  //           https://github.com/galeone/tensorflow/blob/568e2bef00f24af1159a0846abf67c099ca78a21/tensorflow/python/training/tracking/tracking.py#L222-L225
   //           Implementation-wise, it is device used when invoking the
   //           create_resource function to produce the resource_handle
   //           associated with the object:
-  //           https://github.com/tensorflow/tensorflow/blob/568e2bef00f24af1159a0846abf67c099ca78a21/tensorflow/python/training/tracking/tracking.py#L246-L247
+  //           https://github.com/galeone/tensorflow/blob/568e2bef00f24af1159a0846abf67c099ca78a21/tensorflow/python/training/tracking/tracking.py#L246-L247
   //  create_resource - Non owning pointer to the create_resource function
   //                    associated with this object. Must be NON-NULL.
   //  initialize - Non owning pointer to the initialize function associated with
@@ -59,7 +59,7 @@ class RestoredResource : TensorHandleConvertible {
   //  destroy_resource - Non owning pointer to the destroy_resource function
   //                     associated with this object. Ideally this should be
   //                     NON-NULL, but in order to support models saved prior to
-  //                     https://github.com/tensorflow/tensorflow/commit/3c806101f57768e479f8646e7518bbdff1632ca3
+  //                     https://github.com/galeone/tensorflow/commit/3c806101f57768e479f8646e7518bbdff1632ca3
   //                     we allow null here. This will, however, leak resources.
   RestoredResource(const std::string& device,
                    TFConcreteFunction* create_resource,

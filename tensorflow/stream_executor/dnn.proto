@@ -5,7 +5,7 @@ package stream_executor.dnn;
 
 import "google/protobuf/wrappers.proto";
 
-option go_package = "github.com/tensorflow/tensorflow/tensorflow/go/stream_executor";
+option go_package = "github.com/galeone/tensorflow/tensorflow/go/stream_executor";
 
 // Specifies the data type used by an operation.
 enum DataType {

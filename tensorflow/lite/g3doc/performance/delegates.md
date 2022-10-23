@@ -122,7 +122,7 @@ supports multiple flags to figure out the best delegate configuration for your
 model. For instance, `--gpu_backend=gl` can be specified with `--use_gpu` to
 measure GPU execution with OpenGL. The complete list of supported delegate
 parameters is defined in the
-[detailed documentation](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/tools/delegates/README.md#tflite-delegate-registrar).
+[detailed documentation](https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/tools/delegates/README.md#tflite-delegate-registrar).
 
 Here’s an example run for a quantized model with GPU via `adb`:
 
@@ -135,7 +135,7 @@ adb shell /data/local/tmp/benchmark_model \
 You can download pre-built version of this tool for Android, 64-bit ARM
 architecture
 [here](https://storage.googleapis.com/tensorflow-nightly-public/prod/tensorflow/release/lite/tools/nightly/latest/android_aarch64_benchmark_model.apk)
-([more details](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/tools/benchmark/android)).
+([more details](https://github.com/galeone/tensorflow/tree/master/tensorflow/lite/tools/benchmark/android)).
 
 ### Accuracy & correctness
 
@@ -149,7 +149,7 @@ run quantized models, there might be a slight precision improvement (for e.g.,
 TensorFlow Lite has two types of tooling to measure how accurately a delegate
 behaves for a given model: *Task-Based* and *Task-Agnostic*. All the tools
 described in this section support the
-[advanced delegation parameters](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/tools/delegates/README.md#tflite-delegate-registrar)
+[advanced delegation parameters](https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/tools/delegates/README.md#tflite-delegate-registrar)
 used by the benchmarking tool from the previous section. Note that the
 sub-sections below focus on *delegate evaluation* (Does the delegate perform the
 same as the CPU?) rather than model evaluation (Is the model itself good for the
@@ -171,12 +171,12 @@ Prebuilt binaries of these tools (Android, 64-bit ARM architecture), along with
 documentation can be found here:
 
 *   [ImageNet Image Classification](https://storage.googleapis.com/tensorflow-nightly-public/prod/tensorflow/release/lite/tools/nightly/latest/android_aarch64_eval_imagenet_image_classification)
-    ([More details](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/tools/evaluation/tasks/imagenet_image_classification))
+    ([More details](https://github.com/galeone/tensorflow/tree/master/tensorflow/lite/tools/evaluation/tasks/imagenet_image_classification))
 *   [COCO Object Detection](https://storage.googleapis.com/tensorflow-nightly-public/prod/tensorflow/release/lite/tools/nightly/latest/android_aarch64_eval_coco_object_detection)
-    ([More details](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/tools/evaluation/tasks/coco_object_detection))
+    ([More details](https://github.com/galeone/tensorflow/tree/master/tensorflow/lite/tools/evaluation/tasks/coco_object_detection))
 
 The example below demonstrates
-[image classification evaluation](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/tools/evaluation/tasks/imagenet_image_classification)
+[image classification evaluation](https://github.com/galeone/tensorflow/tree/master/tensorflow/lite/tools/evaluation/tasks/imagenet_image_classification)
 with NNAPI utilizing Google's Edge-TPU on a Pixel 4:
 
 ```
@@ -210,7 +210,7 @@ Top-10 Accuracy: 0.923333
 
 For tasks where there isn't an established on-device evaluation tool, or if you
 are experimenting with custom models, TensorFlow Lite has the
-[Inference Diff](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/tools/evaluation/tasks/inference_diff)
+[Inference Diff](https://github.com/galeone/tensorflow/tree/master/tensorflow/lite/tools/evaluation/tasks/inference_diff)
 tool. (Android, 64-bit ARM binary architecture binary
 [here](https://storage.googleapis.com/tensorflow-nightly-public/prod/tensorflow/release/lite/tools/nightly/latest/android_aarch64_eval_inference_diff))
 
@@ -219,7 +219,7 @@ output-value deviation) in two settings:
 
 *   Single-threaded CPU Inference
 *   User-defined Inference - defined by
-    [these parameters](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/tools/delegates/README.md#tflite-delegate-registrar)
+    [these parameters](https://github.com/galeone/tensorflow/blob/master/tensorflow/lite/tools/delegates/README.md#tflite-delegate-registrar)
 
 To do so, the tool generates random Gaussian data and passes it through two
 TFLite Interpreters - one running single-threaded CPU kernels, and the other

@@ -291,10 +291,10 @@ tensorflow::Status ParseCmdLine(const string& line, string* cmd,
 
 void PrintHelp() {
   absl::PrintF(
-      "See https://github.com/tensorflow/tensorflow/tree/master/tensorflow/core/profiler/"
+      "See https://github.com/galeone/tensorflow/tree/master/tensorflow/core/profiler/"
       "README.md for profiler tutorial.\n");
   absl::PrintF(
-      "See https://github.com/tensorflow/tensorflow/tree/master/tensorflow/core/profiler/"
+      "See https://github.com/galeone/tensorflow/tree/master/tensorflow/core/profiler/"
       "g3doc/command_line.md for command line tool tutorial.\n");
   absl::PrintF(
       "profiler --profile_path=<ProfileProto binary file> # required\n"

@@ -60,7 +60,7 @@ Status RestoredResource::Initialize() const {
 
 RestoredResource::~RestoredResource() {
   // Note(bmzhao): SavedModels saved before
-  // https://github.com/tensorflow/tensorflow/commit/3c806101f57768e479f8646e7518bbdff1632ca3
+  // https://github.com/galeone/tensorflow/commit/3c806101f57768e479f8646e7518bbdff1632ca3
   // did not have their destroy_resource function saved, meaning they will
   // leak resources.
   //

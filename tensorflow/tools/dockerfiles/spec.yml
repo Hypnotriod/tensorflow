@@ -27,12 +27,12 @@ header: |
 #
 # Releases are all treated differently by TensorFlow's CI systems.
 releases:
-    # Built Nightly and pushed to tensorflow/tensorflow
+    # Built Nightly and pushed to galeone/tensorflow
     nightly:
         tag_specs:
             - "{nightly}{jupyter}"
             - "{_TAG_PREFIX}{ubuntu-devel}"
-    # Built per-release and pushed to tensorflow/tensorflow
+    # Built per-release and pushed to galeone/tensorflow
     # --arg _TAG_PREFIX=<val> should be set to "1.11" (for example) or "latest".
     versioned:
         tag_specs:

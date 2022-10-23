@@ -24,7 +24,7 @@ limitations under the License.
 namespace tensorflow {
 
 // All "Resources" should have these 3 saved functions:
-// https://github.com/tensorflow/tensorflow/blob/86dc281333d7d277ddc1882f2bca4b17e7ec40e5/tensorflow/python/training/tracking/tracking.py#L277-L281
+// https://github.com/galeone/tensorflow/blob/86dc281333d7d277ddc1882f2bca4b17e7ec40e5/tensorflow/python/training/tracking/tracking.py#L277-L281
 struct RestoredResourceRevivalState {
   std::string device;
   TFConcreteFunctionRevivalState* create_resource = nullptr;

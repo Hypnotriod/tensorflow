@@ -44,7 +44,7 @@ while true; do
 done
 
 if [[ -z "${PYTHON_BIN_PATH}" ]]; then
-  DEBUG_FIBONACCI_BIN="$TEST_SRCDIR/org_tensorflow/tensorflow/python/debug/examples/v1/debug_fibonacci"
+  DEBUG_FIBONACCI_BIN="$TEST_SRCDIR/org_galeone/tensorflow/python/debug/examples/v1/debug_fibonacci"
 else
   DEBUG_FIBONACCI_BIN="${PYTHON_BIN_PATH} -m tensorflow.python.debug.examples.v1.debug_fibonacci"
 fi

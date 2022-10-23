@@ -227,7 +227,7 @@ control token is dead, then all of the outputs are marked as dead as well.
 
 ### `tf_executor.SwitchN` Operation
 
-[`tf_executor.SwitchN`](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/core/ops/control_flow_ops.cc#L49-L53):
+[`tf_executor.SwitchN`](https://github.com/galeone/tensorflow/blob/master/tensorflow/core/ops/control_flow_ops.cc#L49-L53):
 takes two inputs,`data`and`index`and an integer attribute`num_outs`indicating
 the number of outputs. The`data`input is copied to output indicated by
 the`index` input. The other outputs are marked as dead. If one of the inputs or
@@ -263,35 +263,35 @@ though there is no data dependency between them.
 
 [`tf_executor.LoopCond`](https://www.tensorflow.org/api_docs/cc/class/tensorflow/ops/loop-cond):
 forwards its boolean input to its output,
-[it acts as`pivot` for marking the loop termination condition](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/core/kernels/control_flow_ops.h#L115-L118).
+[it acts as`pivot` for marking the loop termination condition](https://github.com/galeone/tensorflow/blob/master/tensorflow/core/kernels/control_flow_ops.h#L115-L118).
 
 ### `tf_executor.Enter` Operation
 
-[`tf_executor.Enter`](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/core/kernels/control_flow_ops.h##77-L79):
+[`tf_executor.Enter`](https://github.com/galeone/tensorflow/blob/master/tensorflow/core/kernels/control_flow_ops.h##77-L79):
 takes a single input and a`name` string attribute that identifies the execution
 frame. It forwards its input to its output in the new execution frame.
 
 ### `tf_executor.Exit` Operation
 
-[`tf_executor.Exit`](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/core/kernels/control_flow_ops.h#L90-L92):
+[`tf_executor.Exit`](https://github.com/galeone/tensorflow/blob/master/tensorflow/core/kernels/control_flow_ops.h#L90-L92):
 forwards its single input to its output, exiting the current execution frame.
 
 ### `tf_executor.ControlTrigger` Operation
 
 [`tf_executor.ControlTrigger`](https://www.tensorflow.org/api_docs/cc/class/tensorflow/ops/control-trigger):
 it is similar to
-[a no-op](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/core/kernels/control_flow_ops.h#L23-L26)
+[a no-op](https://github.com/galeone/tensorflow/blob/master/tensorflow/core/kernels/control_flow_ops.h#L23-L26)
 that acts as a placeholder for control dependencies. It always produces a live
 control output even when some control inputs are dead.
 
 ### `tf_executor.Send` Operation
 
-[`tf_executor.Send`](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/core/kernels/sendrecv_ops.h#L24):
+[`tf_executor.Send`](https://github.com/galeone/tensorflow/blob/master/tensorflow/core/kernels/sendrecv_ops.h#L24):
 matches TensorFlow semantics.
 
 ### `tf_executor.Recv` Operation
 
-[`tf_executor.Recv`](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/core/kernels/sendrecv_ops.h#L37):
+[`tf_executor.Recv`](https://github.com/galeone/tensorflow/blob/master/tensorflow/core/kernels/sendrecv_ops.h#L37):
 matches TensorFlow semantics.
 
 ## Example

@@ -52,7 +52,7 @@ from tensorflow.python.util.compat import collections_abc
 
 
 _XLA_DEBUG_OPTIONS_URL = (
-    'https://github.com/tensorflow/tensorflow/blob/master/'
+    'https://github.com/galeone/tensorflow/blob/master/'
     'tensorflow/compiler/xla/debug_options_flags.cc')
 
 

@@ -6,7 +6,7 @@ package(licenses = ["notice"])
 glob_lit_tests(
     data = [":test_utilities"],
     driver = "//tensorflow/compiler/mlir:run_lit.sh",
-    features = if_oss(["--path=org_tensorflow/tensorflow/compiler/mlir/tfrt"]),
+    features = if_oss(["--path=org_galeone/tensorflow/compiler/mlir/tfrt"]),
     test_file_exts = ["mlir"],
 )
 

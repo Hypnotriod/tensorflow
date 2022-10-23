@@ -3,7 +3,7 @@
 This document describes how to build TensorFlow Lite Android library on your
 own. Normally, you do not need to locally build TensorFlow Lite Android library.
 If you just want to use it, the easiest way is using the
-[TensorFlow Lite AAR hosted at MavenCentral](https://search.maven.org/artifact/org.tensorflow/tensorflow-lite).
+[TensorFlow Lite AAR hosted at MavenCentral](https://search.maven.org/artifact/org.galeone/tensorflow-lite).
 See [Android quickstart](../guide/android.md) for more details on how to use
 them in your Android projects.
 
@@ -45,7 +45,7 @@ by Google from time to time).*
 <!-- mdformat off(devsite fails if there are line-breaks in templates) -->
 {% dynamic if 'tflite-android-tos' in user.acknowledged_walls and request.tld != 'cn' %}
 You can download the Docker file
-<a href="https://raw.githubusercontent.com/tensorflow/tensorflow/master/tensorflow/tools/dockerfiles/tflite-android.Dockerfile">here</a>
+<a href="https://raw.githubusercontent.com/galeone/tensorflow/master/tensorflow/tools/dockerfiles/tflite-android.Dockerfile">here</a>
 {% dynamic else %} You must acknowledge the terms of service to download the
 file.
 <a class="button button-blue devsite-acknowledgement-link" data-globally-unique-wall-id="tflite-android-tos">Acknowledge</a>

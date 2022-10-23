@@ -36,9 +36,9 @@ namespace tensorflow {
 // This is the TF eager runtime implementation of SignatureDefFunction (separate
 // from the TFRT implementation). The user-facing API of SignatureDefFunctions
 // and their semantic differences from ConcreteFunction are described here:
-// https://github.com/tensorflow/tensorflow/blob/e2db60c9d9598ebae0b7741587ce6f5d473584d9/tensorflow/cc/saved_model/experimental/public/signature_def_function.h#L30-L59
+// https://github.com/galeone/tensorflow/blob/e2db60c9d9598ebae0b7741587ce6f5d473584d9/tensorflow/cc/saved_model/experimental/public/signature_def_function.h#L30-L59
 // Additional implementation notes are available here:
-// https://github.com/tensorflow/tensorflow/blob/e2db60c9d9598ebae0b7741587ce6f5d473584d9/tensorflow/c/experimental/saved_model/core/signature_def_function.h#L31-L48
+// https://github.com/galeone/tensorflow/blob/e2db60c9d9598ebae0b7741587ce6f5d473584d9/tensorflow/c/experimental/saved_model/core/signature_def_function.h#L31-L48
 class TFSignatureDefFunction : public SignatureDefFunction {
  public:
   // Factory function for creating a TFSignatureDefFunction.

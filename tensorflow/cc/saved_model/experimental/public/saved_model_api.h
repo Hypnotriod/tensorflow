@@ -50,7 +50,7 @@ class SavedModelAPI {
   //         to contain a single Metagraph (as for those exported from TF2's
   //         `tf.saved_model.save`). If tags != nullptr, we load the metagraph
   //         matching the tags:
-  //         https://github.com/tensorflow/tensorflow/blob/428cdeda09aef81e958eeb274b83d27ad635b57b/tensorflow/core/protobuf/meta_graph.proto#L50-L56
+  //         https://github.com/galeone/tensorflow/blob/428cdeda09aef81e958eeb274b83d27ad635b57b/tensorflow/core/protobuf/meta_graph.proto#L50-L56
   //  status - Set to OK on success and an appropriate error on failure.
   // Returns:
   //  If status is not OK, returns nullptr.
@@ -75,7 +75,7 @@ class SavedModelAPI {
   //
   // Params:
   //  signature_def_key - String key of SignatureDef map of a SavedModel:
-  //                      https://github.com/tensorflow/tensorflow/blob/69b08900b1e991d84bce31f3b404f5ed768f339f/tensorflow/core/protobuf/meta_graph.proto#L89
+  //                      https://github.com/galeone/tensorflow/blob/69b08900b1e991d84bce31f3b404f5ed768f339f/tensorflow/core/protobuf/meta_graph.proto#L89
   //  status - Set to OK on success and an appropriate error on failure.
   // Returns:
   //  If status is not OK, returns nullptr. Otherwise, returns a
