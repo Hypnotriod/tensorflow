@@ -373,6 +373,14 @@ func (t *Tensor) WriteContentsTo(w io.Writer) (int64, error) {
 	return io.Copy(w, bytes.NewReader(tensorData(t.c)))
 }
 
+// Exposes the actual memory address of the continuous tensor data.
+// Useful for real-time feeding with prepared/precomputed raw data with no memory transformation/copying overhead.
+// WARNING: Use may require unsafe data casting, for example:
+// var tensorData *[SIZE]float32 = (*[SIZE]float32)(unsafe.Pointer(&inputTensor.TensorData()[0]))
+func (t *Tensor) TensorData() []byte {
+	return tensorData(t.c)
+}
+
 func tensorData(c *C.TF_Tensor) []byte {
 	// See: https://github.com/golang/go/wiki/cgo#turning-c-arrays-into-go-slices
 	cbytes := C.TF_TensorData(c)
